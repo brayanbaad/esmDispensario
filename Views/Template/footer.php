@@ -19,8 +19,5 @@
     <?php if(!empty($data['script'])) { ?>
     <script src="<?php echo BASE_URL . 'Assets/js/pages/'. $data['script'] ;?>"></script>
     <?php }?>
-    
-    
-
 </body>
 </html>

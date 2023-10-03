@@ -14,6 +14,7 @@
                                     <th style="text-align: center">Item</th>
                                     <th style="text-align: center">Asignado:</th>
                                     <th style="text-align: center">Usuario:</th>
+                                    <th style="text-align: center">Rol:</th>
                                     <th style="text-align: center">Programa:</th>
                                     <th style="text-align: center">Estado:</th>
                                     <th style="text-align: center">Acciones:</th>
@@ -112,6 +113,21 @@
                                         </select>
                                     </div>
                                 </div> 
+                            </div>
+                            <div class="col-md-12">
+                                <label for="rol">Rol</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" >
+                                    <i class="material-icons">
+                                        badge
+                                    </i>
+                                    </span>
+                                    <select name="rol" id="rol" class="form-control" >
+                                        <option>SELECCIONAR</option>
+                                        <option value="1">ADMINISTRADOR</option>
+                                        <option value="2">PERSONALSALUD</option>
+                                    </select>
+                                </div>
                             </div>
                         
                     </div>

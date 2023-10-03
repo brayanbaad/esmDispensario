@@ -6,12 +6,12 @@
             ASIGNAR PERMISOS
         </div>
         <div class="card-body">
-            <form id="formulario" >
+            <form id="formularioPermiso">
                 <div class="row">
                     <?php foreach ($data['datos'] as $row){?>
                         <div class="col-md-4 text-center text-capitalize p-3">
                             <label for=""><?php echo $row['permiso'];?></label><br>
-                            <input type="checkbox" name="permisos[]" value="<?php echo $row['id'];?>" <?php echo isset ($data['asignados'] [$row['id']]) ? 'checked' : '' ; ?>>
+                            <input type="checkbox" name="permisos[]" value="<?php echo $row['id'];?>">
                         </div>
                     <?php } ?>
                     <input type="hidden" value="<?php echo $data['id_usuario'];?>" name="id_usuario">

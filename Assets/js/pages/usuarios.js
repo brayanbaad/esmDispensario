@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded',function () {
             {'data':'id'},
             {'data':'apellidos'},
             {'data':'usuario'},
+            {'data':'rol'},
             {'data':'programa'},
             {'data':'estado'},
             {'data':'acciones'},
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded',function () {
     //REGISTRAR USUARIO
     frm.addEventListener('submit',function(e){
         e.preventDefault();
-        if ( frm.usuario.value == '' || frm.persona.value =="SELECCIONAR" ||frm.programa.value=='SELECCIONAR' ) {
+        if ( frm.usuario.value == '' || frm.persona.value =="SELECCIONAR" ||frm.programa.value=='SELECCIONAR' ||frm.rol.value=='SELECCIONAR' ) {
             alertaPersonalizada('warning','TODOS LOS CAMPOS SON REQUERIDOS');
         }else{
             const data = new FormData(frm);
@@ -74,10 +75,13 @@ function Editar(id){
             http.send();
             http.onreadystatechange = function(){
                 if(this.readyState== 4 && this.status==200){
+                        console.log(this.responseText);
                         const res = JSON.parse(this.responseText);
                         frm.id_usuario.value = res.id;
                         frm.persona.value = res.id_persona;
                         frm.usuario.value = res.usuario;
+                        frm.rol.value = res.rol;
+                        console.log(frm.rol.value);
                         frm.programa.value = res.id_programa;
                         title.textContent='MODIFICAR USUARIO';
                         document.getElementById('claves').classList.add('d-none');
@@ -85,4 +89,19 @@ function Editar(id){
                         tblUsuarios.ajax.reload();
                 }
             }
+}
+
+function registrarPermisos(e){
+    e.preventDefault();
+    const url =BASE_URL+ 'Usuarios/registrarPermiso';
+    const frm = document.getElementById("formulario");
+    const http= new XMLHttpRequest(); 
+    http.open("POST",url,true);
+    http.send(new FormData(frm));
+    http.onreadystatechange = function(){
+        if(this.readyState== 4 && this.status==200){
+            console.log(this.responseText);
+                
+        }
+    }
 }

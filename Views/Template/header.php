@@ -7,12 +7,7 @@
     <meta name="description" content="Responsive Admin Dashboard Template">
     <meta name="keywords" content="admin,dashboard">
     <meta name="author" content="stacks">
-    <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    
-    <!-- Title -->
     <title><?php echo $data['title'];?></title>
-
-    <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
@@ -20,27 +15,22 @@
     <link href="<?php echo BASE_URL . 'Assets/plugins/perfectscroll/perfect-scrollbar.css';?>" rel="stylesheet">
     <link href="<?php echo BASE_URL . 'Assets/plugins/pace/pace.css';?>" rel="stylesheet">
 
-    
-    <!-- Theme Styles -->
     <link href="<?php echo BASE_URL . 'Assets/css/main.css';?>" rel="stylesheet">
     <link href="<?php echo BASE_URL . 'Assets/plugins/DataTables/datatables.min.css';?>" rel="stylesheet"/>
     <link href="<?php echo BASE_URL . 'Assets/css/estilos.css';?>" rel="stylesheet">
     <link href="<?php echo BASE_URL . 'Assets/css/custom.css';?>" rel="stylesheet">
 
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo BASE_URL . 'Assets/img/favicon.ico';?>">
-
-    
 </head>
 
-<body>
+<body >
     <div class="app align-content-stretch d-flex flex-wrap ">
         <div class="app-sidebar">
             <div class="logo bg-info">
-                <a href="index.html" class="logo-icon"><span class="logo-text text-white">Administrador</span></a>
+                <a href="index.html" class="logo-icon"><span class="logo-text text-white"><?php echo $_SESSION['asignar'];?><br></span></a>
                 <div class="sidebar-user-switcher user-activity-online">
                     <a href="#">
                         <span class="user-info-text text-white"><?php echo $_SESSION['asignar'];?><br></span>
-                        
                         <img src="<?php echo BASE_URL . 'Assets/img/logo.png';?>">
                     </a>
                 </div>
@@ -49,6 +39,14 @@
                 <ul class="accordion-menu">
                     <li class="sidebar-title">
                         Registros
+                    </li>
+                    
+                    <li class="">
+                        <a href="<?php echo BASE_URL .'pacientes'?>" class="active">
+                            <i class="material-icons-two-tone">
+                                person_4
+                            </i>Pacientes
+                        </a>
                     </li>
                     <li class="">
                         <a href="<?php echo BASE_URL .'dashboard'?>" class="active">

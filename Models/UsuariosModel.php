@@ -31,7 +31,7 @@ class UsuariosModel extends Query{
     }
 
     public function getEditar($id){
-        $sql ="SELECT id,id_persona,usuario,id_programa,estado FROM usuarios  WHERE id='$id'  AND estado=1";
+        $sql ="SELECT id,id_persona,usuario,rol,id_programa,estado FROM usuarios  WHERE id='$id'  AND estado=1";
         $data =$this->select($sql);
         return $data;
     }
@@ -46,15 +46,15 @@ class UsuariosModel extends Query{
     }
 
     
-    public function RegistrarUsuario($usuario,$persona,$hash,$programa){
-        $sql = "INSERT INTO usuarios (usuario,id_persona,clave,id_programa) VALUES (?,?,?,?)";
-        $datos= array($usuario,$persona,$hash,$programa);
+    public function RegistrarUsuario($usuario,$persona,$rol,$hash,$programa){
+        $sql = "INSERT INTO usuarios (usuario,id_persona,rol,clave,id_programa) VALUES (?,?,?,?)";
+        $datos= array($usuario,$persona,$hash,$rol,$programa);
         return $this->insertar($sql,$datos);
     }
 
-    public function ModificarUsuario($usuario,$persona,$programa,$id_usuario){
-        $sql = "UPDATE usuarios SET usuario =?,id_persona =?,id_programa=? WHERE id=?";
-        $datos= array($usuario,$persona,$programa,$id_usuario);
+    public function ModificarUsuario($usuario,$persona,$rol,$programa,$id_usuario){
+        $sql = "UPDATE usuarios SET usuario =?,id_persona=?,rol=?,id_programa=? WHERE id=?";
+        $datos= array($usuario,$persona,$rol,$programa,$id_usuario);
         return $this->save($sql,$datos);
     }
     public function eliminar($id) {
@@ -72,6 +72,25 @@ class UsuariosModel extends Query{
         $data = $this->save($sql,$datos);
         return $data;
     }
+
+    public function registrarPermisos(int $id_user, int $id_permiso) {
+        $sql = "INSERT INTO detalle_permisos (id_usuario,id_permiso) VALUES(?,?)";
+        $datos= array($id_user,$id_permiso);
+        return $this->save($sql,$datos);
+    }
+
+    public function eliminarPermisos(int $id_user) {
+        $sql = "DELETE FROM detalle_permisos WHERE id_usuario=?";
+        $datos= array($id_user);
+        return $this->save($sql,$datos);
+    }
+
+    public function getDetallePermisos($id_user){
+        $sql ="SELECT * FROM detalle_permisos  WHERE id_usuario=$id_user";
+        $data =$this->selectAll($sql);
+        return $data;
+    }
+    
     
 
     

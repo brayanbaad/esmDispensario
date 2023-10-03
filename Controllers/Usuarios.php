@@ -21,12 +21,22 @@ class Usuarios extends Controller{
         for ($i=0; $i < count($data) ; $i++) { 
             if ($data[$i]['estado']==1) {
                 $data[$i]['estado']='<span class="badge badge-success">ACTIVO</span>';
-                $data[$i]['acciones']='
-                    <div>
-                <a href ="'.BASE_URL.'Usuarios/permisos/'.$data[$i]['id'].'" class="btn btn-dark btn-sm";"><i class="material-icons">key</i></a>
-                <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i></a>
-                <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i></a>
-                    </div>';
+                if ($data[$i]['id']==1) {
+                    $data[$i]['rol']='<span class="badge badge-success">ADMINISTRADOR</span>';
+                    $data[$i]['acciones']='
+                        <div>
+                        <span class="badge bg-dark">ADMINISTRADOR</span>
+                        </div>';
+                } else {
+                    $data[$i]['estado']='<span class="badge badge-success">ACTIVO</span>';
+                    $data[$i]['rol']='<span class="badge bg-info">PERSONAL SALUD</span>';
+                    $data[$i]['acciones']='
+                        <div>
+                            <a href ="'.BASE_URL.'Usuarios/permisos/'.$data[$i]['id'].'" class="btn btn-dark btn-sm";"><i class="material-icons">key</i></a>
+                            <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i></a>
+                            <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i></a>
+                        </div>';
+                }
             }else{
                 $data[$i]['estado']='<span class="badge badge-danger">DESACTIVADO</span>';
                 $data[$i]['acciones']='
@@ -51,6 +61,7 @@ class Usuarios extends Controller{
             if ($data) {
                 $_SESSION['id_usuario']=$data['id'];
                 $_SESSION['asignar']=$data['usuario'];
+                $_SESSION['rol']=$data['rol'];
                 $_SESSION['activo']= true;
                 $res = array('tipo' =>'success','mensaje'=>'BIENVENIDO AL SISTEMA DEL ESTABLECIMIENTO DE SANIDAD ESMBAS10');
             }else {
@@ -70,9 +81,10 @@ class Usuarios extends Controller{
         $clave = $_POST['clave'];
         $confirmar = $_POST['confirmar'];
         $programa = $_POST['programa'];
+        $rol = $_POST['rol'];
         $id_usuario = $_POST['id_usuario'];
         $hash = hash("SHA256",$clave);
-        if (empty($usuario)|| empty($persona) || empty($programa)) {
+        if (empty($usuario)|| empty($persona) || empty($programa) || empty($rol)) {
             $res = array('tipo'=>'warning','mensaje'=>'TODOS LOS CAMPOS SON REQUERIDOS');
         }else{
             if ($id_usuario=="") {
@@ -81,7 +93,7 @@ class Usuarios extends Controller{
                 }else{
                     $verificarUsuario= $this->model->getVerificar('usuario', $usuario,0);
                     if (empty($verificarUsuario)) {
-                        $data = $this->model->RegistrarUsuario($usuario,$persona,$hash,$programa);
+                        $data = $this->model->RegistrarUsuario($usuario,$persona,$rol,$hash,$programa);
                         if ($data>0) {
                             $res = array('tipo'=>'success','mensaje'=>'EL USUARIO FUE REGISTRADO CON EXITO');
                         }else {
@@ -94,7 +106,7 @@ class Usuarios extends Controller{
             }else{
                 $verificarUsuario= $this->model->getVerificar('usuario', $usuario,$id_usuario);
                 if (empty($verificarUsuario)) {
-                    $data = $this->model->ModificarUsuario($usuario,$persona,$programa,$id_usuario);
+                    $data = $this->model->ModificarUsuario($usuario,$persona,$rol,$programa,$id_usuario);
                     if ($data ==1) {
                         $res = array('tipo'=>'success','mensaje'=>'EL USUARIO FUE MODIFICADO CON EXITO');
                     }else {
@@ -143,10 +155,37 @@ class Usuarios extends Controller{
         if (empty($_SESSION['activo'])) {
             header("location:". BASE_URL);
         }
-        $data = $this->model->getPermisos();
+        $data['title'] ='Gestion De Permisos';
+        $data['datos'] = $this->model->getPermisos();
+        $permisos = $this->model->getDetallePermisos($id);
+        $data['asignados'] = array();
+        foreach ($permisos as $permiso) {
+            $data['asignados'][$permiso['id_permiso']] = true;
+        }
+        $data['script'] ='permisos.js';
+        $data['id_usuario'] = $id;
         $this->views->getView($this,"permisos",$data);
     }
 
-    
+    public function registrarPermiso() {
+        
+        $id_user = $_POST['id_usuario'];
+        $eliminar = $this->model->eliminarPermisos($id_user);
+        if ($eliminar==1) {
+            foreach ($_POST['permisos'] as $id_permiso) {
+                $data=$this->model->registrarPermisos($id_user,$id_permiso);
+            }
+            if ($data>0) {
+                $res = array('tipo'=>'success','mensaje'=>'PERMISOS ASIGNADOS CON EXITO');
+            }else {
+                $res = array('tipo'=>'error','mensaje'=>'ERROR AL ASIGNAR LOS PERMISOS');
+            }
+        }else{
+            $res = array('tipo'=>'error','mensaje'=>'ERROR AL ELIMINAR LOS PERMISOS ANTERIORES');
+        }
+        echo json_encode($res,JSON_UNESCAPED_UNICODE);
+        die();
+        
+    }
 }
 ?>
