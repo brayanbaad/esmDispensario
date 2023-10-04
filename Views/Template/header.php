@@ -30,7 +30,7 @@
                 <a href="index.html" class="logo-icon"><span class="logo-text text-white"><?php echo $_SESSION['asignar'];?><br></span></a>
                 <div class="sidebar-user-switcher user-activity-online">
                     <a href="#">
-                        <span class="user-info-text text-white"><?php echo $_SESSION['asignar'];?><br></span>
+                        <span class="user-info-text text-white"><?php echo $_SESSION['asignar'];?><br><span class="user-state-info"><?php echo $_SESSION['rol']?></span></span>
                         <img src="<?php echo BASE_URL . 'Assets/img/logo.png';?>">
                     </a>
                 </div>

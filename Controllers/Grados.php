@@ -11,9 +11,16 @@ class Grados extends Controller
     }
 
     public function index()  {
-        $data['title'] ='Gestion De Grados';
-        $data['script'] ='grados.js';
-        $this->views->getView($this,'index',$data);
+        $id_user = $_SESSION['id_usuario'];
+        $verificar = $this->model->verificarPermiso($id_user,'grados');
+        if (!empty($verificar)) {
+            $data['title'] ='Gestion De Grados';
+            $data['script'] ='grados.js';
+            $this->views->getView($this,'index',$data);
+        } else {
+            header('Location:'.BASE_URL.'Errors/permisos');
+        }
+        
     }
 
     public function listar(){

@@ -11,9 +11,16 @@ class Especialidades extends Controller
     }
 
     public function index()  {
-        $data['title'] ='Gestion De Especialidades';
+        $id_user = $_SESSION['id_usuario'];
+        $verificar = $this->model->verificarPermiso($id_user,'especialidades');
+        if (!empty($verificar)) {
+            $data['title'] ='Gestion De Especialidades';
         $data['script'] ='especialidades.js';
         $this->views->getView($this,'index',$data);
+        } else {
+            header('Location:'.BASE_URL.'Errors/permisos');
+        }
+        
     }
 
     public function listar(){

@@ -10,9 +10,16 @@ class Pacientes extends Controller
     }
 
     public function index()  {
-        $data['title'] ='Gestión de Pacientes';
-        $data['script'] ='pacientes.js';
-        $this->views->getView($this,'index',$data);
+        $id_user = $_SESSION['id_usuario'];
+        $verificar = $this->model->verificarPermiso($id_user,'pacientes');
+        if (!empty($verificar)) {
+            $data['title'] ='Gestión de Pacientes';
+            $data['script'] ='pacientes.js';
+            $this->views->getView($this,'index',$data);
+        } else {
+            header('Location:'.BASE_URL.'Errors/permisos');
+        }
+        
     }
 
     public function listar(){

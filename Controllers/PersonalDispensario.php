@@ -11,14 +11,19 @@ class PersonalDispensario extends Controller{
         }
 
         public function index(){
-            
-            $data['grados'] = $this->model->getGradosPersonal();
-            $data['especialidades'] = $this->model->getEspecialidadPersonal();
-            $data['cargos'] = $this->model->getCargosPersonal();
-            $data['secciones'] = $this->model->getSeccionPersonal();
-            $data['title'] =' Gestion De Personal Dispensario';
-            $data['script'] ='personalDispensario.js';
-            $this->views->getView($this,'index',$data);
+            $id_user = $_SESSION['id_usuario'];
+            $verificar = $this->model->verificarPermiso($id_user,'personalDispensario');
+            if (!empty($verificar)) {
+                $data['grados'] = $this->model->getGradosPersonal();
+                $data['especialidades'] = $this->model->getEspecialidadPersonal();
+                $data['cargos'] = $this->model->getCargosPersonal();
+                $data['secciones'] = $this->model->getSeccionPersonal();
+                $data['title'] =' Gestion De Personal Dispensario';
+                $data['script'] ='personalDispensario.js';
+                $this->views->getView($this,'index',$data);
+            } else {
+                header('Location:'.BASE_URL.'Errors/permisos');
+            }
         }
 
         public function listar(){

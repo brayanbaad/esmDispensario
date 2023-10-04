@@ -9,11 +9,18 @@ class Usuarios extends Controller{
         if (empty($_SESSION['activo'])) {
             header("location:". BASE_URL);
         }
-        $data['programas'] = $this->model->getProgramas();
-        $data['personal'] = $this->model->getPersonas();
-        $data['title'] ='Gestion De Usuarios';
-        $data['script'] ='usuarios.js';
-        $this->views->getView($this,"index",$data);
+        $id_user = $_SESSION['id_usuario'];
+        $verificar = $this->model->verificarPermiso($id_user,'programas');
+        if (!empty($verificar)) {
+            $data['programas'] = $this->model->getProgramas();
+            $data['personal'] = $this->model->getPersonas();
+            $data['title'] ='Gestion De Usuarios';
+            $data['script'] ='usuarios.js';
+            $this->views->getView($this,"index",$data);
+        } else {
+            header('Location:'.BASE_URL.'Errors/permisos');
+        }
+        
     }
 
     public function listar(){
@@ -24,9 +31,11 @@ class Usuarios extends Controller{
                 if ($data[$i]['id']==1) {
                     $data[$i]['rol']='<span class="badge badge-success">ADMINISTRADOR</span>';
                     $data[$i]['acciones']='
-                        <div>
-                        <span class="badge bg-dark">ADMINISTRADOR</span>
-                        </div>';
+                    <div>
+                    <a href ="'.BASE_URL.'Usuarios/permisos/'.$data[$i]['id'].'" class="btn btn-dark btn-sm";"><i class="material-icons">key</i></a>
+                    <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i></a>
+                    <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i></a>
+                </div>';
                 } else {
                     $data[$i]['estado']='<span class="badge badge-success">ACTIVO</span>';
                     $data[$i]['rol']='<span class="badge bg-info">PERSONAL SALUD</span>';
