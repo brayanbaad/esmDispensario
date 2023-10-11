@@ -47,8 +47,8 @@ class UsuariosModel extends Query{
 
     
     public function RegistrarUsuario($usuario,$persona,$rol,$hash,$programa){
-        $sql = "INSERT INTO usuarios (usuario,id_persona,rol,clave,id_programa) VALUES (?,?,?,?)";
-        $datos= array($usuario,$persona,$hash,$rol,$programa);
+        $sql = "INSERT INTO usuarios (usuario,id_persona,rol,clave,id_programa) VALUES (?,?,?,?,?)";
+        $datos= array($usuario,$persona,$rol,$hash,$programa);
         return $this->insertar($sql,$datos);
     }
 

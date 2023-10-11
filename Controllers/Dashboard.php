@@ -10,8 +10,13 @@ class Dashboard extends Controller
         if (empty($_SESSION['activo'])) {
             header("location:". BASE_URL);
         }
-        $data['title'] ='Dashboard';
-        $this->views->getView($this,'index',$data);
+        if ($_SESSION['rol']=="ADMINISTRADOR") {
+            $data['title'] ='Dashboard Administrador';
+            $this->views->getView($this,'dashboardAdmin',$data);
+        }else {
+            $data['title'] ='Dashboard Personal Salud';
+            $this->views->getView($this,'dashboardSalud',$data);
+        }
     }
 
 

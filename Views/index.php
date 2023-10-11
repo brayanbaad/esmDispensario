@@ -52,8 +52,6 @@
     <script src="<?php echo BASE_URL . 'Assets/js/main.js'?>"></script>
     <script src="<?php echo BASE_URL . 'Assets/js/main2.js'?>"></script>
     <script src="<?php echo BASE_URL . 'Assets/js/jquery.min.js'?>"></script>
-    <!-- <script src="<?php echo BASE_URL .'Assets/js/bootstrap.js'?>"></script> -->
-    <!-- <script src="<?php echo BASE_URL .'Assets/js/bootstrap.bundle.js'?>"></script> -->
     <script src="<?php echo BASE_URL .'Assets/js/sweetalert@11.js'; ?>"></script>
     <script src="<?php echo BASE_URL .'Assets/js/custom.js'; ?>"></script>
     <script>

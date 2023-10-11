@@ -123,9 +123,9 @@
                                     </i>
                                     </span>
                                     <select name="rol" id="rol" class="form-control" >
-                                        <option>SELECCIONAR</option>
-                                        <option value="1">ADMINISTRADOR</option>
-                                        <option value="2">PERSONALSALUD</option>
+                                        <option value="SELECCIONAR">SELECCIONAR</option>
+                                        <option value="ADMINISTRADOR">ADMINISTRADOR</option>
+                                        <option value="PERSONALSALUD">PERSONALSALUD</option>
                                     </select>
                                 </div>
                             </div>

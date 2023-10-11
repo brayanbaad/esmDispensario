@@ -13,8 +13,7 @@ class Home extends Controller{
             $this->views->getView($this,"index");
         }
 
-        public function salir()
-    {
+        public function salir(){
         session_destroy();
         header("location:".BASE_URL);
     }

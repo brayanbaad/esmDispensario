@@ -3,12 +3,12 @@
         <div class="col-xl-3 col-md-6">
             <div class="card bg-info">
                 <div class="card-body d-flex text-white">
-                    usuarios:
-                    <span>12</span>
+                    Pacientes:
+                    <span>45</span>
                 </div>
                 <div class="card-footer">
-                    <a href="<?php echo BASE_URL;?>personalDispensario">Ver Detalle</a>
-                    <span>12</span>
+                    <a href="<?php echo BASE_URL;?>personalDispensario">Ver Detalle personal</a>
+                    <span>4</span>
                 </div>
             </div>
 

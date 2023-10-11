@@ -22,7 +22,6 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo BASE_URL . 'Assets/img/favicon.ico';?>">
 </head>
-
 <body >
     <div class="app align-content-stretch d-flex flex-wrap ">
         <div class="app-sidebar">
@@ -30,88 +29,22 @@
                 <a href="index.html" class="logo-icon"><span class="logo-text text-white"><?php echo $_SESSION['asignar'];?><br></span></a>
                 <div class="sidebar-user-switcher user-activity-online">
                     <a href="#">
-                        <span class="user-info-text text-white"><?php echo $_SESSION['asignar'];?><br><span class="user-state-info"><?php echo $_SESSION['rol']?></span></span>
                         <img src="<?php echo BASE_URL . 'Assets/img/logo.png';?>">
+                        <span class="user-info-text text-white "  ><?php echo $_SESSION['asignar'];?><br><span class="user-state-info"><?php echo $_SESSION['rol']?></span></span>
+                        <span class="activity-indicator"></span>
                     </a>
                 </div>
             </div>
             <div class="app-menu ">
-                <ul class="accordion-menu">
-                    <li class="sidebar-title">
-                        Registros
-                    </li>
-                    
-                    <li class="">
-                        <a href="<?php echo BASE_URL .'pacientes'?>" class="active">
-                            <i class="material-icons-two-tone">
-                                person_4
-                            </i>Pacientes
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="<?php echo BASE_URL .'dashboard'?>" class="active">
-                            <i class="material-icons-two-tone">
-                                dashboard
-                            </i>Dashboard
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="<?php echo BASE_URL .'personalDispensario'?>" class="active">
-                            <i class="material-icons-two-tone">
-                                domain
-                            </i>Personal Dispensario
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="<?php echo BASE_URL .'usuarios'?>" class="active">
-                            <i class="material-icons-two-tone">
-                                admin_panel_settings
-                            </i>Usuarios
-                        </a>
-                    </li>
-                    <li class="sidebar-title">
-                        Configuraciones
-                        <li class="">
-                            <a href="<?php echo BASE_URL . 'Grados'?>" class="active">
-                                <i class="material-icons-two-tone  ">
-                                    military_tech</i>Grados
-                                </i>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="<?php echo BASE_URL . 'Especialidades'?>" class="active">
-                                <i class="material-icons-two-tone  ">
-                                account_tree</i>Especialidades
-                                </i>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="<?php echo BASE_URL . 'Cargos'?>" class="active">
-                                <i class="material-icons-two-tone ">
-                                badge</i>Cargos
-                                </i>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="<?php echo BASE_URL . 'Secciones'?>" class="active">
-                                <i class="material-icons-two-tone  ">
-                                auto_awesome_motion</i>Secciones
-                                </i>
-                            </a>
-                        </li>
-                    </li>
-                    <li class="">
-                        <a href="<?php echo BASE_URL . 'Programas'?>" class="active">
-                            <i class="material-icons-two-tone  ">
-                                view_list</i>Programas
-                            </i>
-                        </a>
-                    </li>
-                    
-                </ul>
+                <?php 
+                if($_SESSION['rol']=="ADMINISTRADOR"){
+                    include_once 'Views/template/menuadmin.php';
+                }else{
+                    include_once 'Views/template/menusalud.php';
+                }?>
             </div>
         </div>
-        <div class="app-container">
+        <div class="app-container ">
             <div class="search">
                 <form>
                     <input class="form-control" type="text" placeholder="Type here..." aria-label="Search">

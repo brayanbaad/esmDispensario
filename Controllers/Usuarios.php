@@ -81,6 +81,7 @@ class Usuarios extends Controller{
         echo json_encode($res, JSON_UNESCAPED_UNICODE);
         die();
     }
+    
 
     public function registrar()
     {
