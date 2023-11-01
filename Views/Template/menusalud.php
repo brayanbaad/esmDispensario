@@ -16,8 +16,15 @@
             </i> Pacientes
         </a>
     </li>
+    <!-- <li >
+        <a href="<?php echo BASE_URL .'pacientes'?>" class="active">
+            <i class="material-icons-two-tone">
+            admin_panel_settings
+            </i> Consultar Paciente
+        </a>
+    </li> -->
     
-    <li class="sidebar-title">
+    <!-- <li class="sidebar-title">
         Reportes
     </li>
     <li >
@@ -26,6 +33,6 @@
                 person_4
             </i>Informe
         </a>
-    </li>
+    </li> -->
     
 </ul>

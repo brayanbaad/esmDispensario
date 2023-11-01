@@ -20,9 +20,15 @@ document.addEventListener('DOMContentLoaded',function () {
             {'data':'estado'},
             {'data':'acciones'},
         ],
-        language : {
-            url:'https://cdn.datatables.net/plug-ins/1.13.5/i18n/es-ES.json'
+        language: {
+            "url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"
         },
+        dom:"<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>"+
+            "<'row'<'col-sm-12'tr>>"+
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+        buttons: [
+            'copy', 'excel', 'pdf'
+        ],
         responsive: true,
         order: [[0,'desc']]
     } );
@@ -80,7 +86,6 @@ function Editar(id){
                         frm.persona.value = res.id_persona;
                         frm.usuario.value = res.usuario;
                         frm.rol.value = res.rol;
-                        console.log(frm.rol.value);
                         frm.programa.value = res.id_programa;
                         title.textContent='MODIFICAR USUARIO';
                         document.getElementById('claves').classList.add('d-none');

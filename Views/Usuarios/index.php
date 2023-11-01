@@ -33,8 +33,8 @@
             <div class="modal-content">
                 <div class="modal-header  bg-info">
                     <h5 class="modal-title text-white"  id="title"></h5>
-                    <button class="btn-close " data-bs-dismiss="modal" aria-label="Close">
-                        
+                    <button class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span style="color:white" aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <form id="formulario" autocomplete="off">

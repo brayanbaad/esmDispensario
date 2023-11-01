@@ -40,8 +40,8 @@
     <div id="modalRegistro" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header ">
-                    <h5 class="modal-title " id="title">Nuevo Personal</h5>
+                <div class="modal-header bg-info ">
+                    <h5 class="modal-title text-white " id="title">Nuevo Personal</h5>
                     <button class="btn-close " data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
@@ -50,7 +50,7 @@
                         <div class="modal-body">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-4 mb-2">
+                                    <div class="col-md-5 mb-2">
                                         <label for="grado">Grado:</label>
                                         <div class="input-group">
                                             <span class="input-group-text">
@@ -232,3 +232,7 @@
     </div>
 
 <?php include_once 'Views/template/footer.php'?>
+
+
+
+

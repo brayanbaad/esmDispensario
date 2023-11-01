@@ -67,15 +67,19 @@ class Usuarios extends Controller{
             $clave = $_POST['clave'];
             $hash = hash('SHA256',$clave);
             $data= $this->model->getUsuario($usuario,$hash);
-            if ($data) {
-                $_SESSION['id_usuario']=$data['id'];
-                $_SESSION['asignar']=$data['usuario'];
-                $_SESSION['rol']=$data['rol'];
-                $_SESSION['activo']= true;
-                $res = array('tipo' =>'success','mensaje'=>'BIENVENIDO AL SISTEMA DEL ESTABLECIMIENTO DE SANIDAD ESMBAS10');
-            }else {
-                
-                $res = array('tipo' =>'warning','mensaje'=>' USUARIO O CONTRASEÑA ES INCORRECTA');
+            if($data['estado']==1){
+                if ($data){
+                    $_SESSION['id_usuario']=$data['id'];
+                    $_SESSION['asignar']=$data['usuario'];
+                    $_SESSION['rol']=$data['rol'];
+                    $_SESSION['activo']= true;
+                    $res = array('tipo' =>'success','mensaje'=>'BIENVENIDO AL SISTEMA DEL ESTABLECIMIENTO DE SANIDAD ESMBAS10');
+                }else {
+                    
+                    $res = array('tipo' =>'warning','mensaje'=>' USUARIO O CONTRASEÑA ES INCORRECTA');
+                }
+            }else{
+                $res = array('tipo' =>'warning','mensaje'=>' USUARIO NO EXISTE');
             }
         }
         echo json_encode($res, JSON_UNESCAPED_UNICODE);

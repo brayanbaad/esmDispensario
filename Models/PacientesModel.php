@@ -5,8 +5,8 @@ class PacientesModel extends Query{
         parent::__construct();
     }
 
-    public function getProgramas(){
-        $sql = "SELECT * FROM programas WHERE estado=1";
+    public function getPacientes(){
+        $sql = "SELECT * FROM pacientes";
         return $this->selectAll($sql);
     }
 
@@ -45,6 +45,12 @@ class PacientesModel extends Query{
         $sql = "UPDATE personal_acceso  SET id_grado =?,identificacion=?,fecha_nacimiento=?,apellidos=?,nombres=?,telefono=?,correo=?,id_especialidad=?,id_cargo=?,id_seccion=?,arma=?,novedad=?  WHERE id =?";
         $datos= array($grado,$identificacion,$fecha,$apellidos,$nombres,$telefono,$correo,$especialidad,$cargo,$seccion,$arma,$novedad,$id);
         return $this->save($sql,$datos);
+    }
+
+    public function getDetalles($id){
+        $sql ="SELECT * FROM pacientes  WHERE id =$id";
+        $data =$this->select($sql);
+        return $data;
     }
 
 }

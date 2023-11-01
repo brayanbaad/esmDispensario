@@ -1,7 +1,7 @@
 <?php include_once 'Views/template/header.php'?>
     <div class="container">
         <div class="col-md-12">
-            <button class="btn btn-primary mb-4" id="btnNuevo" type="button">
+            <button class="btn btn-info mb-4" id="btnNuevo" type="button">
                 <i class="material-icons">
                     add
                 </i>Nuevo</button>
@@ -28,8 +28,8 @@
     <div id="modalRegistro" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"  id="title"></h5>
+                <div class="modal-header bg-info">
+                    <h5 class="modal-title text-white"  id="title"></h5>
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         
                     </button>
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary" type="submit">
+                        <button class="btn btn-info" type="submit">
                         <i class="material-icons">
                             save
                         </i>Guardar</button>
