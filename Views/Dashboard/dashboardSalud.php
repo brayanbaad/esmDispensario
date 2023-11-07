@@ -27,7 +27,7 @@
         <div class="col-xl-3 col-md-6">
             <div class="card bg-warning">
                 <div class="card-body d-flex text-white">
-                    Yaisell:
+                    Citas De Hoy:
                     <span>45</span>
                 </div>
                 <div class="card-footer">
@@ -39,7 +39,7 @@
         <div class="col-xl-3 col-md-6">
             <div class="card bg-danger">
                 <div class="card-body d-flex text-white">
-                    Bryan:
+                    Proximas Citas:
                     <span>45</span>
                 </div>
                 <div class="card-footer">

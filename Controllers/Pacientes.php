@@ -3,6 +3,7 @@ class Pacientes extends Controller
 {
     public function __construct() {
         session_start();
+        
         if (empty($_SESSION['activo'])) {
             header("location:". BASE_URL);
         }
@@ -48,11 +49,55 @@ class Pacientes extends Controller
         $this->views->getView($this,"Pacientedetalle",$data);
     }
 
-    public function detalles($id)
+    public function registrar()
     {
-        $data=$this->model->getDetalles($id);
-        echo json_encode($data,JSON_UNESCAPED_UNICODE);
-        die();
+        print_r($_POST);
+        // $persona = $_POST['persona'];
+        // $usuario = $_POST['usuario'];
+        // $usuario = strtoupper($usuario);
+        // $clave = $_POST['clave'];
+        // $confirmar = $_POST['confirmar'];
+        // $programa = $_POST['programa'];
+        // $rol = $_POST['rol'];
+        // $id_usuario = $_POST['id_usuario'];
+        // $hash = hash("SHA256",$clave);
+        // if (empty($usuario)|| empty($persona) || empty($programa) || empty($rol)) {
+        //     $res = array('tipo'=>'warning','mensaje'=>'TODOS LOS CAMPOS SON REQUERIDOS');
+        // }else{
+        //     if ($id_usuario=="") {
+        //         if ($clave!= $confirmar) {
+        //             $res = array('tipo'=>'warning','mensaje'=>'LAS CONTRASEÑAS NO COINCIDEN');
+        //         }else{
+        //             $verificarUsuario= $this->model->getVerificar('usuario', $usuario,0);
+        //             if (empty($verificarUsuario)) {
+        //                 $data = $this->model->RegistrarUsuario($usuario,$persona,$rol,$hash,$programa);
+        //                 if ($data>0) {
+        //                     $res = array('tipo'=>'success','mensaje'=>'EL USUARIO FUE REGISTRADO CON EXITO');
+        //                 }else {
+        //                     $res = array('tipo'=>'error','mensaje'=>'ERROR AL REGISTRAR EL USUARIO');
+        //                 }
+        //             } else {
+        //                 $res = array('tipo'=>'warning','mensaje'=>'EL NOMBRE DEL USUARIO YA EXISTE');
+        //             }
+        //         }
+        //     }else{
+        //         $verificarUsuario= $this->model->getVerificar('usuario', $usuario,$id_usuario);
+        //         if (empty($verificarUsuario)) {
+        //             $data = $this->model->ModificarUsuario($usuario,$persona,$rol,$programa,$id_usuario);
+        //             if ($data ==1) {
+        //                 $res = array('tipo'=>'success','mensaje'=>'EL USUARIO FUE MODIFICADO CON EXITO');
+        //             }else {
+        //                 $res = array('tipo'=>'error','mensaje'=>'ERROR AL MODIFICAR EL USUARIO');
+        //             }
+        //         } else {
+        //             $res = array('tipo'=>'warning','mensaje'=>'EL NOMBRE DEL USUARIO YA EXISTE');
+        //         }
+        //     }
+        // }
+        // echo json_encode($res,JSON_UNESCAPED_UNICODE);
+        // die();
     }
+
+    
 }
 

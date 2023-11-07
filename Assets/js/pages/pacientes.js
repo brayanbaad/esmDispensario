@@ -3,9 +3,9 @@ const btnNuevo = document.querySelector('#btnNuevo');
 const modalRegistro = document.querySelector('#modalRegistro');
 const title = document.querySelector('#title');
 const myModal = new bootstrap.Modal(modalRegistro);
-const hoy_fecha = new Date().toISOString().substring(0, 10);
-document.querySelector("input[name='fecha']").max = hoy_fecha;
-let tdlCargos;
+const fechaNacimiento = document.getElementById("fechaNacimiento");
+const edad = document.getElementById("edad");
+let tblPacientes;
 document.addEventListener('DOMContentLoaded',function () {
      //CARGAR DATOS CON DATATABLE
     tblPacientes=$('#tblPacientes').DataTable( {
@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded',function () {
             {'data':'direccion'},
             {'data':'telefono'},
             {'data':'acciones'},
-            {'data':'id'},
-            {'data':'edad'},
             {'data':'nivelEducativo'},
             {'data':'ocupacion'},
+            {'data':'edad'},
             {'data':'fecha_ingreso'},
+            {'data':'id'},
             {'data':'estado'},
         ],
         language: {
@@ -39,26 +39,46 @@ document.addEventListener('DOMContentLoaded',function () {
         frm.reset();
         myModal.show();
     })
-})
-
-function Detalles(id){
-    const http= new XMLHttpRequest();
-    const url =BASE_URL+ 'Pacientes/detalles/' + id;
-    http.open("GET",url,true);
-    http.send();
-    http.onreadystatechange = function(){
-        if(this.readyState== 4 && this.status==200){
-            console.log(this.responseText);
-                // const res = JSON.parse(this.responseText);
-                // frm.id_usuario.value = res.id;
-                // frm.persona.value = res.id_persona;
-                // frm.usuario.value = res.usuario;
-                // frm.rol.value = res.rol;
-                // frm.programa.value = res.id_programa;
-                // title.textContent='MODIFICAR USUARIO';
-                // document.getElementById('claves').classList.add('d-none');
-                // myModal.show();
-                // tblUsuarios.ajax.reload();
+    frm.addEventListener('submit',function(e){
+        
+        e.preventDefault();
+        if ( frm.tipoIdentificacion.value == 'SELECCIONAR' || frm.numeroIdentificacion.value =="" ||frm.apellidos.value=='' ||frm.nombres.value=='' 
+        || frm.telefono.value=='' || frm.direccion.value=='' ||frm.nivelEducativo.value=='' || frm.ocupacion.value=='' ) {
+            alertaPersonalizada('warning','TODOS LOS CAMPOS SON REQUERIDOS');
+        }else if(frm.edad.value==''){
+            alertaPersonalizada('warning','ESCOGA UNA FECHA CORRECTA');
+        }else{
+            const data = new FormData(frm);
+            const url =BASE_URL+ "Pacientes/registrar";
+            const http= new XMLHttpRequest();
+            http.open("POST",url,true);
+            http.send(data);
+            http.onreadystatechange = function(){
+                if(this.readyState== 4 && this.status==200){
+                    console.log(this.responseText);
+                    //     const res = JSON.parse(this.responseText);
+                    //     alertaPersonalizada(res.tipo,res.mensaje);
+                    // if (res.tipo == 'success') {
+                    //     frm.reset();
+                    //     myModal.hide();
+                    //     tblPacientes.ajax.reload();
+                    // // }
+                }
+            }
         }
-    }
+    })
+});
+
+
+$('#fechaNacimiento').on('change',function() {
+    $('#edad').val(calcularEdad());
+    
+});
+function calcularEdad() {
+    var fechaSeleccionada = $('#fechaNacimiento').val();
+    var fechaNacimiento= new Date(fechaSeleccionada);
+    var fechaActual = new Date();
+    var edad = (parseInt((fechaActual-fechaNacimiento)/(1000*60*60*24*365)));
+    return edad;
 }
+

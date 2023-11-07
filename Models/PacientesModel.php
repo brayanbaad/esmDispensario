@@ -29,7 +29,7 @@ class PacientesModel extends Query{
     }
 
     public function registrar($nombre,$apellido,$correo,$direccion,$telefono,$clave,$rol){
-        $sql = "INSERT INTO personal_acceso (nombre,apellido,correo,direccion,telefono,clave,rol) VALUES (?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO pacientes (nombre,apellido,correo,direccion,telefono,clave,rol) VALUES (?,?,?,?,?,?,?)";
         $datos= array($nombre,$apellido,$correo,$direccion,$telefono,$clave,$rol);
         return $this->insertar($sql,$datos);
         

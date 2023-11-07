@@ -64,14 +64,13 @@
                         <div class="d-flex">
                             <ul class="navbar-nav">
                                 <li class="nav-item hidden-on-mobile">
-                                    <a class="nav-link " id="notificationsDropDown" href="#" data-bs-toggle="dropdown"> <i class="material-icons">expand_more</i></a>
+                                    <a class="nav-link " id="notificationsDropDown" href="#" data-bs-toggle="dropdown"> <i class="material-icons-two-tone">login</i></a>
                                     <div class="dropdown-menu dropdown-menu-end notifications-dropdown" aria-labelledby="notificationsDropDown">
                                         <div class="">
                                             <a href=" <?php echo BASE_URL . 'home/salir'?>">
                                                 <div class="notifications-dropdown-item">
                                                     <i class="material-icons-two-tone col-md-2">login</i>
                                                     Cerrar Sesion
-                                                    
                                                 </div>
                                             </a>
                                         </div>

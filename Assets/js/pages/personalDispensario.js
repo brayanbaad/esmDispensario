@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded',function () {
         
     } );
     btnNuevo.addEventListener('click',function(){
-        title.textContent='NUEVO PERSONAL';
+        title.textContent='NUEVO PERSONAL DISPENSARIO';
         frm.id_personalDispensario.value="";
         frm.identificacion.removeAttribute('readonly');
         frm.reset();

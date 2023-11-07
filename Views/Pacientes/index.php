@@ -17,11 +17,11 @@
                                         <th style="text-align: center ">Direccion:</th>
                                         <th style="text-align: center ">Telefono:</th>
                                         <th style="text-align: center">Acciones:</th>
-                                        <th style="text-align: center ">Item:</th>
-                                        <th style="text-align: center">Edad:</th>
                                         <th style="text-align: center ">N. Educativo:</th>
                                         <th style="text-align: center ">Ocupacion:</th>
+                                        <th style="text-align: center">Edad:</th>
                                         <th style="text-align: center">Fecha Ingreso:</th>
+                                        <th style="text-align: center ">Item:</th>
                                         <th style="text-align: center">Estado:</th>
                                     </tr>
                                 </thead>
@@ -43,137 +43,116 @@
                     <form id="formulario" autocomplete="off">
                         <input type="hidden" id="id_pacientes" name="id_pacientes">
                             <div class="modal-body">
-                                            <input type="hidden" id="id_paciente" name="id_paciente">
-                                            <div class="row">
-                                                <div class="col-md-4 mb-2">
-                                                    <label for="fecha">Fecha De Ingreso A Ruta:</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text">
-                                                            <i class="material-icons">today</i>
-                                                        </span>
-                                                        <input value="<?php echo date('Y-m-d'); ?>"class="form-control" type="date" id="fecha" name="fecha" >
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 mb-4">
-                                                    <label for="rol">Tipo Identificacion:</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text" >
-                                                        <i class="material-icons">
-                                                            badge
-                                                        </i>
-                                                        </span>
-                                                        <select name="rol" id="rol" class="form-control" >
-                                                            <option value="SELECCIONAR">SELECCIONAR</option>
-                                                            <option value="CC">CC</option>
-                                                            <option value="TI">TI</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 mb-4">
-                                                    <label for="usuario">Numero Identificacion</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text">
-                                                            <i class="material-icons">
-                                                                person
-                                                            </i>
-                                                        </span>
-                                                        <input class="form-control" type="text" id="usuario" name="usuario" placeholder="Digite Numero" >
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                    <label for="apellidos">Apellidos:</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text">
-                                                        <i class="material-icons">
-                                                            person
-                                                        </i>
-                                                        </span>
-                                                        <input class="form-control" type="text" id="usuario" name="usuario" placeholder=" Digite Apellidos" >
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                    <label for="nombres">Nombres:</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text">
-                                                        <i class="material-icons">
-                                                            person
-                                                        </i>
-                                                        </span>
-                                                        <input class="form-control" type="text" id="usuario" name="usuario" placeholder="Digite Nombres" >
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8 mb-2">
-                                                    <label for="fecha">Fecha De Nacimiento:</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text">
-                                                            <i class="material-icons">today</i>
-                                                        </span>
-                                                        <input class="form-control" type="date" id="fecha" name="fecha" >
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 mb-4" >
-                                                    <label for="nombres">Edad</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text">
-                                                        <i class="material-icons">
-                                                            person
-                                                        </i>
-                                                        </span>
-                                                        <input class="form-control" type="text" id="usuario" name="usuario" placeholder="Edad" disabled >
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="col-md-4 mb-4">
-                                                    <label for="nombres">Telefono:</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text">
-                                                        <i class="material-icons">
-                                                            person
-                                                        </i>
-                                                        </span>
-                                                        <input class="form-control" type="number" id="usuario" name="usuario" placeholder="Nombres" >
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8 mb-4">
-                                                    <label for="nombres">Direccion:</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text">
-                                                        <i class="material-icons">
-                                                            person
-                                                        </i>
-                                                        </span>
-                                                        <input class="form-control" type="text" id="usuario" name="usuario" placeholder="Nombres" >
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                    <label for="nombres">Nivel Educativo:</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text">
-                                                        <i class="material-icons">
-                                                            person
-                                                        </i>
-                                                        </span>
-                                                        <input class="form-control" type="number" id="usuario" name="usuario" placeholder="Nombres" >
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                    <label for="nombres">Ocupacion:</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-text">
-                                                        <i class="material-icons">
-                                                            person
-                                                        </i>
-                                                        </span>
-                                                        <input class="form-control" type="number" id="usuario" name="usuario" placeholder="Nombres" >
-                                                    </div>
-                                                </div>
+                                    <div class="row">
+                                        <div class="col-md-4 mb-2">
+                                            <label for="fecha">Fecha De Ingreso A Ruta:</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="material-icons">today</i></span>
+                                                <input value="<?php echo date('Y-m-d')?>" class="form-control" type="date" id="fecha" name="fecha" readonly="" >
                                             </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-info" type="submit">
-                                        <i class="material-icons">save</i>Registrar</button>
-                                    <button class="btn btn-danger" type="button" data-bs-dismiss="modal" >
-                                    <i class="material-icons">cancel</i>Cancelar</button>                               
-                                </div>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                            <label for="tipoIdentificacion">Tipo Identificacion:</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="material-icons"> badge</i></span>
+                                                <select name="tipoIdentificacion" id="tipoIdentificacion"  name="tipoIdentificacion"class="form-control" >
+                                                    <option value="SELECCIONAR">SELECCIONAR</option>
+                                                    <option value="CC">CC</option>
+                                                    <option value="TI">TI</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                            <label for="numeroIdentificacion">Numero Identificacion</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="material-icons">person</i></span>
+                                                <input class="form-control" type="number" id="numeroIdentificacion" name="numeroIdentificacion" placeholder="Digite Numero" >
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label for="apellidos">Apellidos:</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                <i class="material-icons"> person</i></span>
+                                                <input class="form-control" type="text" id="apellidos" name="apellidos" placeholder=" Digite Apellidos" >
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label for="nombres">Nombres:</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="material-icons">person</i></span>
+                                                <input class="form-control" type="text" id="nombres" name="nombres" placeholder="Digite Nombres" >
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 mb-2">
+                                            <label for="fechaNacimiento">Fecha De Nacimiento:</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                    <i class="material-icons">today</i>
+                                                </span>
+                                                <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaNacimiento"  name="fechaNacimiento" >
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-4" >
+                                            <label for="eda">Edad</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                <i class="material-icons">
+                                                    person
+                                                </i>
+                                                </span>
+                                                <input class="form-control" type="number" id="edad" name="edad" placeholder="Edad" readonly="" >
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                            <label for="telefono">Telefono:</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                <i class="material-icons">
+                                                    person
+                                                </i>
+                                                </span>
+                                                <input class="form-control" type="number" id="telefono" name="telefono" placeholder="Numero Telefono" >
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 mb-4">
+                                            <label for="direccion">Direccion:</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                <i class="material-icons">
+                                                    person
+                                                </i>
+                                                </span>
+                                                <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion" >
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label for="nivelEducativo">Nivel Educativo:</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                <i class="material-icons">
+                                                    person
+                                                </i>
+                                                </span>
+                                                <input class="form-control" type="text" id="nivelEducativo" name="nivelEducativo" placeholder="Nivel Educativo" >
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label for="ocupacion">Ocupacion:</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                <i class="material-icons">
+                                                    person
+                                                </i>
+                                                </span>
+                                                <input class="form-control" type="text" id="ocupacion" name="ocupacion" placeholder="Ocupacion" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-info" type="submit"><i class="material-icons">save</i>Guardar</button>
+                                        <button class="btn btn-danger" type="button" data-bs-dismiss="modal"><i class="material-icons">cancel</i>Cancelar</button>                               
+                                    </div>
                             </div>
                     </form>
                 </div> 

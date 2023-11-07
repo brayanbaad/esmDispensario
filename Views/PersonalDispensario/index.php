@@ -37,11 +37,11 @@
                 </div>    
             </div>   
         </div>
-    <div id="modalRegistro" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+    <div id="modalRegistro" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-info ">
-                    <h5 class="modal-title text-white " id="title">Nuevo Personal</h5>
+                    <h5 class="modal-title text-white " id="title"></h5>
                     <button class="btn-close " data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
@@ -50,22 +50,22 @@
                         <div class="modal-body">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-5 mb-2">
-                                        <label for="grado">Grado:</label>
+                                    <div class="col-md-4">
+                                        <label for="seccion">Seccion:</label>
                                         <div class="input-group">
                                             <span class="input-group-text">
-                                                <i class="material-icons">
-                                                military_tech
-                                                </i>
+                                            <i class="material-icons">
+                                            military_tech
+                                            </i>
                                             </span>
-                                            <select id="grado" class="form-control" name="grado">
+                                            <select id="seccion" class="form-control" name="seccion">
                                                 <option selected>SELECCIONAR</option>
                                                 <?php foreach($data['grados'] as $row){?>
                                                 <option value="<?php  echo $row['id']?>"><?php  echo $row['nombre']?></option>
                                                 <?php }?>
                                             </select>
                                         </div>
-                                    </div>    
+                                    </div>
                                     <div class="col-md-4 mb-2">
                                         <label for="identificacion">Identificacion:</label>
                                         <div class="input-group">
@@ -89,7 +89,6 @@
                                         </div>
                                         
                                     </div>
-                                    
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 mb-2">
