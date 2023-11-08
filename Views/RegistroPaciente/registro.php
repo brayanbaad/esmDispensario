@@ -2,130 +2,124 @@
 <form id="formulario">
     <div class="card">
         <div class="card-body">
-            <a href="<?php echo BASE_URL . 'pacientes/'?>" class="btn btn-info mb-4" ><i class="material-icons">arrow_back</i> Regresar</a>
             <div class="row">
                 <div class="col-md-4 mb-2">
-                    <label for="fecha">Fecha De Ingreso A Ruta:</label>
+                    <label for="fechaRuta">Fecha De Ingreso A Ruta: <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text">
                             <i class="material-icons">today</i>
                         </span>
-                        <input value="<?= $data['paciente']['fecha_ingreso'] ?>" class="form-control" type="date" id="fecha"  name="fecha" >
+                        <input value="<?php echo date('Y-m-d'); ?>"  class="form-control" type="date" id="fechaRuta"  name="fechaRuta" >
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <label for="tipoIdentificacion">Tipo Identificacion:</label>
+                    <label for="tipoIdentificacion">Tipo Identificacion: <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                         </span>
                         <select name="tipoIdentificacion" id="tipoIdentificacion" class="form-control">
-                        <?php
-                            $opciones = ["SELECCIONAR","CC","TI"];
-                            foreach ($opciones as $opcion) { 
-                                $selected = ($opcion == $data['paciente']['tipo_identificacion']) ? 'selected' : ''; 
-                                echo "<option value='$opcion' $selected>$opcion</option>"; 
-                            } 
-                        ?>
-                            
+                            <option value="SELECCIONAR">SELECCIONAR</option>
+                            <option value="CC">CC</option>
+                            <option value="TI">TI</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <label for="identificacion">Numero Identificacion</label>
+                    <label for="identificacion">Numero Identificacion: <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                         </span>
-                        <input value="<?= $data['paciente']['identificacion'] ?>" class="form-control" type="text" id="identificacion" name="identificacion" placeholder="Digite Numero" disabled >
+                        <input  class="form-control" type="number" id="identificacion" name="identificacion" placeholder="Digite Numero"  >
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <label for="apellidos">Apellidos:</label>
+                    <label for="apellidos">Apellidos: <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text">
                         <i class="material-icons">
                             person
                         </i>
                         </span>
-                        <input value="<?= $data['paciente']['apellidos'] ?>" class="form-control" type="text" id="usuario" name="usuario" placeholder=" Digite Apellidos">
+                        <input  class="form-control" type="text" id="apellidos" name="apellidos" placeholder=" Digite Apellidos">
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <label for="nombres">Nombres:</label>
+                    <label for="nombres">Nombres: <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text">
                         <i class="material-icons">
                             person
                         </i>
                         </span>
-                        <input value="<?= $data['paciente']['nombres'] ?>" class="form-control" type="text" id="nombres" name="nombres" placeholder="Digite Nombres">
+                        <input  class="form-control" type="text" id="nombres" name="nombres" placeholder="Digite Nombres">
                     </div>
                 </div>
                 <div class="col-md-8 mb-2">
-                    <label for="fecha_nacimiento">Fecha De Nacimiento:</label>
+                    <label for="fechaNacimiento">Fecha De Nacimiento: <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text">
                             <i class="material-icons">today</i>
                         </span>
-                        <input value="<?= $data['paciente']['fecha_nacimiento'] ?>"class="form-control" type="date" id="fecha_nacimiento" name="fecha_nacimiento" >
+                        <input  value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaNacimiento" name="fechaNacimiento" >
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" >
-                    <label for="edad">Edad</label>
+                    <label for="edad">Edad: <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text">
                         <i class="material-icons">
                             person
                         </i>
                         </span>
-                        <input value="<?= $data['paciente']['edad'] ?>" class="form-control" type="text" id="edad" name="edad" placeholder="Edad" disabled >
+                        <input  class="form-control" type="text" id="edad" name="edad" placeholder="Edad" disabled >
                     </div>
                 </div>                      
                 <div class="col-md-4 mb-4">
-                    <label for="telefono">Telefono:</label>
+                    <label for="telefono">Telefono: <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text">
                         <i class="material-icons">
                             person
                         </i>
                         </span>
-                        <input value="<?= $data['paciente']['telefono'] ?>" class="form-control" type="number" id="telefono" name="telefono" placeholder="Telefono" >
+                        <input  class="form-control" type="tel" id="telefono" name="telefono" placeholder="Telefono" >
                     </div>
                 </div>
                 <div class="col-md-8 mb-4">
-                    <label for="direccion">Direccion:</label>
+                    <label for="direccion">Direccion: <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text">
                         <i class="material-icons">
                             person
                         </i>
                         </span>
-                        <input value="<?= $data['paciente']['direccion'] ?>" class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion" >
+                        <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion" >
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <label for="niveleducativo">Nivel Educativo:</label>
+                    <label for="nivelEducativo">Nivel Educativo: <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text">
                         <i class="material-icons">
                             person
                         </i>
                         </span>
-                        <input value="<?= $data['paciente']['nivelEducativo'] ?>" class="form-control" type="text" id="niveleducativo" name="niveleducativo" placeholder="Nivel Educativo" >
+                        <input  class="form-control" type="text" id="nivelEducativo" name="nivelEducativo" placeholder="Nivel Educativo" >
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <label for="ocupacion">Ocupacion:</label>
+                    <label for="ocupacion">Ocupacion: <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text">
                         <i class="material-icons">
                             person
                         </i>
                         </span>
-                        <input value="<?= $data['paciente']['ocupacion'] ?>" class="form-control" type="text" id="ocupacion" name="ocupacion" placeholder="ocupacion" >
+                        <input  class="form-control" type="text" id="ocupacion" name="ocupacion" placeholder="ocupacion" >
                     </div>
                 </div>
             </div>
@@ -137,57 +131,49 @@
                     <div class="col-md-4 mb-4">
                         <label for="fechaMestruacion">Fecha Ultima Menstruación:</label>
                         <div class="input-group">
-                            <span class="input-group-text">
-                                <i class="material-icons">today</i>
-                            </span>
-                            <input  value="<?php echo $data['paciente']['fecha_umenstruacion'] ? $data['paciente']['fecha_umenstruacion'] : date('Y-m-d'); ?>" class="form-control" type="date" id="fechaMestruacion"  name="fechaMestruacion" >
+                            <span class="input-group-text"><i class="material-icons">today</i></span>
+                            <input value="<?php echo date('Y-m-d'); ?>"  class="form-control" type="date" id="fechaMestruacion"  name="fechaMestruacion" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
                         <label for="sgestacionalIngreso">Semanas Gestación Al Ingreso:</label>
                         <div class="input-group">
-                            <span class="input-group-text">
-                            <i class="material-icons">
-                                person
-                            </i>
-                            </span>
-                            <input value="<?= $data['paciente']['sgestacional_ingreso'] ?>" class="form-control" type="number" id="sgestacionalIngreso" name="sgestacionalIngreso" placeholder="0" >
+                            <span class="input-group-text"><i class="material-icons">person</i></span>
+                            <input  class="form-control" type="number" id="sgestacionalIngreso" name="sgestacionalIngreso" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-2">
-                        <label for="fecha">Fecha Ingreso CPN1:</label>
+                        <label for="fechaCPN1">Fecha Ingreso CPN1:</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="material-icons">today</i></span>
+                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaCPN1"  name="fechaCPN1" >
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label for="fechaUControlPre">Fecha Ultimo Control Prenatal:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input class="form-control" type="date" id="fecha"  value="<?php echo date('Y-m-d'); ?>" name="fecha" >
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <label for="fecha">Fecha Ultimo Control Prenatal:</label>
-                        <div class="input-group">
-                            <span class="input-group-text">
-                                <i class="material-icons">today</i>
-                            </span>
-                            <input class="form-control" type="date" id="fecha" value="<?php echo date('Y-m-d'); ?>" name="fecha" >
+                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaUControlPre"  name="fechaUControlPre" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Semanas Actuales Ultimo Control:</label>
+                        <label for="SemanasUControl">Semanas Actuales Ultimo Control:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">person</i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="SemanasUControl" name="SemanasUControl" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="rol">Clasificacion Riesgo Obstetrico:</label>
+                        <label for="ClasificacionRiesgo">Clasificacion Riesgo Obstetrico:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="rol" id="rol" class="form-control" >
+                            <select name="ClasificacionRiesgo" id="ClasificacionRiesgo" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value="CC">ALTO</option>
                                 <option value="TI">BAJO</option>
@@ -195,63 +181,63 @@
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
-                        <label for="nombres">Diagnostico Sifilis Gestacional Confirmado:</label>
+                        <label for="DSGestacional">Diagnostico Sifilis Gestacional Confirmado:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">person</i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="DSGestacional" name="DSGestacional" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
-                        <label for="nombres">Tratamiento Sifilis Gestacional:</label>
+                        <label for="TSGestacional">Tratamiento Sifilis Gestacional:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">person</i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="TSGestacional" name="TSGestacional" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Tratamiento Para Sifilis En Pareja:</label>
+                        <label for="TSPareja">Tratamiento Para Sifilis En Pareja:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="TSPareja" name="TSPareja" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Confirmacion Diagnostico infeccion VIH:</label>
+                        <label for="CDVIH">Confirmacion Diagnostico infeccion VIH:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                         </span>
-                        <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                        <input class="form-control" type="number" id="CDVIH" name="CDVIH" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Ingreso Programa Tratamiento VIH:</label>
+                        <label for="IPTVIH">Ingreso Programa Tratamiento VIH:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="material-icons">person</i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="IPTVIH" name="IPTVIH" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
-                        <label for="rol">Asesoria Lactancia Materna 1 Dia:</label>
+                        <label for="ALMaterna">Asesoria Lactancia Materna 1 Dia:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
                             <i class="material-icons">
                                 badge
                             </i>
                             </span>
-                            <select name="rol" id="rol" class="form-control" >
+                            <select name="ALMaterna" id="ALMaterna" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value="CC">SI</option>
                                 <option value="TI">NO</option>
@@ -259,43 +245,43 @@
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
-                        <label for="nombres">Entrega Micronutrientes-Multivitaminicos:</label>
+                        <label for="EMicroMulti">Entrega Micronutrientes-Multivitaminicos:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                     person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="EMicroMulti" name="EMicroMulti" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Vitalidad Madre Final Embarazo:</label>
+                        <label for="VitalidadMadre">Vitalidad Madre Final Embarazo:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">person</i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="VitalidadMadre" name="VitalidadMadre" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Vitalidad Recien Nacido:</label>
+                        <label for="VitalidadNacido">Vitalidad Recien Nacido:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="VitalidadNacido" name="VitalidadNacido" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-3 mb-2">
-                        <label for="fecha">Fecha Probable De Parto(FPP):</label>
+                        <label for="fechaPParto">Fecha Probable De Parto(FPP):</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input class="form-control" type="date" id="fecha" value="<?php echo date('Y-m-d'); ?>" name="fecha" >
+                            <input value="<?php echo date('Y-m-d'); ?>"class="form-control" type="date" id="fechaPParto"  name="fechaPParto" >
                         </div>
                     </div>
                 </div>   
@@ -310,252 +296,240 @@
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input class="form-control" type="date" id="fecha" value="<?php echo date('Y-m-d'); ?>" name="fecha" >
+                            <input class="form-control" type="date" id="fechaLactancia" value="<?php echo date('Y-m-d'); ?>" name="fechaLactancia" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Clasificacion De Factores y Riesgo:</label>
+                        <label for="CFactoresRiesgo">Clasificacion De Factores y Criterios De Riesgo:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="text" id="CFactoresRiesgo" name="CFactoresRiesgo" placeholder="Edad Materna" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Riesgo Biopsicosocial:</label>
+                        <label for="RiesgoBiopsicosocial">Riesgo Biopsicosocial:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="RiesgoBiopsicosocial" name="RiesgoBiopsicosocial" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Numero De Gestaciones Actuales:</label>
+                        <label for="NGestacionesActuales">Numero De Gestaciones Actuales:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="NGestacionesActuales" name="NGestacionesActuales" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Antecedentes De Partos:</label>
+                        <label for="cesareas">Cesareas:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="cesareas" name="cesareas" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Partos</label>
+                        <label for="Abortos">Abortos</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="Abortos" name="Abortos" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Abortos</label>
+                        <label for="HijosVivos">Hijos Vivos:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="HijosVivos" name="HijosVivos" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Hijos Vivos:</label>
+                        <label for="HijosMuertos">Hijos Muertos:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="HijosMuertos" name="HijosMuertos" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Hijos Muertos:</label>
+                        <label for="AntecedentesPatologicos">Antecedentes Patologicos:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="text" id="AntecedentesPatologicos" name="AntecedentesPatologicos" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Antecedentes Patologicos:</label>
+                        <label for="Peso">Peso Actual (kg):</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number"   id="Peso" name="Peso" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Peso Actual (kg):</label>
+                        <label for="Talla">Talla Actual (M):</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number"  id="Talla" name="Talla" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Talla Actual (M):</label>
+                        <label for="IMC">IMC:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number"  id="IMC" name="IMC" placeholder="0" readonly="">
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">IMC:</label>
+                        <label for="CursoPreparacion">Curso Preparacion Maternidad-Paternidad:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="CursoPreparacion" name="CursoPreparacion" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Curso Preparacion Maternidad-Paternidad:</label>
+                        <label for="AtencionGinecob">Atencion Por Ginecobstreticia:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="text" id="AtencionGinecob" name="AtencionGinecob" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Atencion Por Ginecobstreticia:</label>
+                        <label for="AtencionOdontologia">Atencion Por Odontologia:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="text" id="AtencionOdontologia" name="AtencionOdontologia" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Atencion Por Odontologia:</label>
+                        <label for="AtencionNutricion">Atencion Por Nutricion:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="text" id="AtencionNutricion" name="AtencionNutricion" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Atencion Por Nutricion:</label>
+                        <label for="NumeroControles">Numero Controles A Fecha Cohorte:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="NumeroControles" name="NumeroControles" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Numero Controles A Fecha Cohorte:</label>
+                        <label for="VacunaTetano">Vacuna De Tetano:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="text" id="VacunaTetano" name="VacunaTetano" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Vacuna De Tetano:</label>
+                        <label for="DPTA">DPTA:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="text" id="DPTA" name="DPTA" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">DPTA:</label>
+                        <label for="Influenza">Influenza Por Disponiblidad:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="Influenza" name="Influenza" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Influenza Por Disponiblidad:</label>
+                        <label for="SuministroAcidoAcetil">Suministro Acido Acetilsalicilico-ASA:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="SuministroAcidoAcetil" name="SuministroAcidoAcetil" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Suministro Acido Acetilsalicilico-ASA:</label>
+                        <label for="CRiesgoPreeclampsia">Clasificacion Del Riesgo Preeclampsia:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="number" id="CRiesgoPreeclampsia" name="CRiesgoPreeclampsia" placeholder="0" >
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <label for="nombres">ClasificacionDel Riesgo Preeclampsia:</label>
-                        <div class="input-group">
-                            <span class="input-group-text">
-                            <i class="material-icons">
-                                person
-                            </i>
-                            </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
-                        </div>
-                    </div>
-
                 </div>   
         </div> 
     </div> 
@@ -563,127 +537,138 @@
         <div class="card-body"> 
                 <div class="row">
                     <div class="col-md-4 mb-4">
-                        <label for="fecha">Fecha Toma De Sifilis:</label>
+                        <label for="fechaTomaSifilis">Fecha Toma De Sifilis:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input class="form-control" type="date" id="fecha" value="<?php echo date('Y-m-d'); ?>" name="fecha" >
+                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaSifilis"  name="fechaTomaSifilis" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Resultado De Sifilis:</label>
+                        <label for="ResultadoSifilis">Resultados De Sifilis:</label>
                         <div class="input-group">
-                            <span class="input-group-text">
-                            <i class="material-icons">
-                                person
-                            </i>
+                            <span class="input-group-text" >
+                            <i class="material-icons">badge</i>
                             </span>
-                            <input class="form-control" type="text" id="usuario" name="usuario" placeholder="0" >
+                            <select name="ResultadoSifilis" id="ResultadoSifilis" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="REACTIVO">REACTIVO</option>
+                                <option value="NOREACTIVO">NO REACTIVO</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-2">
-                        <label for="fecha">Fecha Toma De VIH:</label>
+                        <label for="fechaTomaVIH">Fecha Toma De VIH:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input class="form-control" type="date" id="fecha"  value="<?php echo date('Y-m-d'); ?>" name="fecha" >
+                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaVIH"   name="fechaTomaVIH" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Resultado De VIH:</label>
+                        <label for="ResultadoVIH">Resultados De VIH:</label>
                         <div class="input-group">
-                            <span class="input-group-text">
-                            <i class="material-icons">
-                                person
-                            </i>
+                            <span class="input-group-text" >
+                            <i class="material-icons">badge</i>
                             </span>
-                            <input class="form-control" type="text" id="usuario" name="usuario" placeholder="0" >
+                            <select name="ResultadoVIH" id="ResultadoVIH" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="POSITIVO">POSITIVO</option>
+                                <option value="NEGATIVO">NEGATIVO</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-2">
-                        <label for="fecha">Fecha Toma De HB:</label>
+                        <label for="fechaTomaHB">Fecha Toma De HB:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input class="form-control" type="date" id="fecha" value="<?php echo date('Y-m-d'); ?>" name="fecha" >
+                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaHB"  name="fechaTomaHB" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Resultado HB:</label>
+                        <label for="ResultadoHB">Resultados De HB:</label>
+                        <div class="input-group">
+                            <span class="input-group-text" >
+                            <i class="material-icons">badge</i>
+                            </span>
+                            <select name="ResultadoHB" id="ResultadoHB" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="POSITIVO">POSITIVO</option>
+                                <option value="NEGATIVO">NEGATIVO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label for="fechaTomaGlicemia">Fecha Toma De Glicemia Basal:</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="material-icons">today</i>
+                            </span>
+                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaGlicemia"  name="fechaTomaGlicemia" >
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <label for="ResultadoGlicemia">Resultado Glicemia Basal:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">person</i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-2">
-                        <label for="fecha">Fecha Toma De Glicemia Basal:</label>
-                        <div class="input-group">
-                            <span class="input-group-text">
-                                <i class="material-icons">today</i>
-                            </span>
-                            <input class="form-control" type="date" id="fecha" value="<?php echo date('Y-m-d'); ?>" name="fecha" >
+                            <input class="form-control" type="number" id="ResultadoGlicemia" name="ResultadoGlicemia" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="nombres">Resultado Glicemia Basal:</label>
-                        <div class="input-group">
-                            <span class="input-group-text">
-                            <i class="material-icons">person</i>
-                            </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <label for="rol">Toma De laboratorios 1 Trimestre:</label>
+                        <label for="TomaLab1Trimestre">Toma De laboratorios 1 Trimestre:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="rol" id="rol" class="form-control" >
+                            <select name="TomaLab1Trimestre" id="TomaLab1Trimestre" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value="COMPLETOS">COMPLETOS</option>
                                 <option value="INCOMPLETOS">INCOMPLETOS</option>
+                                <option value="SINTOMARLOS">SIN TOMARLOS</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="rol">Toma De laboratorios 2 Trimestre:</label>
+                        <label for="TomaLab2Trimestre">Toma De laboratorios 2 Trimestre:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="rol" id="rol" class="form-control" >
+                            <select name="TomaLab2Trimestre" id="TomaLab2Trimestre" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value="COMPLETOS">COMPLETOS</option>
                                 <option value="INCOMPLETOS">INCOMPLETOS</option>
+                                <option value="SINTOMARLOS">SIN TOMARLOS</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="rol">Toma De laboratorios 3 Trimestre:</label>
+                        <label for="TomaLab3Trimestre">Toma De laboratorios 3 Trimestre:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="rol" id="rol" class="form-control" >
+                            <select name="TomaLab3Trimestre" id="TomaLab3Trimestre" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value="COMPLETOS">COMPLETOS</option>
                                 <option value="INCOMPLETOS">INCOMPLETOS</option>
+                                <option value="SINTOMARLOS">SIN TOMARLOS</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="rol">Solicita Ive:</label>
+                        <label for="SolicitaIVE">Solicita Ive:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="rol" id="rol" class="form-control" >
+                            <select name="SolicitaIVE" id="SolicitaIVE" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value="SI">SI</option>
                                 <option value="NO">NO</option>
@@ -697,94 +682,106 @@
         <div class="card-body"> 
                 <div class="row">
                     <div class="col-md-12 mb-4">
-                        <label for="fecha">Fecha Afiliacion Al SSFM</label>
+                        <label for="fechaAfiliacionSSFM">Fecha Afiliacion Al SSFM</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input class="form-control" type="date" id="fecha" value="<?php echo date('Y-m-d'); ?>" name="fecha" >
+                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaAfiliacionSSFM"  name="fechaAfiliacionSSFM" >
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
-                        <label for="fecha">Fecha Realizacion Tamizaje VIH 1 Trimestre  De Gestacion</label>
+                        <label for="fechaTamizaje1">Fecha Realizacion Tamizaje VIH 1 Trimestre  De Gestacion</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input class="form-control" type="date" id="fecha" value="<?php echo date('Y-m-d'); ?>" name="fecha" >
+                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTamizaje1"  name="fechaTamizaje1" >
                         </div>
                     </div>
-                    <div class="col-md-6 mb-4">
-                        <label for="nombres">Resultado Tamizaje VIH 1 Trimestre De Gestacion:</label>
+                    <div class="col-md-4 mb-4">
+                        <label for="ResultadoTamizaje1">Resultado Tamizaje VIH 1 Trimestre De Gestacion::</label>
                         <div class="input-group">
-                            <span class="input-group-text">
-                            <i class="material-icons">
-                                person
-                            </i>
+                            <span class="input-group-text" >
+                            <i class="material-icons">badge</i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <select name="ResultadoTamizaje1" id="ResultadoTamizaje1" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value=" REACTIVO"> REACTIVO</option>
+                                <option value="NO REACTIVO">NO REACTIVO</option>
+                                <option value="PENDIENTE">PENDIENTE</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
-                        <label for="fecha">Fecha Realizacion Tamizaje VIH 2 Trimestre  De Gestacion</label>
-                        <div class="input-group">
-                            <span class="input-group-text">
-                                <i class="material-icons">today</i>
-                            </span>
-                            <input class="form-control" type="date" id="fecha" value="<?php echo date('Y-m-d'); ?>" name="fecha" >
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <label for="nombres">Resultado Tamizaje VIH 2 Trimestre De Gestacion:</label>
-                        <div class="input-group">
-                            <span class="input-group-text">
-                            <i class="material-icons">
-                                person
-                            </i>
-                            </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <label for="fecha">Fecha Realizacion Tamizaje VIH 3 Trimestre  De Gestacion</label>
+                        <label for="fechaTamizaje2">Fecha Realizacion Tamizaje VIH 2 Trimestre  De Gestacion</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input class="form-control" type="date" id="fecha" value="<?php echo date('Y-m-d'); ?>" name="fecha" >
+                            <input class="form-control" type="date" id="fechaTamizaje2" value="<?php echo date('Y-m-d'); ?>" name="fechaTamizaje2" >
                         </div>
                     </div>
-                    <div class="col-md-6 mb-4">
-                        <label for="nombres">Resultado Tamizaje VIH 3 Trimestre De Gestacion:</label>
+                    <div class="col-md-4 mb-4">
+                        <label for="ResultadoTamizaje2">Resultado Tamizaje VIH 2 Trimestre De Gestacion::</label>
                         <div class="input-group">
-                            <span class="input-group-text">
-                            <i class="material-icons">
-                                person
-                            </i>
+                            <span class="input-group-text" >
+                            <i class="material-icons">badge</i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <select name="ResultadoTamizaje2" id="ResultadoTamizaje2" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value=" REACTIVO"> REACTIVO</option>
+                                <option value="NO REACTIVO">NO REACTIVO</option>
+                                <option value="PENDIENTE">PENDIENTE</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
-                        <label for="fecha">Fecha Realizacion Tamizaje VIH 4 Trimestre  De Gestacion</label>
+                        <label for="fechaTamizaje3">Fecha Realizacion Tamizaje VIH 3 Trimestre  De Gestacion</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input class="form-control" type="date" id="fecha" value="<?php echo date('Y-m-d'); ?>" name="fecha" >
+                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTamizaje3"  name="fechaTamizaje3" >
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <label for="ResultadoTamizaje3">Resultado Tamizaje VIH 3 Trimestre De Gestacion::</label>
+                        <div class="input-group">
+                            <span class="input-group-text" >
+                            <i class="material-icons">badge</i>
+                            </span>
+                            <select name="ResultadoTamizaje3" id="ResultadoTamizaje3" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value=" REACTIVO"> REACTIVO</option>
+                                <option value="NO REACTIVO">NO REACTIVO</option>
+                                <option value="PENDIENTE">PENDIENTE</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
-                        <label for="nombres">Resultado Tamizaje VIH 4 Trimestre De Gestacion:</label>
+                        <label for="fechaTamizaje4">Fecha Realizacion Tamizaje VIH 4 Trimestre  De Gestacion</label>
                         <div class="input-group">
                             <span class="input-group-text">
-                            <i class="material-icons">
-                                person
-                            </i>
+                                <i class="material-icons">today</i>
                             </span>
-                            <input class="form-control" type="number" id="usuario" name="usuario" placeholder="0" >
+                            <input class="form-control" type="date" id="fechaTamizaje4" value="<?php echo date('Y-m-d'); ?>" name="fechaTamizaje4" >
                         </div>
-                </div>  
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <label for="ResultadoTamizaje4">Resultado Tamizaje VIH 4 Trimestre De Gestacion::</label>
+                        <div class="input-group">
+                            <span class="input-group-text" >
+                            <i class="material-icons">badge</i>
+                            </span>
+                            <select name="ResultadoTamizaje4" id="ResultadoTamizaje4" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value=" REACTIVO"> REACTIVO</option>
+                                <option value="NO REACTIVO">NO REACTIVO</option>
+                                <option value="PENDIENTE">PENDIENTE</option>
+                            </select>
+                        </div>
+                    </div>  
                 <div class="col-md-12 mb-2">
                     <label for="novedad">Novedad:</label>
                         <div class="input-group">
@@ -799,9 +796,8 @@
         </div> 
     </div>
     <div class="modal-footer">
-        <a href="#" class="btn btn-info" onclick="detallesCompletos(<?= $data['paciente']['identificacion']?>)"><i class="material-icons"> save</i>Guardar</a>
+        <button  class="btn btn-info" type="submit"><i class="material-icons"> save</i>Guardar</button>
         <a href="<?php echo BASE_URL . 'pacientes/'?>" class="btn btn-danger" type="button" data-bs-dismiss="modal" ><i class="material-icons">cancel</i>Cancelar</a>
     </div>
 </form> 
-
 <?php include_once 'Views/template/footer.php'?>

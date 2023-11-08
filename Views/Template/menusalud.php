@@ -1,4 +1,7 @@
 <ul class="accordion-menu" >
+<li class="sidebar-title">
+        Maternidad
+    </li>
     <li >
         <a href="<?php echo BASE_URL .'dashboard'?>" class="active">
             <i class="material-icons-two-tone">
@@ -7,32 +10,47 @@
         </a>
     </li>
     <li class="sidebar-title">
-        Maternidad
+        PACIENTE
     </li>
     <li >
-        <a href="<?php echo BASE_URL .'pacientes'?>" class="active">
+        <a href="<?php echo BASE_URL .'RegistroPaciente'?>" class="active">
             <i class="material-icons-two-tone">
-            admin_panel_settings
-            </i> Pacientes
+            person_add
+            </i> Nuevo Paciente
         </a>
     </li>
-    <!-- <li >
-        <a href="<?php echo BASE_URL .'pacientes'?>" class="active">
+    <li >
+        <a href="<?php echo BASE_URL .'pacientes'?>" class="active" disabled>
             <i class="material-icons-two-tone">
-            admin_panel_settings
-            </i> Consultar Paciente
+            dataset
+            </i> Consultar Pacientes 
         </a>
-    </li> -->
+    </li>
+    <li >
+        <a href="<?php echo BASE_URL .'pacientes'?>" class="active" disabled >
+            <i class="material-icons-two-tone">
+            edit_calendar
+            </i> Proximas Citas
+        </a>
+    </li>
     
-    <!-- <li class="sidebar-title">
-        Reportes
+    <li class="sidebar-title">
+        INFORMES
     </li>
-    <li >
+    <li>
         <a href="<?php echo BASE_URL .'consultar'?>" class="active">
             <i class="material-icons-two-tone">
-                person_4
-            </i>Informe
+            devices_fold
+            </i>Reportes
         </a>
+    </li>
+    <!-- <li>
+    <div class="col-xl-12 col-md-6">
+            <div class="card bg-warning">
+                <div class="card-body d-flex text-white">
+                <input value="<?php echo date('Y-m-d')?>" class="form-control" type="date" readonly="" >
+                </div>
+            </div>
+        </div>
     </li> -->
-    
 </ul>

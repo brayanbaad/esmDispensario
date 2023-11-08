@@ -9,28 +9,23 @@ class PacientesModel extends Query{
         $sql = "SELECT * FROM pacientes";
         return $this->selectAll($sql);
     }
-
-    public function getGradosPersonal(){
-        $sql = "SELECT * FROM personal_dispensario WHERE estado=1";
-        return $this->selectAll($sql);
+    public function getDetalles($id){
+        $sql ="SELECT * FROM pacientes  WHERE id =$id";
+        $data =$this->select($sql);
+        return $data;
     }
-    public function getpersonal(){
-        $sql = "SELECT p.*, pr.nombre as programa, pd.nombres AS persona FROM personal_acceso p INNER JOIN programas pr ON p.id_programa = pr.id INNER JOIN personal_dispensario pd ON p.id_persona = pd.id WHERE p.id_programa = pr.id AND p.id_persona = pd.id;";
-        return $this->selectAll($sql);
-    }
-
-    public function getVerificar($item,$nombre){
+    public function getVerificar($item,$identificacion,$id){
         if ($id > 0) {
-            $sql = "SELECT id FROM personal_dispensario WHERE $item = '$identificacion' AND id !=$id  ";
+            $sql = "SELECT id FROM pacientes WHERE $item = '$identificacion' AND id !=$id  ";
         } else {
-            $sql = "SELECT id FROM personal_dispensario WHERE $item = '$identificacion'";
+            $sql = "SELECT id FROM pacientes WHERE $item = '$identificacion'";
         }
         return $this->select($sql);
     }
 
-    public function registrar($nombre,$apellido,$correo,$direccion,$telefono,$clave,$rol){
-        $sql = "INSERT INTO pacientes (nombre,apellido,correo,direccion,telefono,clave,rol) VALUES (?,?,?,?,?,?,?)";
-        $datos= array($nombre,$apellido,$correo,$direccion,$telefono,$clave,$rol);
+    public function registrarPaciente($id_paciente,$fecha,$tipoIdentificacion,$numeroIdentificacion,$apellidos,$nombres,$fechaNacimiento,$edad,$direccion,$telefono,$nivelEducativo,$ocupacion){
+        $sql = "INSERT INTO pacientes (id,fecha_ingreso,tipo_identificacion,identificacion,apellidos,nombres,fecha_nacimiento,edad,direccion,telefono,nivelEducativo,ocupacion) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+        $datos= array($id_paciente,$fecha,$tipoIdentificacion,$numeroIdentificacion,$apellidos,$nombres,$fechaNacimiento,$edad,$direccion,$telefono,$nivelEducativo,$ocupacion);
         return $this->insertar($sql,$datos);
         
     }
@@ -47,10 +42,5 @@ class PacientesModel extends Query{
         return $this->save($sql,$datos);
     }
 
-    public function getDetalles($id){
-        $sql ="SELECT * FROM pacientes  WHERE id =$id";
-        $data =$this->select($sql);
-        return $data;
-    }
 
 }

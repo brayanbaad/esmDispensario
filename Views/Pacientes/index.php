@@ -1,27 +1,23 @@
 <?php include_once 'Views/template/header.php'?>
     <div class="container">
         <div class="col-md-12">
-                <button class="btn btn-info mb-4" id="btnNuevo" type="button">
-                <i class="material-icons">
-                    add
-                </i>Nuevo</button>
-                <div class="card ">
-                    <div class="card-body"  >
+            <div class="card ">
+                <div class="card-body"  >
                         <div class="table-responsive">
                             <table class="table table-striped table-hover table-bordered display nowrap text-center " style="width:100%" id="tblPacientes">
                                 <thead class="">
                                     <tr>
                                         <th style="text-align: center ">Identificacion:</th>
+                                        <th style="text-align: center">Acciones:</th>
                                         <th style="text-align: center">Apellidos:</th>
                                         <th style="text-align: center">Nombres:</th>
                                         <th style="text-align: center ">Direccion:</th>
                                         <th style="text-align: center ">Telefono:</th>
-                                        <th style="text-align: center">Acciones:</th>
                                         <th style="text-align: center ">N. Educativo:</th>
                                         <th style="text-align: center ">Ocupacion:</th>
                                         <th style="text-align: center">Edad:</th>
-                                        <th style="text-align: center">Fecha Ingreso:</th>
                                         <th style="text-align: center ">Item:</th>
+                                        <th style="text-align: center">Fecha Ingreso:</th>
                                         <th style="text-align: center">Estado:</th>
                                     </tr>
                                 </thead>
@@ -32,23 +28,23 @@
                     </div>
                 </div> 
         </div>   
-        <div id="modalRegistro" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+        <div id="modalRegistro" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
-                    <div class="modal-header bg-info  ">
+                    <div class="modal-header bg-primary  ">
                         <h5 class="modal-title text-white " id="title"></h5>
                         <button class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
                         </button>
                     </div>
                     <form id="formulario" autocomplete="off">
-                        <input type="hidden" id="id_pacientes" name="id_pacientes">
+                        <input type="hidden" id="id_paciente" name="id_paciente">
                             <div class="modal-body">
                                     <div class="row">
                                         <div class="col-md-4 mb-2">
                                             <label for="fecha">Fecha De Ingreso A Ruta:</label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="material-icons">today</i></span>
-                                                <input value="<?php echo date('Y-m-d')?>" class="form-control" type="date" id="fecha" name="fecha" readonly="" >
+                                                <input value="<?php echo date('Y-m-d')?>" class="form-control" type="date" id="fecha" name="fecha" >
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-4">
@@ -63,10 +59,10 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-4">
-                                            <label for="numeroIdentificacion">Numero Identificacion</label>
+                                            <label for="identificacion">Numero Identificacion</label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="material-icons">person</i></span>
-                                                <input class="form-control" type="number" id="numeroIdentificacion" name="numeroIdentificacion" placeholder="Digite Numero" >
+                                                <input class="form-control" type="number" id="identificacion" name="identificacion" placeholder="Digite Numero" >
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-4">
@@ -94,7 +90,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-4" >
-                                            <label for="eda">Edad</label>
+                                            <label for="edad">Edad</label>
                                             <div class="input-group">
                                                 <span class="input-group-text">
                                                 <i class="material-icons">

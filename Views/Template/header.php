@@ -23,9 +23,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo BASE_URL . 'Assets/img/favicon.ico';?>">
 </head>
 <body >
+    <?php 
+    $fechamax = date('Y-M-D');
+    ?>
     <div class="app align-content-stretch d-flex flex-wrap ">
         <div class="app-sidebar">
-            <div class="logo bg-info">
+            <div class="logo bg-primary">
                 <a href="index.html" class="logo-icon"><span class="logo-text text-white"><?php echo $_SESSION['asignar'];?><br></span></a>
                 <div class="sidebar-user-switcher user-activity-online">
                     <a href="#">

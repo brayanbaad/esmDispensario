@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded',function () {
         },
         columns: [ 
             {'data':'identificacion'},
+            {'data':'acciones'},
             {'data':'apellidos'},
             {'data':'nombres'},
             {'data':'direccion'},
             {'data':'telefono'},
-            {'data':'acciones'},
             {'data':'nivelEducativo'},
             {'data':'ocupacion'},
             {'data':'edad'},
@@ -33,20 +33,17 @@ document.addEventListener('DOMContentLoaded',function () {
         responsive: true,
         order: [[0,'desc']]
     } );
-    btnNuevo.addEventListener('click',function(){
-        title.textContent='NUEVO PACIENTE';
-        frm.id_pacientes.value="";
-        frm.reset();
-        myModal.show();
-    })
+    // btnNuevo.addEventListener('click',function(){
+    //     title.textContent='NUEVO PACIENTE';
+    //     frm.id_paciente.value="";
+    // })
     frm.addEventListener('submit',function(e){
-        
         e.preventDefault();
-        if ( frm.tipoIdentificacion.value == 'SELECCIONAR' || frm.numeroIdentificacion.value =="" ||frm.apellidos.value=='' ||frm.nombres.value=='' 
+        if ( frm.tipoIdentificacion.value == 'SELECCIONAR' || frm.identificacion.value =="" ||frm.apellidos.value=='' ||frm.nombres.value=='' 
         || frm.telefono.value=='' || frm.direccion.value=='' ||frm.nivelEducativo.value=='' || frm.ocupacion.value=='' ) {
             alertaPersonalizada('warning','TODOS LOS CAMPOS SON REQUERIDOS');
         }else if(frm.edad.value==''){
-            alertaPersonalizada('warning','ESCOGA UNA FECHA CORRECTA');
+            alertaPersonalizada('warning','ESCOGA UNA FECHA PARA CONOCER LA EDAD');
         }else{
             const data = new FormData(frm);
             const url =BASE_URL+ "Pacientes/registrar";
@@ -56,13 +53,13 @@ document.addEventListener('DOMContentLoaded',function () {
             http.onreadystatechange = function(){
                 if(this.readyState== 4 && this.status==200){
                     console.log(this.responseText);
-                    //     const res = JSON.parse(this.responseText);
-                    //     alertaPersonalizada(res.tipo,res.mensaje);
-                    // if (res.tipo == 'success') {
-                    //     frm.reset();
-                    //     myModal.hide();
-                    //     tblPacientes.ajax.reload();
-                    // // }
+                        const res = JSON.parse(this.responseText);
+                        alertaPersonalizada(res.tipo,res.mensaje);
+                    if (res.tipo == 'success') {
+                        frm.reset();
+                        myModal.hide();
+                        tblPacientes.ajax.reload();
+                    }
                 }
             }
         }
