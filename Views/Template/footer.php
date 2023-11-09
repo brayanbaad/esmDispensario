@@ -12,6 +12,7 @@
     <script src="<?php echo BASE_URL . 'Assets/js/main.min.js';?>"></script>
     <script src="<?php echo BASE_URL . 'Assets/js/sweetalert@11.js';?>"></script>
     <script src="<?php echo BASE_URL . 'Assets/plugins/DataTables/datatables.min.js';?>"></script>
+    <script src="<?php echo BASE_URL . 'Assets/js/chart.min.js';?>"></script>
     <script src="<?php echo BASE_URL . 'Assets/js/custom.js';?>"></script>
     <script>
             const BASE_URL ="<?php echo BASE_URL; ?>";

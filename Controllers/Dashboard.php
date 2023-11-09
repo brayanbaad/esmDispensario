@@ -12,6 +12,11 @@ class Dashboard extends Controller
         }
         if ($_SESSION['rol']=="ADMINISTRADOR") {
             $data['title'] ='Dashboard Administrador';
+            $data['script'] ='dashboard.js';
+            $data['personalDispensario'] = $this->model->getDatos('personal_Dispensario');
+            $data['usuarios'] = $this->model->getDatos('usuarios');
+            $data['secciones'] = $this->model->getDatos('secciones');
+            $data['especialidades'] = $this->model->getDatos('especialidades');
             $this->views->getView($this,'dashboardAdmin',$data);
         }else {
             $data['title'] ='Dashboard Personal Salud';
