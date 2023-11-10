@@ -15,7 +15,6 @@
                                     <th style="text-align: center">Asignado:</th>
                                     <th style="text-align: center">Usuario:</th>
                                     <th style="text-align: center">Rol:</th>
-                                    <th style="text-align: center">Programa:</th>
                                     <th style="text-align: center">Estado:</th>
                                     <th style="text-align: center">Acciones:</th>
                                     </tr>
@@ -94,25 +93,6 @@
                                         <input class="form-control" type="password" id="confirmar" name="confirmar" placeholder="Confirmar " >
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12 mb-4">
-                                    <label for="programa">Programa:</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                            military_tech
-                                            </i>
-                                        </span>
-                                        <select id="programa" class="form-control" name="programa">
-                                            <option selected>SELECCIONAR</option>
-                                            <?php foreach($data['programas'] as $row){?>
-                                            <option value="<?php  echo $row['id']?>"><?php  echo $row['nombre']?></option>
-                                            <?php }?>
-                                        </select>
-                                    </div>
-                                </div> 
                             </div>
                             <div class="col-md-12">
                                 <label for="rol">Rol</label>

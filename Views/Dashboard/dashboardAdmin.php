@@ -1,12 +1,12 @@
 <?php include_once 'Views/template/header.php'?>
     <div class="row">
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-info">
+            <div class="card bg-primary">
                 <div class="card-body d-flex text-white justify-content-between">
                     Personal Dispensario
                     <i class="material-icons ">person</i>
                 </div>
-                <div class="card-footer d-flex  justify-content-center bg-info ">
+                <div class="card-footer d-flex  justify-content-center bg-primary ">
                     <span class="text-white"><?php echo $data['personalDispensario']['total']?></span>
                 </div>
             </div>

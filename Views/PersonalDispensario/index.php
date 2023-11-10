@@ -51,14 +51,14 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <label for="seccion">Seccion:</label>
+                                        <label for="grado">Grado: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
                                             <i class="material-icons">
                                             military_tech
                                             </i>
                                             </span>
-                                            <select id="seccion" class="form-control" name="seccion">
+                                            <select id="grado" class="form-control" name="grado">
                                                 <option selected>SELECCIONAR</option>
                                                 <?php foreach($data['grados'] as $row){?>
                                                 <option value="<?php  echo $row['id']?>"><?php  echo $row['nombre']?></option>
@@ -67,7 +67,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="identificacion">Identificacion:</label>
+                                        <label for="identificacion">Identificacion: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
                                                 <i class="material-icons">
@@ -78,21 +78,21 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="fecha">Fecha De Nacimiento:</label>
+                                        <label for="fecha">Fecha De Nacimiento: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
                                                 <i class="material-icons">
                                                     today
                                                 </i>
                                             </span>
-                                            <input class="form-control" type="date" id="fecha" name="fecha" >
+                                            <input value="<?php echo date('Y-m-d')?>" class="form-control" type="date" id="fecha" name="fecha" >
                                         </div>
                                         
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 mb-2">
-                                        <label for="apellidos">Apellidos:</label>
+                                        <label for="apellidos">Apellidos: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
                                                 <i class="material-icons">
@@ -103,7 +103,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-2">
-                                        <label for="nombres">Nombres:</label>
+                                        <label for="nombres">Nombres: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
                                                 <i class="material-icons">
@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4 mb-2">
-                                        <label for="telefono">Telefono:</label>
+                                        <label for="telefono">Telefono: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
                                                 <i class="material-icons">
@@ -127,7 +127,7 @@
                                         </div>
                                     </div>  
                                     <div class="col-md-4 mb-2">
-                                        <label for="correo">Correo:</label>
+                                        <label for="correo">Correo: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
                                                 <i class="material-icons">
@@ -138,7 +138,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="especialidad">Especialidad</label>
+                                        <label for="especialidad">Especialidad: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
                                             <i class="material-icons">
@@ -156,7 +156,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <label for="cargo">Cargo:</label>
+                                        <label for="cargo">Cargo: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
                                             <i class="material-icons">
@@ -172,7 +172,7 @@
                                         </div>
                                     </div> 
                                     <div class="col-md-4">
-                                        <label for="seccion">Seccion:</label>
+                                        <label for="seccion">Seccion: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
                                             <i class="material-icons">
@@ -188,7 +188,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <label for="Arma">Arma:</label>
+                                        <label for="Arma">Arma: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
                                                 <i class="material-icons">
@@ -202,14 +202,14 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 mb-2">
-                                        <label for="novedad">Novedad:</label>
+                                        <label for="novedad">Novedad: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
                                                 <i class="material-icons">
                                                     article
                                                 </i>
                                             </span>
-                                            <textarea class="form-control" type="text" id="novedad" name="novedad" rows="6" placeholder=""></textarea>
+                                            <textarea class="form-control" type="text" id="novedad" name="novedad" rows="3" placeholder=""></textarea>
                                         </div>
                                     </div> 
                                 </div>

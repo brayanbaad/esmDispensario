@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded',function () {
             {'data':'apellidos'},
             {'data':'usuario'},
             {'data':'rol'},
-            {'data':'programa'},
             {'data':'estado'},
             {'data':'acciones'},
         ],
@@ -30,7 +29,7 @@ document.addEventListener('DOMContentLoaded',function () {
             'copy', 'excel', 'pdf'
         ],
         responsive: true,
-        order: [[0,'desc']]
+        order: [[0,'asc']]
     } );
     btnNuevo.addEventListener('click',function(){
         title.textContent='NUEVO USUARIO';
@@ -86,7 +85,6 @@ function Editar(id){
                         frm.persona.value = res.id_persona;
                         frm.usuario.value = res.usuario;
                         frm.rol.value = res.rol;
-                        frm.programa.value = res.id_programa;
                         title.textContent='MODIFICAR USUARIO';
                         document.getElementById('claves').classList.add('d-none');
                         myModal.show();

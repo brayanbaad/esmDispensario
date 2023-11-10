@@ -20,6 +20,7 @@ class Dashboard extends Controller
             $this->views->getView($this,'dashboardAdmin',$data);
         }else {
             $data['title'] ='Dashboard Personal Salud';
+            $data['script'] ='pacientes.js';
             $this->views->getView($this,'dashboardSalud',$data);
         }
     }

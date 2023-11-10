@@ -28,7 +28,7 @@
     ?>
     <div class="app align-content-stretch d-flex flex-wrap ">
         <div class="app-sidebar">
-            <div class="logo bg-primary">
+            <div class="logo bg-info">
                 <a href="index.html" class="logo-icon"><span class="logo-text text-white"><?php echo $_SESSION['asignar'];?><br></span></a>
                 <div class="sidebar-user-switcher user-activity-online">
                     <a href="#">

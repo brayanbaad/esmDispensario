@@ -32,7 +32,6 @@ class Usuarios extends Controller{
                     $data[$i]['rol']='<span class="badge badge-success">ADMINISTRADOR</span>';
                     $data[$i]['acciones']='
                     <div>
-                    <a href ="'.BASE_URL.'Usuarios/permisos/'.$data[$i]['id'].'" class="btn btn-dark btn-sm";"><i class="material-icons">key</i></a>
                     <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i></a>
                     <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i></a>
                 </div>';
@@ -41,7 +40,7 @@ class Usuarios extends Controller{
                     $data[$i]['rol']='<span class="badge bg-info">PERSONAL SALUD</span>';
                     $data[$i]['acciones']='
                         <div>
-                            <a href ="'.BASE_URL.'Usuarios/permisos/'.$data[$i]['id'].'" class="btn btn-dark btn-sm";"><i class="material-icons">key</i></a>
+                            
                             <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i></a>
                             <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i></a>
                         </div>';

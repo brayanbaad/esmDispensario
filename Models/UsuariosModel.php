@@ -9,11 +9,14 @@ class UsuariosModel extends Query{
             $data =$this->select($sql);
             return $data;
     }
+    
     public function getUsuarios(){
-        $sql ="SELECT u.*,p.id,p.nombre as programa, pd.id,pd.apellidos as apellidos FROM usuarios u INNER JOIN programas p INNER JOIN personal_dispensario pd WHERE u.id_programa = p.id and pd.id=u.id; ";
+        $sql ="SELECT u.*, pd.id,pd.apellidos as apellidos FROM usuarios u  INNER JOIN personal_dispensario pd WHERE  pd.id=u.id; ";
         $data =$this->selectAll($sql);
         return $data;
     }
+    
+    
     public function getProgramas(){
         $sql ="SELECT * FROM programas  WHERE estado=1";
         $data =$this->selectAll($sql);
@@ -31,7 +34,7 @@ class UsuariosModel extends Query{
     }
 
     public function getEditar($id){
-        $sql ="SELECT id,id_persona,usuario,rol,id_programa,estado FROM usuarios  WHERE id='$id'  AND estado=1";
+        $sql ="SELECT id,id_persona,usuario,rol,estado FROM usuarios  WHERE id='$id'  AND estado=1";
         $data =$this->select($sql);
         return $data;
     }

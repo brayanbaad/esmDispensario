@@ -33,10 +33,6 @@ document.addEventListener('DOMContentLoaded',function () {
         responsive: true,
         order: [[0,'desc']]
     } );
-    // btnNuevo.addEventListener('click',function(){
-    //     title.textContent='NUEVO PACIENTE';
-    //     frm.id_paciente.value="";
-    // })
     frm.addEventListener('submit',function(e){
         e.preventDefault();
         if ( frm.tipoIdentificacion.value == 'SELECCIONAR' || frm.identificacion.value =="" ||frm.apellidos.value=='' ||frm.nombres.value=='' 
@@ -78,4 +74,70 @@ function calcularEdad() {
     var edad = (parseInt((fechaActual-fechaNacimiento)/(1000*60*60*24*365)));
     return edad;
 }
+
+// var ctx = document.getElementById("personal");
+// var myPieChart = new Chart(ctx, {
+//     type: 'doughnut',
+//     data: {
+//         labels: ["Sso", "Ps", "Ts", "SmSm"],
+//         datasets: [{
+//             data: [12.21, 15.58, 11.25, 8.32],
+//             backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
+//         }],
+//     },
+// });
+
+var ctx = document.getElementById("usuarios");
+var myPieChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Blue", "Red", "Yellow", "Green","Yellow", "Green"],
+        datasets: [{
+            data: [12.21, 15.58, 11.25, 8.32, 12.21, 15.58,],
+            backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745', '#ffc107', '#28a745'],
+        }],
+    },
+});
+
+var ctx = document.getElementById("personal");
+var myLineChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June"],
+        datasets: [{
+            label: "Revenue",
+            backgroundColor: "rgba(2,117,216,1)",
+            borderColor: "rgba(2,117,216,1)",
+            data: [4215, 5312, 6251, 7841, 9821, 14984],
+        }],
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                time: {
+                    unit: 'month'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 6
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: 0,
+          max: 15000,
+          maxTicksLimit: 5
+        },
+        gridLines: {
+          display: true
+        }
+      }],
+    },
+    legend: {
+      display: false
+    }
+  }
+});
 
