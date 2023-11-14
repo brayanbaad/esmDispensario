@@ -4,8 +4,8 @@ class PersonalDispensarioModel extends Query{
     {
         parent::__construct();
     }
-    public function getCargosPersonal(){
-        $sql = "SELECT * FROM cargos WHERE estado=1";
+    public function getArmasPersonal(){
+        $sql = "SELECT * FROM arma WHERE estado=1";
         return $this->selectAll($sql);
     }
     public function getEspecialidadPersonal(){
@@ -22,12 +22,12 @@ class PersonalDispensarioModel extends Query{
     }
 
     public function getPersonasDispensario(){
-        $sql = "SELECT P.*, g.nombreCorto as grado, e.nombre AS especialidad, c.nombre as cargo , s.nombre as seccion FROM personal_dispensario P INNER JOIN grados g ON p.id_grado = g.id INNER JOIN especialidades e ON p.id_especialidad = e.id INNER JOIN cargos c ON p.id_cargo = c.id INNER JOIN secciones s ON p.id_seccion = s.id WHERE p.id_grado = g.id And p.id_especialidad = e.id And p.id_cargo = c.id and p.id_seccion = s.id;";
+        $sql = "SELECT P.*, g.nombreCorto as grado,a.nombre AS arma, e.nombre AS especialidad, s.nombre as seccion FROM personal_dispensario P INNER JOIN arma a ON p.id_arma = a.id  INNER JOIN especialidades e ON p.id_especialidad = e.id INNER JOIN grados g ON p.id_grado = g.id INNER JOIN secciones s ON p.id_seccion = s.id WHERE p.id_grado = g.id And p.id_especialidad = e.id And p.id_arma = a.id and p.id_seccion = s.id;";
         return $this->selectAll($sql);
     }
 
     public function getPersonaDispensario($id){
-        $sql = "SELECT id,id_grado,identificacion,fecha_nacimiento,apellidos,nombres,telefono,correo,id_especialidad,id_cargo,id_seccion,arma,novedad  FROM personal_dispensario WHERE id = $id  ";
+        $sql = "SELECT id,id_grado,identificacion,fecha_nacimiento,apellidos,nombres,telefono,correo,id_especialidad,id_seccion,id_arma,novedad  FROM personal_dispensario WHERE id = $id  ";
         return $this->select($sql);
     }
 
@@ -40,10 +40,10 @@ class PersonalDispensarioModel extends Query{
         return $this->select($sql);
     }
 
-    public function registrar($grado,$identificacion,$fecha,$apellidos,$nombres,$telefono,$correo,$especialidad,$cargo,$seccion,$arma,$novedad){
-        $sql = "INSERT INTO personal_dispensario (id_grado,identificacion,fecha_nacimiento,apellidos,nombres,telefono,correo,id_especialidad,id_cargo,id_seccion,arma,novedad) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
-        $datos= array($grado,$identificacion,$fecha,$apellidos,$nombres,$telefono,$correo,$especialidad,$cargo,$seccion,$arma,$novedad);
-        return $this->save($sql,$datos);
+    public function registrar($grado,$identificacion,$fecha,$apellidos,$nombres,$telefono,$correo,$especialidad,$seccion,$arma,$novedad){
+        $sql = "INSERT INTO personal_dispensario (id_grado,identificacion,fecha_nacimiento,apellidos,nombres,telefono,correo,id_especialidad,id_seccion,id_arma,novedad) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        $datos= array($grado,$identificacion,$fecha,$apellidos,$nombres,$telefono,$correo,$especialidad,$seccion,$arma,$novedad);
+        return $this->insertar($sql,$datos);
     }
     public function eliminar($id){
         $sql = "UPDATE  personal_dispensario SET estado = ? WHERE id = ?";
@@ -51,9 +51,9 @@ class PersonalDispensarioModel extends Query{
         return $this->save($sql,$datos);
     }
 
-    public function modificar($grado,$identificacion,$fecha,$apellidos,$nombres,$telefono,$correo,$especialidad,$cargo,$seccion,$arma,$novedad,$id){
-        $sql = "UPDATE personal_dispensario  SET id_grado =?,identificacion=?,fecha_nacimiento=?,apellidos=?,nombres=?,telefono=?,correo=?,id_especialidad=?,id_cargo=?,id_seccion=?,arma=?,novedad=?  WHERE id =?";
-        $datos= array($grado,$identificacion,$fecha,$apellidos,$nombres,$telefono,$correo,$especialidad,$cargo,$seccion,$arma,$novedad,$id);
+    public function modificar($grado,$identificacion,$fecha,$apellidos,$nombres,$telefono,$correo,$especialidad,$seccion,$arma,$novedad,$id){
+        $sql = "UPDATE personal_dispensario  SET id_grado =?,identificacion=?,fecha_nacimiento=?,apellidos=?,nombres=?,telefono=?,correo=?,id_especialidad=?,id_seccion=?,id_arma=?,novedad=?  WHERE id =?";
+        $datos= array($grado,$identificacion,$fecha,$apellidos,$nombres,$telefono,$correo,$especialidad,$seccion,$arma,$novedad,$id);
         return $this->save($sql,$datos);
     }
 

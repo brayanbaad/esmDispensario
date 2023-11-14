@@ -16,7 +16,7 @@ class PersonalDispensario extends Controller{
             if (!empty($verificar)) {
                 $data['grados'] = $this->model->getGradosPersonal();
                 $data['especialidades'] = $this->model->getEspecialidadPersonal();
-                $data['cargos'] = $this->model->getCargosPersonal();
+                $data['armas'] = $this->model->getArmasPersonal();
                 $data['secciones'] = $this->model->getSeccionPersonal();
                 $data['title'] =' Gestion De Personal Dispensario';
                 $data['script'] ='personalDispensario.js';
@@ -57,26 +57,23 @@ class PersonalDispensario extends Controller{
             $nombres = $_POST['nombres'];
             $nombres = strtoupper($nombres);
             $telefono = $_POST['telefono'];
-            $telefono = strtoupper($telefono);
             $correo = $_POST['correo'];
             $correo = strtoupper($correo);
             $especialidad = $_POST['especialidad'];
-            $cargo = $_POST['cargo'];
             $seccion = $_POST['seccion'];
             $arma = $_POST['arma'];
-            $arma = strtoupper($arma);
             $novedad = $_POST['novedad'];
             $novedad = strtoupper($novedad);
             $id_personalDispensario = $_POST['id_personalDispensario'];
             if (empty($grado) || empty($identificacion) || empty($fecha) || empty($apellidos) 
             || empty($nombres) || empty($telefono) || empty($correo) || empty($especialidad) 
-            || empty($cargo) || empty($seccion) || empty($arma) || empty($novedad)) {
+            || empty($seccion) || empty($arma) || empty($novedad)) {
                 $res = array('tipo'=>'Warning','mensaje'=>'TODOS LOS CAMPOS SON REQUERIDOS');
             }else{
                 if ($id_personalDispensario =="") {
                     $verificarIdentificacion=$this->model->getVerificar('identificacion',$identificacion,0);
                     if (empty($verificarIdentificacion)) {
-                        $data = $this->model->registrar($grado,$identificacion,$fecha,$apellidos,$nombres,$telefono,$correo,$especialidad,$cargo,$seccion,$arma,$novedad);
+                        $data = $this->model->registrar($grado,$identificacion,$fecha,$apellidos,$nombres,$telefono,$correo,$especialidad,$seccion,$arma,$novedad);
                         if ($data>0) {
                             $res = array('tipo'=>'success','mensaje'=>'PERSONAL DISPENSARIO FUE REGISTRADO CON EXITO');
                         }else {
@@ -88,7 +85,7 @@ class PersonalDispensario extends Controller{
                 }else{
                     $verificarIdentificacion=$this->model->getVerificar('identificacion',$identificacion,$id_personalDispensario);
                     if (empty($verificarIdentificacion)) {
-                        $data = $this->model->modificar($grado,$identificacion,$fecha,$apellidos,$nombres,$telefono,$correo,$especialidad,$cargo,$seccion,$arma,$novedad,$id_personalDispensario);
+                        $data = $this->model->modificar($grado,$identificacion,$fecha,$apellidos,$nombres,$telefono,$correo,$especialidad,$seccion,$arma,$novedad,$id_personalDispensario);
                         if ($data==1) {
                             $res = array('tipo'=>'success','mensaje'=>'PERSONAL DISPENSARIO FUE MODIFICADO CON EXITO');
                         }else {

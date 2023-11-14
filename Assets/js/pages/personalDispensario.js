@@ -19,13 +19,12 @@ document.addEventListener('DOMContentLoaded',function () {
             {'data':'apellidos'},
             {'data':'nombres'},
             {'data':'grado'},
-            {'data':'cargo'},
+            {'data':'seccion'},
             {'data':'estado'},
             {'data':'fecha_nacimiento'},
             {'data':'correo'},
             {'data':'telefono'},
             {'data':'especialidad'},
-            {'data':'seccion'},
             {'data':'arma'},
             {'data':'novedad'},
             {'data':'id'}, 
@@ -34,7 +33,7 @@ document.addEventListener('DOMContentLoaded',function () {
             url:'https://cdn.datatables.net/plug-ins/1.13.5/i18n/es-ES.json'
         },
         responsive: true,
-        order: [[14,'desc']]
+        order: [[13,'asc']]
         
     } );
     btnNuevo.addEventListener('click',function(){
@@ -50,8 +49,8 @@ document.addEventListener('DOMContentLoaded',function () {
         if (frm.grado.value=='SELECCIONAR' || frm.identificacion.value=='' 
         ||frm.fecha.value == ''
         ||frm.apellidos.value=='' || frm.nombres.value=='' || frm.telefono.value==''
-        || frm.correo.value=='' || frm.especialidad.value=='SELECCIONAR' || frm.cargo.value=='SELECCIONAR' 
-        ||frm.seccion.value=='SELECCIONAR'|| frm.arma.value=='' || frm.novedad =='' ) {
+        || frm.correo.value=='' || frm.especialidad.value=='SELECCIONAR' 
+        ||frm.seccion.value=='SELECCIONAR'|| frm.arma.value=='SELECCIONAR' || frm.novedad =='' ) {
             alertaPersonalizada('warning','TODOS LOS CAMPOS SON REQUERIDOS');
         } else {
             const url =BASE_URL+"PersonalDispensario/registrar";
@@ -93,24 +92,22 @@ function Editar(id) {
     http.onreadystatechange = function(){
         if(this.readyState== 4 && this.status==200){
                 const res = JSON.parse(this.responseText);
-                console.log(res);
-                // title.textContent = "EDITAR PERSONAL";
-                // frm.id_personalDispensario.value = res.id;
-                // frm.grado.value = res.id_grado;
-                // frm.identificacion.value = res.identificacion;
-                // frm.identificacion.setAttribute('readonly','readonly');
-                // frm.fecha.value = res.fecha_nacimiento;
-                // frm.apellidos.value = res.apellidos;
-                // frm.nombres.value = res.nombres;
-                // frm.telefono.value = res.telefono;
-                // frm.correo.value = res.correo;
-                // frm.especialidad.value = res.id_especialidad;
-                // frm.cargo.value = res.id_cargo;
-                // frm.seccion.value = res.id_seccion;
-                // frm.arma.value = res.arma;
-                // frm.novedad.value = res.novedad;
-                // myModal.show();
-                // tdlPersonalDispensario.ajax.reload();
+                title.textContent = "EDITAR PERSONAL";
+                frm.id_personalDispensario.value = res.id;
+                frm.grado.value = res.id_grado;
+                frm.identificacion.value = res.identificacion;
+                frm.identificacion.setAttribute('readonly','readonly');
+                frm.fecha.value = res.fecha_nacimiento;
+                frm.apellidos.value = res.apellidos;
+                frm.nombres.value = res.nombres;
+                frm.telefono.value = res.telefono;
+                frm.correo.value = res.correo;
+                frm.especialidad.value = res.id_especialidad;
+                frm.seccion.value = res.id_seccion;
+                frm.arma.value = res.id_arma;
+                frm.novedad.value = res.novedad;
+                myModal.show();
+                tdlPersonalDispensario.ajax.reload();
             
         }
     }

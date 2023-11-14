@@ -106,6 +106,7 @@
                                         <option value="SELECCIONAR">SELECCIONAR</option>
                                         <option value="ADMINISTRADOR">ADMINISTRADOR</option>
                                         <option value="PERSONALSALUD">PERSONALSALUD</option>
+                                        <option value="AUXILIAR ">AUXILIAR </option>
                                     </select>
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 <?php
-class Cargos extends Controller
+class Armas extends Controller
 {
     public function __construct() {
         session_start();
@@ -12,10 +12,10 @@ class Cargos extends Controller
 
     public function index()  {
         $id_user = $_SESSION['id_usuario'];
-        $verificar = $this->model->verificarPermiso($id_user,'cargos');
+        $verificar = $this->model->verificarPermiso($id_user,'armas');
         if (!empty($verificar)) {
-            $data['title'] ='Gestion De Cargos';
-            $data['script'] ='cargos.js';
+            $data['title'] ='Gestion De Armas';
+            $data['script'] ='armas.js';
             $this->views->getView($this,'index',$data);
         } else {
             header('Location:'.BASE_URL.'Errors/permisos');
@@ -24,7 +24,7 @@ class Cargos extends Controller
     }
 
     public function listar(){
-        $data= $this->model->getCargos();
+        $data= $this->model->getArmas();
         for ($i=0; $i < count($data) ; $i++) { 
             if ($data[$i]['estado']==1) {
                 $data[$i]['estado']='<span class="badge badge-success">ACTIVO</span>';
@@ -48,11 +48,11 @@ class Cargos extends Controller
     public function registrar(){
         $nombre = $_POST['nombre'];
         $nombre = strtoupper($nombre);
-        $id_cargo =  $_POST['id_cargo'];
+        $id_arma =  $_POST['id_arma'];
         if (empty($nombre)) {
             $res = array('tipo'=>'warning','mensaje'=>'EL CAMPO NOMBRE ES REQUERIDO');
         } else {
-            if ($id_cargo =="") {
+            if ($id_arma =="") {
                 $verificarNombre= $this->model->getVerificar('nombre', $nombre,0);
                 if (empty($verificarNombre)) {
                     $data = $this->model->registrar($nombre);

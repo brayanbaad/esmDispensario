@@ -41,9 +41,9 @@
                             </a>
                         </li>
                         <li class="">
-                            <a href="<?php echo BASE_URL . 'Cargos'?>" class="active">
+                            <a href="<?php echo BASE_URL . 'armas'?>" class="active">
                                 <i class="material-icons-two-tone ">
-                                badge</i>Cargos
+                                badge</i>Armas
                                 </i>
                             </a>
                         </li>

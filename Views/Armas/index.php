@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover table-bordered display nowrap text-center" style="width:100%" id="tdlCargos">
+                            <table class="table table-striped table-hover table-bordered display nowrap text-center" style="width:100%" id="tdlArmas">
                                 <thead>
                                     <tr>
                                         <th style="text-align: center">Id</th>
@@ -35,7 +35,7 @@
                     </button>
                 </div>
                 <form id="formulario" autocomplete="off">
-                    <input type="hidden" id="id_cargo" name="id_cargo">
+                    <input type="hidden" id="id_arma" name="id_arma">
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-12">

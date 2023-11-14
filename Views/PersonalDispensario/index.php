@@ -16,18 +16,16 @@
                                         <th style="text-align: center">Apellidos:</th>
                                         <th style="text-align: center">Nombres:</th>
                                         <th style="text-align: center">Grado</th>
-                                        <th style="text-align: center">Cargo:</th>
+                                        <th style="text-align: center">Seccion:</th>
                                         <th style="text-align: center">Estado:</th>
                                         <th style="text-align: center">Fecha Nacimiento:</th>
                                         <th style="text-align: center">Correo</th>
                                         <th style="text-align: center">Telefono:</th>
                                         <th style="text-align: center">Especialidad</th>
-                                        <th style="text-align: center">Seccion:</th>
                                         <th style="text-align: center">Arma:</th>
                                         <th style="text-align: center">Novedad:</th>
                                         <th style="text-align: center">Item</th>
                                     </tr>
-                                    
                                 </thead>
                                 <tbody>
                                 </tbody>
@@ -58,10 +56,10 @@
                                             military_tech
                                             </i>
                                             </span>
-                                            <select id="grado" class="form-control" name="grado">
+                                            <select id="grado"  class="form-control" name="grado">
                                                 <option selected>SELECCIONAR</option>
                                                 <?php foreach($data['grados'] as $row){?>
-                                                <option value="<?php  echo $row['id']?>"><?php  echo $row['nombre']?></option>
+                                                <option value="<?php  echo $row['id']?>"><?php  echo $row['nombreCorto']?></option>
                                                 <?php }?>
                                             </select>
                                         </div>
@@ -134,7 +132,7 @@
                                                     mail
                                                 </i>
                                             </span>
-                                            <input class="form-control" type="text" id="correo" name="correo" placeholder="sanidadMil@gmail.com" >
+                                            <input class="form-control" type="email" id="correo" name="correo" placeholder="sanidadMil@gmail.com" >
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -155,23 +153,23 @@
                                     </div> 
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <label for="cargo">Cargo: <span class="text-danger">*</span></label>
+                                    <div class="col-md-6">
+                                        <label for="arma">Arma: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
                                             <i class="material-icons">
                                                 diversity_3
                                             </i>
                                             </span>
-                                            <select id="cargo" class="form-control" name="cargo">
+                                            <select id="arma" class="form-control"  name="arma">
                                                 <option selected>SELECCIONAR</option>
-                                                <?php foreach($data['cargos'] as $row){?>
+                                                <?php foreach($data['armas'] as $row){?>
                                                 <option value="<?php  echo $row['id']?>"><?php  echo $row['nombre']?></option>
                                                 <?php }?>
                                             </select>
                                         </div>
                                     </div> 
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <label for="seccion">Seccion: <span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <span class="input-group-text">
@@ -179,7 +177,7 @@
                                                 lan
                                             </i>
                                             </span>
-                                            <select id="seccion" class="form-control" name="seccion">
+                                            <select id="seccion"  class="form-control" name="seccion">
                                                 <option selected>SELECCIONAR</option>
                                                 <?php foreach($data['secciones'] as $row){?>
                                                 <option value="<?php  echo $row['id']?>"><?php  echo $row['nombre']?></option>
@@ -187,18 +185,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 mb-2">
-                                        <label for="Arma">Arma: <span class="text-danger">*</span></label>
-                                        <div class="input-group">
-                                            <span class="input-group-text">
-                                                <i class="material-icons">
-                                                    design_services
-                                                </i>
-                                            </span>
-                                            <input class="form-control" type="text" id="arma" name="arma" placeholder="Arma" >
-                                        </div>
-                                    </div> 
-                                    
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 mb-2">

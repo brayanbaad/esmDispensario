@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded',function () {
             url:'https://cdn.datatables.net/plug-ins/1.13.5/i18n/es-ES.json'
         },
         responsive: true,
-        order: [[0,'desc']]
+        order: [[0,'asc']]
         
     } );
     btnNuevo.addEventListener('click',function(){
