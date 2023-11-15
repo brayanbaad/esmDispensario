@@ -116,28 +116,28 @@ var myLineChart = new Chart(ctx, {
             xAxes: [{
                 time: {
                     unit: 'month'
+                },
+                gridLines: {
+                    display: false
+                },
+                ticks: {
+                    maxTicksLimit: 6
+                }
+            }],
+            yAxes: [{
+                ticks: {
+                    min: 0,
+                    max: 15000,
+                    maxTicksLimit: 5
+                },
+                gridLines: {
+                    display: true
+                }
+            }],
         },
-        gridLines: {
-          display: false
-        },
-        ticks: {
-          maxTicksLimit: 6
+        legend: {
+            display: false
         }
-      }],
-      yAxes: [{
-        ticks: {
-          min: 0,
-          max: 15000,
-          maxTicksLimit: 5
-        },
-        gridLines: {
-          display: true
-        }
-      }],
-    },
-    legend: {
-      display: false
     }
-  }
 });
 

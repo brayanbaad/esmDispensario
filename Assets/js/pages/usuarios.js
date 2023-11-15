@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded',function () {
         language: {
             "url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"
         },
-        dom:"<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>"+
-            "<'row'<'col-sm-12'tr>>"+
-            "<'row'<'col-sm-5'i><'col-sm-7'p>>",
-        buttons: [
-            'copy', 'excel', 'pdf'
-        ],
+        // dom:"<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>"+
+        //     "<'row'<'col-sm-12'tr>>"+
+        //     "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+        // buttons: [
+        //     'copy', 'excel', 'pdf'
+        // ],
         responsive: true,
         order: [[0,'asc']]
     } );
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded',function () {
     //REGISTRAR USUARIO
     frm.addEventListener('submit',function(e){
         e.preventDefault();
-        if ( frm.usuario.value == '' || frm.persona.value =="SELECCIONAR" ||frm.programa.value=='SELECCIONAR' ||frm.rol.value=='SELECCIONAR' ) {
+        if ( frm.usuario.value == '' || frm.persona.value =="SELECCIONAR"  ||frm.rol.value=='SELECCIONAR' ) {
             alertaPersonalizada('warning','TODOS LOS CAMPOS SON REQUERIDOS');
         }else{
             const data = new FormData(frm);

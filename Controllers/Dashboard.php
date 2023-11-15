@@ -18,10 +18,15 @@ class Dashboard extends Controller
             $data['secciones'] = $this->model->getDatos('secciones');
             $data['especialidades'] = $this->model->getDatos('especialidades');
             $this->views->getView($this,'dashboardAdmin',$data);
-        }else {
+        }else if ($_SESSION['rol']=="PERSONALSALUD") {
             $data['title'] ='Dashboard Personal Salud';
             $data['script'] ='pacientes.js';
             $this->views->getView($this,'dashboardSalud',$data);
+        }else{
+            $data['title'] ='Dashboard Auxiliar';
+            $data['script'] ='citas.js';
+            $data['pacientes'] = $this->model->getDatos('pacientes');
+            $this->views->getView($this,'dashboardAuxiliar',$data);
         }
     }
 

@@ -10,9 +10,12 @@
     <script src="<?php echo BASE_URL . 'Assets/plugins/pace/pace.min.js';?>"></script>
     <script src="<?php echo BASE_URL . 'Assets/plugins/apexcharts/apexcharts.min.js';?>"></script>
     <script src="<?php echo BASE_URL . 'Assets/js/main.min.js';?>"></script>
+    <script src="<?php echo BASE_URL . 'Assets/js/moment.min.js';?>"></script>
+    <script src="<?php echo BASE_URL . 'Assets/js/maincalendar.min.js';?>"></script>
     <script src="<?php echo BASE_URL . 'Assets/js/sweetalert@11.js';?>"></script>
     <script src="<?php echo BASE_URL . 'Assets/plugins/DataTables/datatables.min.js';?>"></script>
     <script src="<?php echo BASE_URL . 'Assets/js/chart.min.js';?>"></script>
+    <script src="<?php echo BASE_URL . 'Assets/js/es.js';?>"></script>
     <script src="<?php echo BASE_URL . 'Assets/js/custom.js';?>"></script>
     <script>
             const BASE_URL ="<?php echo BASE_URL; ?>";

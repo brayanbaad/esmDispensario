@@ -18,6 +18,7 @@
     <link href="<?php echo BASE_URL . 'Assets/css/main.css';?>" rel="stylesheet">
     <link href="<?php echo BASE_URL . 'Assets/plugins/DataTables/datatables.min.css';?>" rel="stylesheet"/>
     <link href="<?php echo BASE_URL . 'Assets/css/estilos.css';?>" rel="stylesheet">
+    <link href="<?php echo BASE_URL . 'Assets/css/maincalendar.min.css';?>" rel="stylesheet">
     <link href="<?php echo BASE_URL . 'Assets/css/custom.css';?>" rel="stylesheet">
 
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo BASE_URL . 'Assets/img/favicon.ico';?>">
@@ -42,8 +43,10 @@
                 <?php 
                 if($_SESSION['rol']=="ADMINISTRADOR"){
                     include_once 'Views/template/menuadmin.php';
-                }else{
+                }else if($_SESSION['rol']=="PERSONALSALUD") {
                     include_once 'Views/template/menusalud.php';
+                }else{
+                    include_once 'Views/template/menuauxiliar.php';
                 }?>
             </div>
         </div>
@@ -67,16 +70,15 @@
                         <div class="d-flex">
                             <ul class="navbar-nav">
                                 <li class="nav-item hidden-on-mobile">
-                                    <a class="nav-link " id="notificationsDropDown" href="#" data-bs-toggle="dropdown"> <i class="material-icons-two-tone">login</i></a>
-                                    <div class="dropdown-menu dropdown-menu-end notifications-dropdown" aria-labelledby="notificationsDropDown">
-                                        <div class="">
+                                    <a class="nav-link " id="notificationsDropDown" href="#" data-bs-toggle="dropdown"><i class="material-icons">login</i></a>
+                                    <div class="dropdown-menu dropdown-menu-end notifications-dropdown " aria-labelledby="notificationsDropDown">
                                             <a href=" <?php echo BASE_URL . 'home/salir'?>">
-                                                <div class="notifications-dropdown-item">
-                                                    <i class="material-icons-two-tone col-md-2">login</i>
-                                                    Cerrar Sesion
+                                                <div class="notifications-dropdown-item ">
+                                                <i class="material-icons col-md-4">emoji_people</i>
+                                                Cerrar Sesion
                                                 </div>
                                             </a>
-                                        </div>
+                                        
                                     </div>
                                 </li>
                             </ul>

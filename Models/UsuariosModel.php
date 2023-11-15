@@ -49,15 +49,15 @@ class UsuariosModel extends Query{
     }
 
     
-    public function RegistrarUsuario($usuario,$persona,$rol,$hash,$programa){
-        $sql = "INSERT INTO usuarios (usuario,id_persona,rol,clave,id_programa) VALUES (?,?,?,?,?)";
-        $datos= array($usuario,$persona,$rol,$hash,$programa);
+    public function RegistrarUsuario($usuario,$persona,$rol,$hash){
+        $sql = "INSERT INTO usuarios (usuario,id_persona,rol,clave) VALUES (?,?,?,?)";
+        $datos= array($usuario,$persona,$rol,$hash);
         return $this->insertar($sql,$datos);
     }
 
-    public function ModificarUsuario($usuario,$persona,$rol,$programa,$id_usuario){
-        $sql = "UPDATE usuarios SET usuario =?,id_persona=?,rol=?,id_programa=? WHERE id=?";
-        $datos= array($usuario,$persona,$rol,$programa,$id_usuario);
+    public function ModificarUsuario($usuario,$persona,$rol,$id_usuario){
+        $sql = "UPDATE usuarios SET usuario =?,id_persona=?,rol=? WHERE id=?";
+        $datos= array($usuario,$persona,$rol,$id_usuario);
         return $this->save($sql,$datos);
     }
     public function eliminar($id) {

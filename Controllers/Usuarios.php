@@ -28,23 +28,31 @@ class Usuarios extends Controller{
         for ($i=0; $i < count($data) ; $i++) { 
             if ($data[$i]['estado']==1) {
                 $data[$i]['estado']='<span class="badge badge-success">ACTIVO</span>';
-                if ($data[$i]['id']==1) {
+                if ($data[$i]['rol']=="ADMINISTRADOR") {
                     $data[$i]['rol']='<span class="badge badge-success">ADMINISTRADOR</span>';
                     $data[$i]['acciones']='
                     <div>
                     <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i></a>
                     <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i></a>
                 </div>';
-                } else {
+                } else if($data[$i]['rol']=="PERSONALSALUD") {
                     $data[$i]['estado']='<span class="badge badge-success">ACTIVO</span>';
                     $data[$i]['rol']='<span class="badge bg-info">PERSONAL SALUD</span>';
                     $data[$i]['acciones']='
                         <div>
-                            
+                            <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i></a>
+                            <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i></a>
+                        </div>';
+                }else{
+                    $data[$i]['estado']='<span class="badge badge-success">ACTIVO</span>';
+                    $data[$i]['rol']='<span class="badge bg-warning">AUXILIAR</span>';
+                    $data[$i]['acciones']='
+                        <div>
                             <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i></a>
                             <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i></a>
                         </div>';
                 }
+
             }else{
                 $data[$i]['estado']='<span class="badge badge-danger">DESACTIVADO</span>';
                 $data[$i]['acciones']='
@@ -86,18 +94,16 @@ class Usuarios extends Controller{
     }
     
 
-    public function registrar()
-    {
+    public function registrar(){
         $persona = $_POST['persona'];
         $usuario = $_POST['usuario'];
         $usuario = strtoupper($usuario);
         $clave = $_POST['clave'];
         $confirmar = $_POST['confirmar'];
-        $programa = $_POST['programa'];
         $rol = $_POST['rol'];
         $id_usuario = $_POST['id_usuario'];
         $hash = hash("SHA256",$clave);
-        if (empty($usuario)|| empty($persona) || empty($programa) || empty($rol)) {
+        if (empty($usuario)|| empty($persona)  || empty($rol)) {
             $res = array('tipo'=>'warning','mensaje'=>'TODOS LOS CAMPOS SON REQUERIDOS');
         }else{
             if ($id_usuario=="") {
@@ -106,7 +112,7 @@ class Usuarios extends Controller{
                 }else{
                     $verificarUsuario= $this->model->getVerificar('usuario', $usuario,0);
                     if (empty($verificarUsuario)) {
-                        $data = $this->model->RegistrarUsuario($usuario,$persona,$rol,$hash,$programa);
+                        $data = $this->model->RegistrarUsuario($usuario,$persona,$rol,$hash);
                         if ($data>0) {
                             $res = array('tipo'=>'success','mensaje'=>'EL USUARIO FUE REGISTRADO CON EXITO');
                         }else {
@@ -119,7 +125,7 @@ class Usuarios extends Controller{
             }else{
                 $verificarUsuario= $this->model->getVerificar('usuario', $usuario,$id_usuario);
                 if (empty($verificarUsuario)) {
-                    $data = $this->model->ModificarUsuario($usuario,$persona,$rol,$programa,$id_usuario);
+                    $data = $this->model->ModificarUsuario($usuario,$persona,$rol,$id_usuario);
                     if ($data ==1) {
                         $res = array('tipo'=>'success','mensaje'=>'EL USUARIO FUE MODIFICADO CON EXITO');
                     }else {

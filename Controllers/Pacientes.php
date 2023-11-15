@@ -23,8 +23,7 @@ class Pacientes extends Controller{
                 $data[$i]['estado']='<span class="badge badge-success"> ACTIVO</span>';
                 $data[$i]['acciones']='
                 <div>
-                <a href ="'.BASE_URL.'pacientes/detallePaciente/'.$data[$i]['id'].'" class="btn btn-info btn-sm" ;"><i class="material-icons">visibility</i></a>
-                
+                <a href ="'.BASE_URL.'pacientes/detallePaciente/'.$data[$i]['id'].'" class="btn btn-info btn-sm" ;"><i class="material-icons">visibility</i>Ver Paciente</a>
                 </div>';
                 
             }else{
