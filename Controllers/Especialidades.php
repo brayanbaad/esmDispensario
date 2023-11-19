@@ -66,16 +66,16 @@ class Especialidades extends Controller
                 }
             }else{
                 $verificarNombre= $this->model->getVerificar('nombre', $nombre,$id_especialidad);
-            if (empty($verificarNombre)) {
-                $data = $this->model->modificar($nombre,$id_especialidad);
-                if ($data ==1) {
-                    $res = array('tipo'=>'success','mensaje'=>'LA ESPECIALIDAD FUE MODIFICADO CON EXITO');
-                }else {
-                    $res = array('tipo'=>'error','mensaje'=>'ERROR AL MODIFICAR LA ESPECIALIDAD');
+                if (empty($verificarNombre)) {
+                    $data = $this->model->modificar($nombre,$id_especialidad);
+                    if ($data ==1) {
+                        $res = array('tipo'=>'success','mensaje'=>'LA ESPECIALIDAD FUE MODIFICADO CON EXITO');
+                    }else {
+                        $res = array('tipo'=>'error','mensaje'=>'ERROR AL MODIFICAR LA ESPECIALIDAD');
+                    }
+                } else {
+                    $res = array('tipo'=>'warning','mensaje'=>'EL NOMBRE DE LA ESPECIALIDAD YA EXISTE');
                 }
-            } else {
-                $res = array('tipo'=>'warning','mensaje'=>'EL NOMBRE DE LA ESPECIALIDAD YA EXISTE');
-            }
             }
             
         }

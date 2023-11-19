@@ -70,7 +70,7 @@ class Pacientes extends Controller{
         if (empty($tipoIdentificacion)|| empty($identificacion) || empty($apellidos) || empty($nombres) 
             || empty($edad) || empty($telefono) || empty($direccion) || empty($nivelEducativo)
             || empty($ocupacion)) {
-            $res = array('tipo'=>'warning','mensaje'=>'TODOS LOS CAMPOS SON REQUERIDOS');
+            $res = array('tipo'=>'warning','mensaje'=>'LOS DATOS BASICOS SON REQUERIDOS');
         }else{
             if ($id_paciente==""){
                 $verificarPaciente= $this->model->getVerificar('identificacion', $identificacion,0);
