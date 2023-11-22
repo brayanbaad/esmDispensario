@@ -175,27 +175,37 @@
                             </span>
                             <select name="ClasificacionRiesgo" id="ClasificacionRiesgo" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="CC">ALTO</option>
-                                <option value="TI">BAJO</option>
+                                <option value="ALTO">ALTO</option>
+                                <option value="BAJO">BAJO</option>
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-4 mb-4">
                         <label for="DSGestacional">Diagnostico Sifilis Gestacional Confirmado:</label>
                         <div class="input-group">
-                            <span class="input-group-text">
-                            <i class="material-icons">person</i>
+                            <span class="input-group-text" >
+                            <i class="material-icons">badge</i>
                             </span>
-                            <input class="form-control" type="number" id="DSGestacional" name="DSGestacional" placeholder="0" >
+                            <select name="DSGestacional" id="DSGestacional" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-4 mb-4">
                         <label for="TSGestacional">Tratamiento Sifilis Gestacional:</label>
                         <div class="input-group">
                             <span class="input-group-text">
-                            <i class="material-icons">person</i>
+                                <i class="material-icons">person</i>
                             </span>
-                            <input class="form-control" type="number" id="TSGestacional" name="TSGestacional" placeholder="0" >
+                            <select name="TSGestacional" id="TSGestacional" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -206,7 +216,13 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="TSPareja" name="TSPareja" placeholder="0" >
+                            <select name="TSPareja" id="TSPareja" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -217,7 +233,11 @@
                                 person
                             </i>
                         </span>
-                        <input class="form-control" type="number" id="CDVIH" name="CDVIH" placeholder="0" >
+                        <select name="CDVIH" id="CDVIH" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -226,10 +246,16 @@
                             <span class="input-group-text">
                                 <i class="material-icons">person</i>
                             </span>
-                            <input class="form-control" type="number" id="IPTVIH" name="IPTVIH" placeholder="0" >
+                            <select name="IPTVIH" id="IPTVIH" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
                         </div>
+                        
                     </div>
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-4 mb-4">
                         <label for="ALMaterna">Asesoria Lactancia Materna 1 Dia:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
@@ -252,19 +278,65 @@
                                     person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="EMicroMulti" name="EMicroMulti" placeholder="0" >
+                            <select name="EMicroMulti" id="EMicroMulti" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-2">
+                        <label for="fechaEObstetrico">Fecha Evento Obstetrico(Parto-Aborto):</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="material-icons">today</i>
+                            </span>
+                            <input value="<?php echo date('Y-m-d'); ?>"class="form-control" type="date" id="fechaEObstetrico"  name="fechaEObstetrico" >
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <label for="MPFamiliar">Metodo De Planificacion Familiar:</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                            <i class="material-icons">
+                                    person
+                            </i>
+                            </span>
+                            <select name="MPFamiliar" id="MPFamiliar" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
                         <label for="VitalidadMadre">Vitalidad Madre Final Embarazo:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">person</i>
                             </span>
-                            <input class="form-control" type="number" id="VitalidadMadre" name="VitalidadMadre" placeholder="0" >
+                            <select name="VitalidadMadre" id="VitalidadMadre" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="VitalidadNacido">Vitalidad Recien Nacido:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -272,10 +344,15 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="VitalidadNacido" name="VitalidadNacido" placeholder="0" >
+                            <select name="VitalidadNacido" id="VitalidadNacido" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-md-3 mb-2">
+                    <div class="col-md-6 mb-2">
                         <label for="fechaPParto">Fecha Probable De Parto(FPP):</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -318,7 +395,12 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="RiesgoBiopsicosocial" name="RiesgoBiopsicosocial" placeholder="0" >
+                            <select name="RiesgoBiopsicosocial" id="RiesgoBiopsicosocial" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="21">21</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -329,7 +411,52 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="NGestacionesActuales" name="NGestacionesActuales" placeholder="0" >
+                            <select name="NGestacionesActuales" id="NGestacionesActuales" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <label for="AntecedentesParto">Antecedentes De Partos:</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                            <i class="material-icons">
+                                person
+                            </i>
+                            </span>
+                            <select name="AntecedentesParto" id="AntecedentesParto" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -340,7 +467,24 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="cesareas" name="cesareas" placeholder="0" >
+                            <select name="cesareas" id="cesareas" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -351,7 +495,24 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="Abortos" name="Abortos" placeholder="0" >
+                            <select name="Abortos" id="Abortos" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -362,7 +523,24 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="HijosVivos" name="HijosVivos" placeholder="0" >
+                            <select name="HijosVivos" id="HijosVivos" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -373,7 +551,24 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="HijosMuertos" name="HijosMuertos" placeholder="0" >
+                            <select name="HijosMuertos" id="HijosMuertos" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -384,7 +579,7 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="AntecedentesPatologicos" name="AntecedentesPatologicos" placeholder="0" >
+                            <input class="form-control" type="text" id="AntecedentesPatologicos" name="AntecedentesPatologicos" placeholder="Digite Antecedente" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -417,7 +612,7 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number"  id="IMC" name="IMC" placeholder="0" readonly="">
+                            <input class="form-control" type="number"  id="IMC" name="IMC" placeholder="0"  step=".2" readonly="">
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">

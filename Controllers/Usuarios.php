@@ -206,5 +206,34 @@ class Usuarios extends Controller{
         die();
         
     }
+
+    public function cambiarPass(){
+        $actual = $_POST['claveActual'];
+        $nueva = $_POST['claveNueva'];
+        $confirmar = $_POST['claveConfirmar'];
+        if (empty($actual)|| empty($nueva)  || empty($confirmar)) {
+            $res = array('tipo'=>'warning','mensaje'=>'TODOS LOS CAMPOS SON REQUERIDOS');
+        }else{
+            if ($nueva != $confirmar) {
+                $res = array('tipo'=>'error','mensaje'=>'LAS CONTRASEÑAN NO COINCIDEN');
+            }else {
+                $id=$_SESSION['id_usuario'];
+                $hash = hash("SHA256",$actual);
+                $data = $this->model->getPass($hash,$id);
+                if ($data['clave']== $hash) {
+                    $verificar = $this->model->modificarPass(hash("SHA256",$nueva),$id);
+                    if ($verificar==1) {
+                        $res = array('tipo'=>'success','mensaje'=>'LA CONTRASEÑA FUE MODIFICADA CON EXITO');
+                    }else {
+                        $res = array('tipo'=>'error','mensaje'=>'ERROR AL MODIFICAR LA CONTRASEÑA');
+                    }
+                }else {
+                    $res = array('tipo'=>'warning','mensaje'=>'LA CONTRASEÑA ACTUAL ES INCORRECTA');
+                }
+            }
+        }
+        echo json_encode($res,JSON_UNESCAPED_UNICODE);
+        die();
+    }
 }
 ?>

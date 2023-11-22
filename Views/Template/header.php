@@ -51,12 +51,6 @@
             </div>
         </div>
         <div class="app-container ">
-            <div class="search">
-                <form>
-                    <input class="form-control" type="text" placeholder="Type here..." aria-label="Search">
-                </form>
-                <a href="#" class="toggle-search"><i class="material-icons">close</i></a>
-            </div>
             <div class="app-header">
                 <nav class="navbar navbar-light navbar-expand-lg">
                     <div class="container-fluid">
@@ -70,15 +64,35 @@
                         <div class="d-flex">
                             <ul class="navbar-nav">
                                 <li class="nav-item hidden-on-mobile">
-                                    <a class="nav-link " id="notificationsDropDown" href="#" data-bs-toggle="dropdown"><i class="material-icons">login</i></a>
-                                    <div class="dropdown-menu dropdown-menu-end notifications-dropdown " aria-labelledby="notificationsDropDown">
-                                            <a href=" <?php echo BASE_URL . 'home/salir'?>">
-                                                <div class="notifications-dropdown-item ">
-                                                <i class="material-icons col-md-4">emoji_people</i>
-                                                Cerrar Sesion
+                                    <a class="nav-link " id="notificationsDropDown" href="#" data-bs-toggle="dropdown"><i class="material-icons">person</i><i class="material-icons">expand_more</i></a>
+                                    <div class="dropdown-menu dropdown-menu-end notifications-dropdown"  aria-labelledby="notificationsDropDown">
+                                        <div class="notifications-dropdown-list "  >
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#cambiarPass">
+                                                <div class="notifications-dropdown-item">
+                                                    <div class="notifications-dropdown-item-image" >
+                                                        <span class="notifications-badge bg-info text-white mb-2">
+                                                            <i class="material-icons"> key</i>
+                                                        </span>
+                                                        <div class="notifications-dropdown-item-text">
+                                                            <p class="bold-notifications-text"> Cambiar Contraseña</p>
+                                                        </div>
+                                                    </div>
+                                                    
                                                 </div>
                                             </a>
-                                        
+                                            <a href="<?php echo BASE_URL . 'home/salir'?>">
+                                                <div class="notifications-dropdown-item">
+                                                    <div class="notifications-dropdown-item-image">
+                                                        <span class="notifications-badge bg-info text-white">
+                                                            <i class="material-icons">login</i>
+                                                        </span>
+                                                        <div class="notifications-dropdown-item-text">
+                                                            <p class="bold-notifications-text">Cerrar Sesión</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </li>
                             </ul>

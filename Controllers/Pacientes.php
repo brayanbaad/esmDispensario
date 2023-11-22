@@ -50,6 +50,7 @@ class Pacientes extends Controller{
 
     public function registrar()
     {
+        $id_paciente = $_POST['id_paciente'];
         $fecha = $_POST['fecha'];
         $tipoIdentificacion = $_POST['tipoIdentificacion'];
         $identificacion = $_POST['identificacion'];
@@ -66,16 +67,17 @@ class Pacientes extends Controller{
         $nivelEducativo = strtoupper($nivelEducativo);
         $ocupacion = $_POST['ocupacion'];
         $ocupacion = strtoupper($ocupacion);
-        $id_paciente = $_POST['id_paciente'];
+        
         if (empty($tipoIdentificacion)|| empty($identificacion) || empty($apellidos) || empty($nombres) 
             || empty($edad) || empty($telefono) || empty($direccion) || empty($nivelEducativo)
             || empty($ocupacion)) {
-            $res = array('tipo'=>'warning','mensaje'=>'LOS DATOS BASICOS SON REQUERIDOS');
+            $res = array('tipo'=>'warning','mensaje'=>'LOS DATOS BASICOS SON REQUERIDOS PARA EL REGISTRO');
         }else{
             if ($id_paciente==""){
                 $verificarPaciente= $this->model->getVerificar('identificacion', $identificacion,0);
                 if (empty($verificarPaciente)) {
-                    $data = $this->model->registrarPaciente($id_paciente,$fecha,$tipoIdentificacion,$identificacion,$apellidos,$nombres,$fechaNacimiento,$edad,$direccion,$telefono,$nivelEducativo,$ocupacion);
+                    $data = $this->model->registrarPaciente($id_paciente,$fecha,$tipoIdentificacion,
+                    $identificacion,$apellidos,$nombres,$fechaNacimiento,$edad,$direccion,$telefono,$nivelEducativo,$ocupacion,);
                     if ($data>0) {
                         $res = array('tipo'=>'success','mensaje'=>'EL PACIENTE FUE REGISTRADO CON EXITO');
                     }else {
