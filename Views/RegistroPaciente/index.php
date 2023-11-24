@@ -1,7 +1,8 @@
 <?php include_once 'Views/template/header.php'?>
-<form id="formulario">
+<form id="formularioPaciente" autocomplete="off">
     <div class="card">
         <div class="card-body">
+        <input type="text" id="id_paciente" name="id_paciente">
             <div class="row">
                 <div class="col-md-4 mb-2">
                     <label for="fechaRuta">Fecha De Ingreso A Ruta: <span class="text-danger">*</span></label>
@@ -75,7 +76,7 @@
                             person
                         </i>
                         </span>
-                        <input  class="form-control" type="text" id="edad" name="edad" placeholder="Edad" disabled >
+                        <input  class="form-control" type="text" id="edad" name="edad" placeholder="Edad" readonly="" >
                     </div>
                 </div>                      
                 <div class="col-md-4 mb-4">
@@ -86,7 +87,7 @@
                             person
                         </i>
                         </span>
-                        <input  class="form-control" type="tel" id="telefono" name="telefono" placeholder="Telefono" >
+                        <input  class="form-control" type="number" id="telefono" name="telefono" placeholder="Telefono" >
                     </div>
                 </div>
                 <div class="col-md-8 mb-4">
@@ -128,28 +129,28 @@
     <div class="card">
         <div class="card-body"> 
                 <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <label for="fechaMestruacion">Fecha Ultima Menstruación:</label>
+                    <div class="col-md-6 mb-4">
+                        <label for="fechaMenstruacion">Fecha Ultima Menstruación:</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="material-icons">today</i></span>
-                            <input value="<?php echo date('Y-m-d'); ?>"  class="form-control" type="date" id="fechaMestruacion"  name="fechaMestruacion" >
+                            <input value="<?php echo date('Y-m-d'); ?>"  class="form-control" type="date" id="fechaMenstruacion"  name="fechaMenstruacion" >
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <label for="sgestacionalIngreso">Semanas Gestación Al Ingreso:</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="material-icons">person</i></span>
-                            <input  class="form-control" type="number" id="sgestacionalIngreso" name="sgestacionalIngreso" placeholder="0" >
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-2">
+                <div class="col-md-6 mb-2">
                         <label for="fechaCPN1">Fecha Ingreso CPN1:</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="material-icons">today</i></span>
                             <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaCPN1"  name="fechaCPN1" >
                         </div>
                     </div>
-                    <div class="col-md-4 mb-2">
+                    <div class="col-md-6 mb-4">
+                        <label for="sgestacionalIngreso">Semanas De Gestación Al Ingreso Semanas/Dias:</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="material-icons">person</i></span>
+                            <input value="0" class="form-control" type="number" id="sgestacionalIngreso" name="sgestacionalIngreso" placeholder="0" readonly="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
                         <label for="fechaUControlPre">Fecha Ultimo Control Prenatal:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -159,12 +160,12 @@
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="SemanasUControl">Semanas Actuales Ultimo Control:</label>
+                        <label for="SemanasAControl">Semanas Actuales Ultimo Control:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">person</i>
                             </span>
-                            <input class="form-control" type="number" id="SemanasUControl" name="SemanasUControl" placeholder="0" >
+                            <input value="0" class="form-control" type="number" id="SemanasAControl" name="SemanasAControl" placeholder="0" readonly="">
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -240,7 +241,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="IPTVIH">Ingreso Programa Tratamiento VIH:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -255,7 +256,7 @@
                         </div>
                         
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="ALMaterna">Asesoria Lactancia Materna 1 Dia:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
@@ -265,8 +266,8 @@
                             </span>
                             <select name="ALMaterna" id="ALMaterna" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="CC">SI</option>
-                                <option value="TI">NO</option>
+                                <option value="SI">SI</option>
+                                <option value="NO">NO</option>
                             </select>
                         </div>
                     </div>
@@ -367,7 +368,7 @@
     <div class="card">
         <div class="card-body"> 
                 <div class="row">
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="fechaLactancia">Fecha Asesoria Lactancia Materna:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -376,7 +377,7 @@
                             <input class="form-control" type="date" id="fechaLactancia" value="<?php echo date('Y-m-d'); ?>" name="fechaLactancia" >
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="CFactoresRiesgo">Clasificacion De Factores y Criterios De Riesgo:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -384,7 +385,7 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="CFactoresRiesgo" name="CFactoresRiesgo" placeholder="Edad Materna" >
+                            <input  class="form-control" type="text" id="CFactoresRiesgo" name="CFactoresRiesgo" placeholder="Edad Materna" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -543,7 +544,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="HijosMuertos">Hijos Muertos:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -571,7 +572,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="AntecedentesPatologicos">Antecedentes Patologicos:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -590,7 +591,7 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number"   id="Peso" name="Peso" placeholder="0" >
+                            <input  class="form-control" type="number"   id="Peso" name="Peso"  placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -601,7 +602,7 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number"  id="Talla" name="Talla" placeholder="0" >
+                            <input  class="form-control" type="number"  id="Talla" name="Talla"  placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -612,7 +613,7 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number"  id="IMC" name="IMC" placeholder="0"  step=".2" readonly="">
+                            <input  class="form-control" type="number"  id="IMC" name="IMC" placeholder="0"  readonly="">
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -623,18 +624,35 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="CursoPreparacion" name="CursoPreparacion" placeholder="0" >
+                            <select name="CursoPreparacion" id="CursoPreparacion" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="AtencionGinecob">Atencion Por Ginecobstreticia:</label>
+                        <label for="AtencionGineco">Atencion Por Ginecobstreticia:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="AtencionGinecob" name="AtencionGinecob" placeholder="0" >
+                            <select name="AtencionGineco" id="AtencionGineco" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -645,10 +663,14 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="AtencionOdontologia" name="AtencionOdontologia" placeholder="0" >
+                            <select name="AtencionOdontologia" id="AtencionOdontologia" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="AtencionNutricion">Atencion Por Nutricion:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -656,7 +678,26 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="AtencionNutricion" name="AtencionNutricion" placeholder="0" >
+                            <select name="AtencionNutricion" id="AtencionNutricion" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <label for="AtencionPsicologia">Atencion Por Psicologia:</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                            <i class="material-icons">
+                                person
+                            </i>
+                            </span>
+                            <select name="AtencionPsicologia" id="AtencionPsicologia" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -667,7 +708,20 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="NumeroControles" name="NumeroControles" placeholder="0" >
+                            <select name="NumeroControles" id="NumeroControles" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -678,7 +732,15 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="VacunaTetano" name="VacunaTetano" placeholder="0" >
+                            <select name="VacunaTetano" id="VacunaTetano" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="AV">AV</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -689,10 +751,14 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="DPTA" name="DPTA" placeholder="0" >
+                            <select name="DPTA" id="DPTA" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="NA">NA</option>
+                                <option value="UNICA">UNICA</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="Influenza">Influenza Por Disponiblidad:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -700,10 +766,31 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="Influenza" name="Influenza" placeholder="0" >
+                            <select name="Influenza" id="Influenza" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="DA">DA</option>
+                                <option value="DU">DU</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
+                        <label for="VacunaCovid">Vacuna CODIV-19:</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                            <i class="material-icons">
+                                person
+                            </i>
+                            </span>
+                            <select name="VacunaCovid" id="VacunaCovid" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="SINVACUNAR">SIN VACUNAR</option>
+                                <option value="PRIMERADOSIS">PRIMERA DOSIS</option>
+                                <option value="SEGUNDADOSIS">SEGUNDA DOSIS</option>
+                                <option value="REFUERZO">REFUERZO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
                         <label for="SuministroAcidoAcetil">Suministro Acido Acetilsalicilico-ASA:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -711,10 +798,15 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="SuministroAcidoAcetil" name="SuministroAcidoAcetil" placeholder="0" >
+                            <select name="SuministroAcidoAcetil" id="SuministroAcidoAcetil" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="NOAPLICA">NO APLICA</option>
+                                <option value="SISUMINISTRA">SI SE SUMINISTRA</option>
+                                <option value="NOEVALUADO">REGISTRO NO EVALUADO</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="CRiesgoPreeclampsia">Clasificacion Del Riesgo Preeclampsia:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -722,7 +814,12 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="number" id="CRiesgoPreeclampsia" name="CRiesgoPreeclampsia" placeholder="0" >
+                            <select name="CRiesgoPreeclampsia" id="CRiesgoPreeclampsia" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="RIESGONOEVALUADO">RIESGO NO EVALUADO</option>
+                                <option value="RIESGOBAJO">RIESGO BAJO</option>
+                                <option value="RIESGOALTO">RIESGO ALTO</option>
+                            </select>
                         </div>
                     </div>
                 </div>   
@@ -731,7 +828,7 @@
     <div class="card">
         <div class="card-body"> 
                 <div class="row">
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="fechaTomaSifilis">Fecha Toma De Sifilis:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -740,7 +837,7 @@
                             <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaSifilis"  name="fechaTomaSifilis" >
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="ResultadoSifilis">Resultados De Sifilis:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
@@ -753,7 +850,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-2">
+                    <div class="col-md-6 mb-2">
                         <label for="fechaTomaVIH">Fecha Toma De VIH:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -762,7 +859,7 @@
                             <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaVIH"   name="fechaTomaVIH" >
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="ResultadoVIH">Resultados De VIH:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
@@ -775,7 +872,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-2">
+                    <div class="col-md-6 mb-2">
                         <label for="fechaTomaHB">Fecha Toma De HB:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -784,7 +881,7 @@
                             <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaHB"  name="fechaTomaHB" >
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="ResultadoHB">Resultados De HB:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
@@ -797,7 +894,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-2">
+                    <div class="col-md-6 mb-2">
                         <label for="fechaTomaGlicemia">Fecha Toma De Glicemia Basal:</label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -806,13 +903,13 @@
                             <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaGlicemia"  name="fechaTomaGlicemia" >
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="ResultadoGlicemia">Resultado Glicemia Basal:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">person</i>
                             </span>
-                            <input class="form-control" type="number" id="ResultadoGlicemia" name="ResultadoGlicemia" placeholder="0" >
+                            <input  value="0" class="form-control" type="number" id="ResultadoGlicemia" name="ResultadoGlicemia" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -857,13 +954,26 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="SolicitaIVE">Solicita Ive:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
                             <select name="SolicitaIVE" id="SolicitaIVE" class="form-control" >
+                                <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="SI">SI</option>
+                                <option value="NO">NO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <label for="TamizajeChagas">Tamizaje Chagas:</label>
+                        <div class="input-group">
+                            <span class="input-group-text" >
+                            <i class="material-icons">badge</i>
+                            </span>
+                            <select name="TamizajeChagas" id="TamizajeChagas" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value="SI">SI</option>
                                 <option value="NO">NO</option>
@@ -894,7 +1004,7 @@
                             <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTamizaje1"  name="fechaTamizaje1" >
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="ResultadoTamizaje1">Resultado Tamizaje VIH 1 Trimestre De Gestacion::</label>
                         <div class="input-group">
                             <span class="input-group-text" >
@@ -904,7 +1014,6 @@
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value=" REACTIVO"> REACTIVO</option>
                                 <option value="NO REACTIVO">NO REACTIVO</option>
-                                <option value="PENDIENTE">PENDIENTE</option>
                             </select>
                         </div>
                     </div>
@@ -917,7 +1026,7 @@
                             <input class="form-control" type="date" id="fechaTamizaje2" value="<?php echo date('Y-m-d'); ?>" name="fechaTamizaje2" >
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="ResultadoTamizaje2">Resultado Tamizaje VIH 2 Trimestre De Gestacion::</label>
                         <div class="input-group">
                             <span class="input-group-text" >
@@ -927,7 +1036,6 @@
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value=" REACTIVO"> REACTIVO</option>
                                 <option value="NO REACTIVO">NO REACTIVO</option>
-                                <option value="PENDIENTE">PENDIENTE</option>
                             </select>
                         </div>
                     </div>
@@ -940,7 +1048,7 @@
                             <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTamizaje3"  name="fechaTamizaje3" >
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="ResultadoTamizaje3">Resultado Tamizaje VIH 3 Trimestre De Gestacion::</label>
                         <div class="input-group">
                             <span class="input-group-text" >
@@ -950,7 +1058,6 @@
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value=" REACTIVO"> REACTIVO</option>
                                 <option value="NO REACTIVO">NO REACTIVO</option>
-                                <option value="PENDIENTE">PENDIENTE</option>
                             </select>
                         </div>
                     </div>
@@ -963,7 +1070,7 @@
                             <input class="form-control" type="date" id="fechaTamizaje4" value="<?php echo date('Y-m-d'); ?>" name="fechaTamizaje4" >
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-6 mb-4">
                         <label for="ResultadoTamizaje4">Resultado Tamizaje VIH 4 Trimestre De Gestacion::</label>
                         <div class="input-group">
                             <span class="input-group-text" >
@@ -978,21 +1085,21 @@
                         </div>
                     </div>  
                 <div class="col-md-12 mb-2">
-                    <label for="novedad">Novedad:</label>
+                    <label for="observaciones">Observaciones:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="material-icons">
                                     article
                                 </i>
                             </span>
-                        <textarea class="form-control" type="text" id="novedad" name="novedad" rows="6" placeholder=""></textarea>
+                        <textarea class="form-control" type="text" id="observaciones" name="observaciones" rows="6" placeholder=""></textarea>
                     </div>
                 </div> 
         </div> 
     </div>
     <div class="modal-footer">
         <button  class="btn btn-info" type="submit"><i class="material-icons"> save</i>Guardar</button>
-        <a href="<?php echo BASE_URL . 'pacientes/'?>" class="btn btn-danger" type="button" data-bs-dismiss="modal" ><i class="material-icons">cancel</i>Cancelar</a>
+        <a href="<?php echo BASE_URL . 'dashboard/'?>" class="btn btn-danger" type="button" data-bs-dismiss="modal" ><i class="material-icons">cancel</i>Cancelar</a>
     </div>
 </form> 
 <?php include_once 'Views/template/footer.php'?>

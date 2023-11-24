@@ -2,7 +2,6 @@
 <form id="formulario">
     <div class="card">
         <div class="card-body">
-            <a href="<?php echo BASE_URL . 'pacientes/'?>" class="btn btn-info mb-4" ><i class="material-icons">arrow_back</i> Regresar</a>
             <div class="row">
                 <div class="col-md-4 mb-2">
                     <label for="fecha">Fecha De Ingreso A Ruta:</label>
