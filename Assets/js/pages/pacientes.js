@@ -1,4 +1,4 @@
-const frm = document.querySelector('#formularioPaciente');
+const frm = document.querySelector('#formulario');
 const title = document.querySelector('#title');
 const fechaNacimiento = document.getElementById("fechaNacimiento");
 const edad = document.getElementById("edad");
@@ -13,18 +13,17 @@ document.addEventListener('DOMContentLoaded',function () {
             alertaPersonalizada('warning','ESCOJA LA FECHA DE NACIMIENTO PARA CONOCER LA EDAD');
         }else{
             const http= new XMLHttpRequest();
-            const url =BASE_URL+ "RegistroPaciente/registrar";
+            const url =BASE_URL+ "Pacientes/registrar";
             const data = new FormData(frm);
             http.open("POST",url,true);
             http.send(data);
             http.onreadystatechange = function(){
                 if(this.readyState== 4 && this.status==200){
                     console.log(this.responseText);
-                    //     const res = JSON.parse(this.responseText);
-                    //     alertaPersonalizada(res.tipo,res.mensaje);
+                    // const res = JSON.parse(this.responseText);
+                    // alertaPersonalizada(res.tipo,res.mensaje);
                     // if (res.tipo == 'success') {
                     //     frm.reset();
-                    //     myModal.hide();
                     // }
                 }
             }

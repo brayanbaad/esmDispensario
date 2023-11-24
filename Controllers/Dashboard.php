@@ -25,7 +25,7 @@ class Dashboard extends Controller
         }else{
             $data['title'] ='Dashboard Auxiliar';
             $data['script'] ='citas.js';
-            $data['pacientes'] = $this->model->getDatos('pacientes');
+            // $data['pacientes'] = $this->model->getDatos('pacientes');
             $this->views->getView($this,'dashboardAuxiliar',$data);
         }
     }

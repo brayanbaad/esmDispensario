@@ -1,5 +1,5 @@
 <?php include_once 'Views/template/header.php'?>
-<form id="formulario">
+<form id="formularioDetalle">
     <div class="card">
         <div class="card-body">
             <div class="row">

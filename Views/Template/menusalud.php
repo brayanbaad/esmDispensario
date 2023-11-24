@@ -13,7 +13,7 @@
         PACIENTE
     </li>
     <li >
-        <a href="<?php echo BASE_URL .'RegistroPaciente'?>" class="active">
+        <a href="<?php echo BASE_URL .'Pacientes'?>" class="active">
             <i class="material-icons-two-tone">
             person_add
             </i> Nuevo Paciente
