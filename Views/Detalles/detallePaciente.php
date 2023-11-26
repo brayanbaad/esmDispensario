@@ -1,15 +1,18 @@
+
 <?php include_once 'Views/template/header.php'?>
 <form id="formularioDetalle">
     <div class="card">
         <div class="card-body">
+            
             <div class="row">
+            <input value="<?= $data['paciente']['id'] ?>" class="form-control" type="text" id="id"  name="id" >
                 <div class="col-md-4 mb-2">
-                    <label for="fecha">Fecha De Ingreso A Ruta:</label>
+                    <label for="fechaRuta">Fecha De Ingreso A Ruta:</label>
                     <div class="input-group">
                         <span class="input-group-text">
                             <i class="material-icons">today</i>
                         </span>
-                        <input value="<?= $data['paciente']['fecha_ingreso'] ?>" class="form-control" type="date" id="fecha"  name="fecha" >
+                        <input value="<?= $data['paciente']['fechaRuta'] ?>" class="form-control" type="date" id="fechaRuta"  name="fechaRuta" >
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -22,7 +25,7 @@
                         <?php
                             $opciones = ["SELECCIONAR","CC","TI"];
                             foreach ($opciones as $opcion) { 
-                                $selected = ($opcion == $data['paciente']['tipo_identificacion']) ? 'selected' : ''; 
+                                $selected = ($opcion == $data['paciente']['tipoIdentificacion']) ? 'selected' : ''; 
                                 echo "<option value='$opcion' $selected>$opcion</option>"; 
                             } 
                         ?>
@@ -31,14 +34,14 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <label for="identificacion">Numero Identificacion</label>
+                    <label for="Identificacion">Numero Identificacion</label>
                     <div class="input-group">
                         <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                         </span>
-                        <input value="<?= $data['paciente']['identificacion'] ?>" class="form-control" type="text" id="identificacion" name="identificacion" placeholder="Digite Numero" disabled >
+                        <input value="<?= $data['paciente']['Identificacion'] ?>" class="form-control" type="text" id="Identificacion" name="Identificacion" placeholder="Digite Numero" disabled >
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
@@ -63,13 +66,13 @@
                         <input value="<?= $data['paciente']['nombres'] ?>" class="form-control" type="text" id="nombres" name="nombres" placeholder="Digite Nombres">
                     </div>
                 </div>
-                <div class="col-md-8 mb-2">
+                <!-- <div class="col-md-8 mb-2">
                     <label for="fecha_nacimiento">Fecha De Nacimiento:</label>
                     <div class="input-group">
                         <span class="input-group-text">
                             <i class="material-icons">today</i>
                         </span>
-                        <input value="<?= $data['paciente']['fecha_nacimiento'] ?>"class="form-control" type="date" id="fecha_nacimiento" name="fecha_nacimiento" >
+                        <input value="<?= $data['paciente']['fechaNacimiento'] ?>"class="form-control" type="date" id="fecha_nacimiento" name="fecha_nacimiento" >
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" >
@@ -126,11 +129,11 @@
                         </span>
                         <input value="<?= $data['paciente']['ocupacion'] ?>" class="form-control" type="text" id="ocupacion" name="ocupacion" placeholder="ocupacion" >
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>   
     </div>
-    <div class="card">
+    <!-- <div class="card">
         <div class="card-body"> 
                 <div class="row">
                     <div class="col-md-4 mb-4">
@@ -796,7 +799,7 @@
                     </div>
                 </div> 
         </div> 
-    </div>
+    </div> -->
     <div class="modal-footer">
         <a href="#" class="btn btn-info" onclick="detallesCompletos(<?= $data['paciente']['identificacion']?>)"><i class="material-icons"> save</i>Guardar</a>
         <a href="<?php echo BASE_URL . 'pacientes/'?>" class="btn btn-danger" type="button" data-bs-dismiss="modal" ><i class="material-icons">cancel</i>Cancelar</a>

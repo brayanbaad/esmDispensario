@@ -5,45 +5,46 @@ class PacientesModel extends Query{
         parent::__construct();
     }
 
-    public function getPacientes(){
-        $sql = "SELECT * FROM pacientes";
-        return $this->selectAll($sql);
-    }
+    
     public function getDetalles($id){
         $sql ="SELECT * FROM pacientes  WHERE id =$id";
         $data =$this->select($sql);
         return $data;
     }
-    public function getVerificar($item,$identificacion,$id){
+    public function getVerificar($item,$nombre,$id){
         if ($id > 0) {
-            $sql = "SELECT id FROM pacientes WHERE $item = '$identificacion' AND id !=$id  ";
+            $sql = "SELECT id FROM pacientes WHERE $item = '$nombre' AND id !=$id  ";
         } else {
-            $sql = "SELECT id FROM pacientes WHERE $item = '$identificacion'";
+            $sql = "SELECT id FROM pacientes WHERE $item = '$nombre'";
         }
         return $this->select($sql);
     }
 
-    public function registrarPaciente($fechaRuta,$tipoIdentificacion,$identificacion,$apellidos,$nombres,$fechaNacimiento,$edad,$telefono,$direccion,$nivelEducativo,$ocupacion,
-    $fechaMenstruacion,$fechaCPN1,$sgestacionalIngreso,$fechaUControlPre,$SemanasAControl,$ClasificacionRiesgo,$DSGestacional,$TSGestacional,$TSPareja,$CDVIH,$IPTVIH,$ALMaterna,$EMicroMulti
-    ,$fechaEObstetrico,$MPFamiliar,$VitalidadMadre,$VitalidadNacido,$fechaPParto,$fechaLactancia,$CFactoresRiesgo,$RiesgoBiopsicosocial,$NGestacionesActuales,$AntecedentesParto,$cesareas,$Abortos
-    ,$HijosVivos,$HijosMuertos,$AntecedentesPatologicos,$Peso,$Talla,$IMC,$CursoPreparacion,$AtencionGineco,$AtencionOdontologia,$AtencionNutricion,$AtencionPsicologia,$NumeroControles,$VacunaTetano
-    ,$DPTA,$Influenza,$VacunaCovid,$SuministroAcidoAcetil,$CRiesgoPreeclampsia,$fechaTomaSifilis,$ResultadoSifilis,$fechaTomaVIH,$ResultadoVIH,$fechaTomaHB,$ResultadoHB,$fechaTomaGlicemia,$ResultadoGlicemia
-    ,$TomaLab1Trimestre,$TomaLab2Trimestre,$TomaLab3Trimestre,$SolicitaIVE,$TamizajeChagas,$fechaAfiliacionSSFM,$fechaTamizaje1,$ResultadoTamizaje1,$fechaTamizaje2,$ResultadoTamizaje2
-    ,$fechaTamizaje3,$ResultadoTamizaje3,$fechaTamizaje4,$ResultadoTamizaje4,$observaciones){
-        $sql = "INSERT INTO pacientes (fechaRuta,tipoIdentificacion,identificacion,apellidos,nombres,fechaNacimiento,edad,telefono,direccion,nivelEducativo,ocupacion,
-        fechaMenstruacion,fechaCPN1,sgestacionalIngreso,fechaUControlPre,SemanasAControl,ClasificacionRiesgo,DSGestacional,TSGestacional,TSPareja,CDVIH,IPTVIH,ALMaterna,EMicroMulti
-        ,fechaEObstetrico,MPFamiliar,VitalidadMadre,VitalidadNacido,fechaPParto,fechaLactancia,CFactoresRiesgo,RiesgoBiopsicosocial,NGestacionesActuales,AntecedentesParto,cesareas,Abortos
-        ,HijosVivos,HijosMuertos,AntecedentesPatologicos,Peso,Talla,IMC,CursoPreparacion,AtencionGineco,AtencionOdontologia,AtencionNutricion,AtencionPsicologia,NumeroControles,VacunaTetano
-        ,DPTA,Influenza,VacunaCovid,SuministroAcidoAcetil,CRiesgoPreeclampsia,fechaTomaSifilis,ResultadoSifilis,fechaTomaVIH,ResultadoVIH,fechaTomaHBResultadoHB,fechaTomaGlicemia,ResultadoGlicemia
-        ,TomaLab1Trimestre,TomaLab2Trimestre,TomaLab3Trimestre,SolicitaIVE,TamizajeChagas,fechaAfiliacionSSFM,fechaTamizaje1,ResultadoTamizaje1,fechaTamizaje2,ResultadoTamizaje2
-        ,fechaTamizaje3,ResultadoTamizaje3,fechaTamizaje4,ResultadoTamizaje4,observaciones) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        $datos= array($fechaRuta,$tipoIdentificacion,$identificacion,$apellidos,$nombres,$fechaNacimiento,$edad,$telefono,$direccion,$nivelEducativo,$ocupacion,
-        $fechaMenstruacion,$fechaCPN1,$sgestacionalIngreso,$fechaUControlPre,$SemanasAControl,$ClasificacionRiesgo,$DSGestacional,$TSGestacional,$TSPareja,$CDVIH,$IPTVIH,$ALMaterna,$EMicroMulti
-        ,$fechaEObstetrico,$MPFamiliar,$VitalidadMadre,$VitalidadNacido,$fechaPParto,$fechaLactancia,$CFactoresRiesgo,$RiesgoBiopsicosocial,$NGestacionesActuales,$AntecedentesParto,$cesareas,$Abortos
-        ,$HijosVivos,$HijosMuertos,$AntecedentesPatologicos,$Peso,$Talla,$IMC,$CursoPreparacion,$AtencionGineco,$AtencionOdontologia,$AtencionNutricion,$AtencionPsicologia,$NumeroControles,$VacunaTetano
-        ,$DPTA,$Influenza,$VacunaCovid,$SuministroAcidoAcetil,$CRiesgoPreeclampsia,$fechaTomaSifilis,$ResultadoSifilis,$fechaTomaVIH,$ResultadoVIH,$fechaTomaHB,$ResultadoHB,$fechaTomaGlicemia,$ResultadoGlicemia
-        ,$TomaLab1Trimestre,$TomaLab2Trimestre,$TomaLab3Trimestre,$SolicitaIVE,$TamizajeChagas,$fechaAfiliacionSSFM,$fechaTamizaje1,$ResultadoTamizaje1,$fechaTamizaje2,$ResultadoTamizaje2
-        ,$fechaTamizaje3,$ResultadoTamizaje3,$fechaTamizaje4,$ResultadoTamizaje4,$observaciones);
+    public function registrarPaciente($fechaRuta,$tipoIdentificacion,$identificacion,$apellidos,$nombres,$fechaNacimiento,$edad,$telefono,$direccion,$nivelEducativo
+    ,$ocupacion,$fechaMenstruacion,$fechaCPN1,$sgestacionalIngreso,$fechaUControlPre,$SemanasAControl,$ClasificacionRiesgo,$DSGestacional,$TSGestacional,$TSPareja,$CDVIH
+    ,$IPTVIH,$ALMaterna,$EMicroMulti,$fechaEObstetrico,$MPFamiliar,$VitalidadMadre,$VitalidadNacido,$fechaPParto,$fechaLactancia,$CFactoresRiesgo,$RiesgoBiopsicosocial
+    ,$NGestacionesActuales,$AntecedentesParto,$cesareas,$Abortos,$HijosVivos,$HijosMuertos,$AntecedentesPatologicos,$Peso,$Talla,$IMC,$CursoPreparacion,$AtencionGineco
+    ,$AtencionOdontologia,$AtencionNutricion,$AtencionPsicologia,$NumeroControles,$VacunaTetano,$DPTA,$Influenza,$VacunaCovid,$SuministroAcidoAcetil,$CRiesgoPreeclampsia
+    ,$fechaTomaSifilis,$ResultadoSifilis,$fechaTomaVIH,$ResultadoVIH,$fechaTomaHB,$ResultadoHB,$fechaTomaGlicemia,$ResultadoGlicemia,$TomaLab1Trimestre,$TomaLab2Trimestre
+    ,$TomaLab3Trimestre,$SolicitaIVE,$TamizajeChagas,$fechaAfiliacionSSFM,$fechaTamizaje1,$ResultadoTamizaje1,$fechaTamizaje2,$ResultadoTamizaje2,$fechaTamizaje3
+    ,$ResultadoTamizaje3,$fechaTamizaje4,$ResultadoTamizaje4,$observaciones){
+        $sql = "INSERT INTO pacientes (fechaRuta,tipoIdentificacion,identificacion,apellidos,nombres,fechaNacimiento,edad,telefono,direccion,nivelEducativo
+        ,ocupacion,fechaMenstruacion,fechaCPN1,sgestacionalIngreso,fechaUControlPre,SemanasAControl,ClasificacionRiesgo,DSGestacional,TSGestacional,TSPareja,CDVIH
+        ,IPTVIH,ALMaterna,EMicroMulti,fechaEObstetrico,MPFamiliar,VitalidadMadre,VitalidadNacido,fechaPParto,fechaLactancia,CFactoresRiesgo,RiesgoBiopsicosocial
+        ,NGestacionesActuales,AntecedentesParto,cesareas,Abortos,HijosVivos,HijosMuertos,AntecedentesPatologicos,Peso,Talla,IMC,CursoPreparacion,AtencionGineco
+        ,AtencionOdontologia,AtencionNutricion,AtencionPsicologia,NumeroControles,VacunaTetano,DPTA,Influenza,VacunaCovid,SuministroAcidoAcetil,CRiesgoPreeclampsia
+        ,fechaTomaSifilis,ResultadoSifilis,fechaTomaVIH,ResultadoVIH,fechaTomaHB,ResultadoHB,fechaTomaGlicemia,ResultadoGlicemia,TomaLab1Trimestre,TomaLab2Trimestre
+        ,TomaLab3Trimestre,SolicitaIVE,TamizajeChagas,fechaAfiliacionSSFM,fechaTamizaje1,ResultadoTamizaje1,fechaTamizaje2,ResultadoTamizaje2,fechaTamizaje3
+        ,ResultadoTamizaje3,fechaTamizaje4,ResultadoTamizaje4,observaciones) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
+        ,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $datos= array($fechaRuta,$tipoIdentificacion,$identificacion,$apellidos,$nombres,$fechaNacimiento,$edad,$telefono,$direccion,$nivelEducativo
+        ,$ocupacion,$fechaMenstruacion,$fechaCPN1,$sgestacionalIngreso,$fechaUControlPre,$SemanasAControl,$ClasificacionRiesgo,$DSGestacional,$TSGestacional,$TSPareja,$CDVIH
+        ,$IPTVIH,$ALMaterna,$EMicroMulti,$fechaEObstetrico,$MPFamiliar,$VitalidadMadre,$VitalidadNacido,$fechaPParto,$fechaLactancia,$CFactoresRiesgo,$RiesgoBiopsicosocial
+        ,$NGestacionesActuales,$AntecedentesParto,$cesareas,$Abortos,$HijosVivos,$HijosMuertos,$AntecedentesPatologicos,$Peso,$Talla,$IMC,$CursoPreparacion,$AtencionGineco
+        ,$AtencionOdontologia,$AtencionNutricion,$AtencionPsicologia,$NumeroControles,$VacunaTetano,$DPTA,$Influenza,$VacunaCovid,$SuministroAcidoAcetil,$CRiesgoPreeclampsia
+        ,$fechaTomaSifilis,$ResultadoSifilis,$fechaTomaVIH,$ResultadoVIH,$fechaTomaHB,$ResultadoHB,$fechaTomaGlicemia,$ResultadoGlicemia,$TomaLab1Trimestre,$TomaLab2Trimestre
+        ,$TomaLab3Trimestre,$SolicitaIVE,$TamizajeChagas,$fechaAfiliacionSSFM,$fechaTamizaje1,$ResultadoTamizaje1,$fechaTamizaje2,$ResultadoTamizaje2,$fechaTamizaje3
+        ,$ResultadoTamizaje3,$fechaTamizaje4,$ResultadoTamizaje4,$observaciones);
         return $this->insertar($sql,$datos);
         
     }

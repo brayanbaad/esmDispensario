@@ -19,14 +19,14 @@
             </i> Nuevo Paciente
         </a>
     </li>
-    <!-- <li >
-        <a href=">" class="active" disabled>
+    <li >
+        <a href="<?php echo BASE_URL .'Detalles'?>" class="active" disabled>
             <i class="material-icons-two-tone">
             dataset
             </i> Consultar Pacientes 
         </a>
     </li>
-    <li >
+    <!-- <li >
         <a href="" class="active" disabled >
             <i class="material-icons-two-tone">
             edit_calendar

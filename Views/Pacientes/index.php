@@ -2,7 +2,7 @@
 <form id="formulario" autocomplete="off">
     <div class="card">
         <div class="card-body">
-        <input type="text" id="id_paciente" name="id_paciente">
+        <input type="hidden" id="id_paciente" name="id_paciente">
             <div class="row">
                 <div class="col-md-4 mb-2">
                     <label for="fechaRuta">Fecha De Ingreso A Ruta: <span class="text-danger">*</span></label>
@@ -910,7 +910,7 @@
                             <span class="input-group-text">
                             <i class="material-icons">person</i>
                             </span>
-                            <input  value="0" class="form-control" type="number" id="ResultadoGlicemia" name="ResultadoGlicemia" placeholder="0" >
+                            <input   class="form-control" type="number" id="ResultadoGlicemia" name="ResultadoGlicemia" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
