@@ -43,11 +43,12 @@
                 header("location:". BASE_URL);
             }
             $data['title'] ='Detalles Del Paciente';
-            $pacientes = $this->model->getDetallePaciente($id);
+            $paciente = $this->model->getDetallePaciente($id);
             $data['paciente']=array();
-            foreach ($pacientes as $paciente) {
-                $data['paciente'][$paciente['id']]=true;
+            foreach($paciente as $valor){
+                $data['paciente']= $valor;
             }
+           
             $this->views->getView($this,"detallePaciente",$data);
         }
     } 
