@@ -1,3 +1,4 @@
+
 let tdlDetalles;
 document.addEventListener('DOMContentLoaded',function () {
     //CARGAR DATOS CON DATATABLE
@@ -11,7 +12,9 @@ document.addEventListener('DOMContentLoaded',function () {
             {'data':'acciones'},
             {'data':'apellidos'},
             {'data':'nombres'},
+            {'data':'clasificacionRiesgo'},
             {'data':'fechaNacimiento'},
+            {'data':'edad'},
             {'data':'telefono'},
             {'data':'id'},
             {'data':'estado'},
@@ -23,6 +26,11 @@ document.addEventListener('DOMContentLoaded',function () {
         order: [[0,'desc']]
         
     } );
-    
-    
 })
+
+
+
+
+
+
+

@@ -21,11 +21,14 @@ class Dashboard extends Controller
         }else if ($_SESSION['rol']=="PERSONALSALUD") {
             $data['title'] ='Dashboard Personal Salud';
             $data['script'] ='pacientes.js';
+            $data['pacientes'] = $this->model->getDatos('pacientes');
+            $data['citas'] = $this->model->getFecha();
             $this->views->getView($this,'dashboardSalud',$data);
         }else{
             $data['title'] ='Dashboard Auxiliar';
             $data['script'] ='citas.js';
             $data['pacientes'] = $this->model->getDatos('pacientes');
+            $data['citas'] = $this->model->getFecha();
             $this->views->getView($this,'dashboardAuxiliar',$data);
         }
     }

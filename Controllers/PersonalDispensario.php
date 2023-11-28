@@ -33,8 +33,8 @@ class PersonalDispensario extends Controller{
                     $data[$i]['estado']='<span class="badge badge-success"> ACTIVO</span>';
                     $data[$i]['acciones']='
                     <div>
-                    <a href ="#" class="btn btn-primary btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i></a>
-                    <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i></a>
+                    <a href ="#" class="btn btn-primary btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i>Editar</a>
+                    <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i>Eliminar</a>
                     </div>';
                     
                 }else{

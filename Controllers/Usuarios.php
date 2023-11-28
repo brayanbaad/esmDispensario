@@ -32,33 +32,52 @@ class Usuarios extends Controller{
                     $data[$i]['rol']='<span class="badge badge-success">ADMINISTRADOR</span>';
                     $data[$i]['acciones']='
                     <div>
-                    <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i></a>
-                    <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i></a>
+                    <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i>Editar</a>
+                    <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i>Desactivar</a>
                 </div>';
                 } else if($data[$i]['rol']=="PERSONALSALUD") {
                     $data[$i]['estado']='<span class="badge badge-success">ACTIVO</span>';
                     $data[$i]['rol']='<span class="badge bg-info">PERSONAL SALUD</span>';
                     $data[$i]['acciones']='
                         <div>
-                            <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i></a>
-                            <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i></a>
+                            <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i>Editar</a>
+                            <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i>Desactivar</a>
                         </div>';
                 }else{
                     $data[$i]['estado']='<span class="badge badge-success">ACTIVO</span>';
                     $data[$i]['rol']='<span class="badge bg-warning">AUXILIAR</span>';
                     $data[$i]['acciones']='
                         <div>
-                            <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i></a>
-                            <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i></a>
+                            <a href ="#" class="btn btn-info btn-sm" onclick="Editar('.$data[$i]['id'].');"><i class="material-icons">edit</i>Editar</a>
+                            <a href ="#" class="btn btn-danger btn-sm"  onclick="Eliminar('.$data[$i]['id'].');"><i class="material-icons">delete</i>Desactivar</a>
                         </div>';
                 }
 
             }else{
-                $data[$i]['estado']='<span class="badge badge-danger">DESACTIVADO</span>';
-                $data[$i]['acciones']='
+                
+                if ($data[$i]['rol']=="ADMINISTRADOR") {
+                    $data[$i]['estado']='<span class="badge badge-danger">DESACTIVADO</span>';
+                    $data[$i]['rol']='<span class="badge badge-danger">ADMINISTRADOR</span>';
+                    $data[$i]['acciones']='
                     <div>
                     <button class="btn btn-success" type="button" onclick="Activar('.$data[$i]['id'].');"><i class="material-icons">recycling</i>Activar</button>
                     </div>';
+                }elseif ($data[$i]['rol']=="PERSONALSALUD") {
+                    $data[$i]['estado']='<span class="badge badge-danger">DESACTIVADO</span>';
+                    $data[$i]['rol']='<span class="badge bg-danger">PERSONALSALUD</span>';
+                    $data[$i]['acciones']='
+                    <div>
+                    <button class="btn btn-success" type="button" onclick="Activar('.$data[$i]['id'].');"><i class="material-icons">recycling</i>Activar</button>
+                    </div>';
+                }else {
+                    $data[$i]['estado']='<span class="badge badge-danger">DESACTIVADO</span>';
+                    $data[$i]['rol']='<span class="badge bg-danger">AUXILIAR</span>';
+                    $data[$i]['acciones']='
+                    <div>
+                    <button class="btn btn-success" type="button" onclick="Activar('.$data[$i]['id'].');"><i class="material-icons">recycling</i>Activar</button>
+                    </div>';
+                }
+                
             }
         }
         echo json_encode($data,JSON_UNESCAPED_UNICODE);
@@ -74,19 +93,18 @@ class Usuarios extends Controller{
             $clave = $_POST['clave'];
             $hash = hash('SHA256',$clave);
             $data= $this->model->getUsuario($usuario,$hash);
-            if($data['estado']==1){
-                if ($data){
+            if($data){
+                if ($data['estado']==1){
                     $_SESSION['id_usuario']=$data['id'];
                     $_SESSION['asignar']=$data['usuario'];
                     $_SESSION['rol']=$data['rol'];
                     $_SESSION['activo']= true;
                     $res = array('tipo' =>'success','mensaje'=>'BIENVENIDO AL SISTEMA DEL ESTABLECIMIENTO DE SANIDAD ESMBAS10');
                 }else {
-                    
-                    $res = array('tipo' =>'warning','mensaje'=>' USUARIO O CONTRASEÑA ES INCORRECTA');
+                    $res = array('tipo' =>'warning','mensaje'=>' USUARIO NO ESTA HABILITADO PARA EL INGRESO');
                 }
             }else{
-                $res = array('tipo' =>'warning','mensaje'=>' USUARIO NO EXISTE');
+                $res = array('tipo' =>'warning','mensaje'=>' USUARIO O CONTRASEÑA ES INCORRECTA');
             }
         }
         echo json_encode($res, JSON_UNESCAPED_UNICODE);

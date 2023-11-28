@@ -592,7 +592,7 @@
                                 person
                             </i>
                             </span>
-                            <input  class="form-control" type="number"   id="Peso" name="Peso"  placeholder="0" >
+                            <input class="form-control" type="number"   id="Peso" name="Peso"  placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -784,9 +784,9 @@
                             </span>
                             <select name="VacunaCovid" id="VacunaCovid" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="SINVACUNAR">SIN VACUNAR</option>
-                                <option value="PRIMERADOSIS">PRIMERA DOSIS</option>
-                                <option value="SEGUNDADOSIS">SEGUNDA DOSIS</option>
+                                <option value="SIN VACUNAR">SIN VACUNAR</option>
+                                <option value="PRIMERA DOSIS">PRIMERA DOSIS</option>
+                                <option value="SEGUNDA DOSIS">SEGUNDA DOSIS</option>
                                 <option value="REFUERZO">REFUERZO</option>
                             </select>
                         </div>
@@ -801,9 +801,9 @@
                             </span>
                             <select name="SuministroAcidoAcetil" id="SuministroAcidoAcetil" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="NOAPLICA">NO APLICA</option>
-                                <option value="SISUMINISTRA">SI SE SUMINISTRA</option>
-                                <option value="NOEVALUADO">REGISTRO NO EVALUADO</option>
+                                <option value="NO APLICA">NO APLICA</option>
+                                <option value="SI SUMINISTRA">SI SE SUMINISTRA</option>
+                                <option value="NO EVALUADO">REGISTRO NO EVALUADO</option>
                             </select>
                         </div>
                     </div>
@@ -817,9 +817,9 @@
                             </span>
                             <select name="CRiesgoPreeclampsia" id="CRiesgoPreeclampsia" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="RIESGONOEVALUADO">RIESGO NO EVALUADO</option>
-                                <option value="RIESGOBAJO">RIESGO BAJO</option>
-                                <option value="RIESGOALTO">RIESGO ALTO</option>
+                                <option value="RIESGO NO EVALUADO">RIESGO NO EVALUADO</option>
+                                <option value="RIESGO BAJO">RIESGO BAJO</option>
+                                <option value="RIESGO ALTO">RIESGO ALTO</option>
                             </select>
                         </div>
                     </div>
@@ -847,7 +847,7 @@
                             <select name="ResultadoSifilis" id="ResultadoSifilis" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value="REACTIVO">REACTIVO</option>
-                                <option value="NOREACTIVO">NO REACTIVO</option>
+                                <option value="NO REACTIVO">NO REACTIVO</option>
                             </select>
                         </div>
                     </div>
@@ -910,7 +910,7 @@
                             <span class="input-group-text">
                             <i class="material-icons">person</i>
                             </span>
-                            <input   class="form-control" type="number" id="ResultadoGlicemia" name="ResultadoGlicemia" placeholder="0" >
+                            <input  class="form-control" type="number" id="ResultadoGlicemia" name="ResultadoGlicemia" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -923,7 +923,7 @@
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value="COMPLETOS">COMPLETOS</option>
                                 <option value="INCOMPLETOS">INCOMPLETOS</option>
-                                <option value="SINTOMARLOS">SIN TOMARLOS</option>
+                                <option value="SIN TOMARLOS">SIN TOMARLOS</option>
                             </select>
                         </div>
                     </div>
@@ -937,7 +937,7 @@
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value="COMPLETOS">COMPLETOS</option>
                                 <option value="INCOMPLETOS">INCOMPLETOS</option>
-                                <option value="SINTOMARLOS">SIN TOMARLOS</option>
+                                <option value="SIN TOMARLOS">SIN TOMARLOS</option>
                             </select>
                         </div>
                     </div>
@@ -951,7 +951,7 @@
                                 <option value="SELECCIONAR">SELECCIONAR</option>
                                 <option value="COMPLETOS">COMPLETOS</option>
                                 <option value="INCOMPLETOS">INCOMPLETOS</option>
-                                <option value="SINTOMARLOS">SIN TOMARLOS</option>
+                                <option value="SIN TOMARLOS">SIN TOMARLOS</option>
                             </select>
                         </div>
                     </div>
@@ -1013,7 +1013,7 @@
                             </span>
                             <select name="ResultadoTamizaje1" id="ResultadoTamizaje1" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value=" REACTIVO"> REACTIVO</option>
+                                <option value="REACTIVO"> REACTIVO</option>
                                 <option value="NO REACTIVO">NO REACTIVO</option>
                             </select>
                         </div>
@@ -1035,7 +1035,7 @@
                             </span>
                             <select name="ResultadoTamizaje2" id="ResultadoTamizaje2" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value=" REACTIVO"> REACTIVO</option>
+                                <option value="REACTIVO"> REACTIVO</option>
                                 <option value="NO REACTIVO">NO REACTIVO</option>
                             </select>
                         </div>
@@ -1057,7 +1057,7 @@
                             </span>
                             <select name="ResultadoTamizaje3" id="ResultadoTamizaje3" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value=" REACTIVO"> REACTIVO</option>
+                                <option value="REACTIVO"> REACTIVO</option>
                                 <option value="NO REACTIVO">NO REACTIVO</option>
                             </select>
                         </div>
@@ -1079,9 +1079,8 @@
                             </span>
                             <select name="ResultadoTamizaje4" id="ResultadoTamizaje4" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value=" REACTIVO"> REACTIVO</option>
+                                <option value="REACTIVO"> REACTIVO</option>
                                 <option value="NO REACTIVO">NO REACTIVO</option>
-                                <option value="PENDIENTE">PENDIENTE</option>
                             </select>
                         </div>
                     </div>  

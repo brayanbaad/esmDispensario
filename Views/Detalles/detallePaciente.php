@@ -1,11 +1,11 @@
 
 <?php include_once 'Views/template/header.php'?>
-<form id="formularioDetalle">
+<form id="formularioDetalle"  >
     <div class="card">
         <div class="card-body">
-
+        <a href="<?php echo BASE_URL . 'detalles/'?>" class="btn btn-info mb-4" type="button" data-bs-dismiss="modal" ><i class="material-icons">undo</i>Regresar</a>
             <div class="row">
-            <input value="<?= $data['paciente']['id'] ?>" class="form-control" type="text" id="id"  name="id" >
+            <input value="<?= $data['paciente']['id'] ?>" class="form-control" type="hidden" id="id"  name="id" >
                 <div class="col-md-4 mb-2">
                     <label for="fechaRuta">Fecha De Ingreso A Ruta:</label>
                     <div class="input-group">
@@ -41,7 +41,7 @@
                                 person
                             </i>
                         </span>
-                        <input value="<?= $data['paciente']['identificacion'] ?>" class="form-control" type="text" id="identificacion" name="identificacion"  disabled >
+                        <input value="<?= $data['paciente']['identificacion'] ?>" class="form-control" type="text" id="identificacion" name="identificacion"  readonly="" >
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
@@ -52,7 +52,7 @@
                             person
                         </i>
                         </span>
-                        <input value="<?= $data['paciente']['apellidos'] ?>" class="form-control" type="text" id="usuario" name="usuario" placeholder=" Digite Apellidos">
+                        <input value="<?= $data['paciente']['apellidos'] ?>" class="form-control" type="text" id="apellidos" name="apellidos" placeholder=" Digite Apellidos">
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
@@ -67,12 +67,12 @@
                     </div>
                 </div>
                 <div class="col-md-8 mb-2">
-                    <label for="fecha_nacimiento">Fecha De Nacimiento:</label>
+                    <label for="fechaNacimiento">Fecha De Nacimiento:</label>
                     <div class="input-group">
                         <span class="input-group-text">
                             <i class="material-icons">today</i>
                         </span>
-                        <input value="<?= $data['paciente']['fechaNacimiento'] ?>"class="form-control" type="date" id="fecha_nacimiento" name="fecha_nacimiento" >
+                        <input value="<?= $data['paciente']['fechaNacimiento'] ?>"class="form-control" type="date" id="fechaNacimiento" name="fechaNacimiento" >
                     </div>
                 </div>
                 <div class="col-md-4 mb-4" >
@@ -83,7 +83,7 @@
                             person
                         </i>
                         </span>
-                        <input value="<?= $data['paciente']['edad'] ?>" class="form-control" type="text" id="edad" name="edad" placeholder="Edad" disabled >
+                        <input value="<?= $data['paciente']['edad'] ?>" class="form-control" type="text" id="edad" name="edad" placeholder="Edad" readonly="" >
                     </div>
                 </div>                      
                 <div class="col-md-4 mb-4">
@@ -109,14 +109,14 @@
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <label for="niveleducativo">Nivel Educativo:</label>
+                    <label for="nivelEducativo">Nivel Educativo:</label>
                     <div class="input-group">
                         <span class="input-group-text">
                         <i class="material-icons">
                             person
                         </i>
                         </span>
-                        <input value="<?= $data['paciente']['nivelEducativo'] ?>" class="form-control" type="text" id="niveleducativo" name="niveleducativo" placeholder="Nivel Educativo" >
+                        <input value="<?= $data['paciente']['nivelEducativo'] ?>" class="form-control" type="text" id="nivelEducativo" name="nivelEducativo" placeholder="Nivel Educativo" >
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
@@ -127,7 +127,7 @@
                             person
                         </i>
                         </span>
-                        <input value="<?= $data['paciente']['ocupacion'] ?>" class="form-control" type="text" id="ocupacion" name="ocupacion" placeholder="ocupacion" >
+                        <input value="<?= $data['paciente']['ocupacion'] ?>" class="form-control" type="text" id="ocupacion" name="ocupacion" placeholder="Ocupacion" >
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@
                         <label for="fechaMenstruacion">Fecha Ultima Menstruación:</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="material-icons">today</i></span>
-                            <input  value="<?php echo $data['paciente']['fechaMenstruacion'] ? $data['paciente']['fechaMenstruacion'] : date('Y-m-d'); ?>" class="form-control" type="date" id="fechaMestruacion"  name="fechaMestruacion" >
+                            <input  value="<?php echo $data['paciente']['fechaMenstruacion'] ? $data['paciente']['fechaMenstruacion'] : date('Y-m-d'); ?>" class="form-control" type="date" id="fechaMenstruacion"  name="fechaMenstruacion" >
                         </div>
                     </div>
                     <div class="col-md-6 mb-2">
@@ -177,12 +177,12 @@
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="ClasificacionRiesgo">Clasificacion Riesgo Obstetrico:</label>
+                        <label for="clasificacionRiesgo">Clasificacion Riesgo Obstetrico:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
                                 <i class="material-icons">badge</i>
                             </span>
-                        <select name="ClasificacionRiesgo" id="ClasificacionRiesgo" class="form-control">
+                        <select name="clasificacionRiesgo" id="clasificacionRiesgo" class="form-control">
                         <?php
                             $opciones = ["SELECCIONAR","ALTO","BAJO"];
                             foreach ($opciones as $opcion) { 
@@ -195,12 +195,12 @@
                     </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="DSGestacional">Diagnostico Sifilis Gestacional Confirmado:</label>
+                        <label for="dSGestacional">Diagnostico Sifilis Gestacional Confirmado:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="DSGestacional" id="DSGestacional" class="form-control">
+                            <select name="dSGestacional" id="dSGestacional" class="form-control">
                         <?php
                             $opciones = ["SELECCIONAR","1","2"];
                             foreach ($opciones as $opcion) { 
@@ -213,12 +213,12 @@
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="TSGestacional">Tratamiento Sifilis Gestacional:</label>
+                        <label for="tSGestacional">Tratamiento Sifilis Gestacional:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="material-icons">person</i>
                             </span>
-                            <select name="TSGestacional" id="TSGestacional" class="form-control">
+                            <select name="tSGestacional" id="tSGestacional" class="form-control">
                             <?php
                             $opciones = ["SELECCIONAR","1","2","3","4"];
                             foreach ($opciones as $opcion) { 
@@ -230,14 +230,14 @@
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <label for="TSPareja">Tratamiento Para Sifilis En Pareja:</label>
+                        <label for="tSPareja">Tratamiento Para Sifilis En Pareja:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
                                 person
                             </i>
                             </span>
-                            <select name="TSPareja" id="TSPareja" class="form-control">
+                            <select name="tSPareja" id="tSPareja" class="form-control">
                             <?php
                             $opciones = ["SELECCIONAR","1","2","3","4"];
                             foreach ($opciones as $opcion) { 
@@ -449,23 +449,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="NGestacionesActuales" id="NGestacionesActuales" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
+                            <select name="NGestacionesActuales" id="NGestacionesActuales" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['NGestacionesActuales']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -477,23 +468,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="AntecedentesParto" id="AntecedentesParto" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
+                            <select name="AntecedentesParto" id="AntecedentesParto" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['AntecedentesParto']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -505,23 +487,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="cesareas" id="cesareas" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
+                            <select name="cesareas" id="cesareas" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['cesareas']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -533,23 +506,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="Abortos" id="Abortos" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
+                            <select name="Abortos" id="Abortos" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['Abortos']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -561,23 +525,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="HijosVivos" id="HijosVivos" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
+                            <select name="HijosVivos" id="HijosVivos" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['HijosVivos']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -589,23 +544,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="HijosMuertos" id="HijosMuertos" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
+                            <select name="HijosMuertos" id="HijosMuertos" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['HijosMuertos']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -617,7 +563,7 @@
                                 person
                             </i>
                             </span>
-                            <input class="form-control" type="text" id="AntecedentesPatologicos" name="AntecedentesPatologicos" placeholder="Digite Antecedente" >
+                            <input value="<?= $data['paciente']['AntecedentesPatologicos'] ?>" class="form-control" type="text" id="AntecedentesPatologicos" name="AntecedentesPatologicos" placeholder="Digite Antecedente" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -628,7 +574,7 @@
                                 person
                             </i>
                             </span>
-                            <input  class="form-control" type="number"   id="Peso" name="Peso"  placeholder="0" >
+                            <input value="<?= $data['paciente']['peso'] ?>" class="form-control" type="number"   id="Peso" name="Peso"  placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -639,7 +585,7 @@
                                 person
                             </i>
                             </span>
-                            <input  class="form-control" type="number"  id="Talla" name="Talla"  placeholder="0" >
+                            <input value="<?= $data['paciente']['Talla'] ?>" class="form-control" type="number"  id="Talla" name="Talla"  placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -650,7 +596,7 @@
                                 person
                             </i>
                             </span>
-                            <input  class="form-control" type="number"  id="IMC" name="IMC" placeholder="0"  readonly="">
+                            <input  value="<?= $data['paciente']['IMC'] ?>" class="form-control" type="number"  id="IMC" name="IMC" placeholder="0"  readonly="">
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -661,19 +607,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="CursoPreparacion" id="CursoPreparacion" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
+                            <select name="CursoPreparacion" id="CursoPreparacion" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","0","1","2","3","4","5","6","7","8","9","10"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['CursoPreparacion']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -685,10 +626,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="AtencionGineco" id="AtencionGineco" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
+                            <select name="AtencionGineco" id="AtencionGineco" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","1","2"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['AtencionGineco']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -700,10 +645,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="AtencionOdontologia" id="AtencionOdontologia" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
+                            <select name="AtencionOdontologia" id="AtencionOdontologia" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","1","2"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['AtencionOdontologia']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -715,10 +664,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="AtencionNutricion" id="AtencionNutricion" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
+                            <select name="AtencionNutricion" id="AtencionNutricion" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","1","2"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['AtencionNutricion']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -730,10 +683,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="AtencionPsicologia" id="AtencionPsicologia" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
+                            <select name="AtencionPsicologia" id="AtencionPsicologia" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","1","2"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['AtencionPsicologia']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -745,19 +702,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="NumeroControles" id="NumeroControles" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
+                            <select name="NumeroControles" id="NumeroControles" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","1","2","3","4","5","6","7","8","9","10"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['NumeroControles']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -769,14 +721,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="VacunaTetano" id="VacunaTetano" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="AV">AV</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                            <select name="VacunaTetano" id="VacunaTetano" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","AV","1","2","3","4","5"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['VacunaTetano']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -788,10 +740,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="DPTA" id="DPTA" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="NA">NA</option>
-                                <option value="UNICA">UNICA</option>
+                            <select name="DPTA" id="DPTA" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","NA","UNICA"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['DPTA']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -803,10 +759,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="Influenza" id="Influenza" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="DA">DA</option>
-                                <option value="DU">DU</option>
+                            <select name="Influenza" id="Influenza" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","DA","DU"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['Influenza']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -818,12 +778,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="VacunaCovid" id="VacunaCovid" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="SINVACUNAR">SIN VACUNAR</option>
-                                <option value="PRIMERADOSIS">PRIMERA DOSIS</option>
-                                <option value="SEGUNDADOSIS">SEGUNDA DOSIS</option>
-                                <option value="REFUERZO">REFUERZO</option>
+                            <select name="VacunaCovid" id="VacunaCovid" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","SINVACUNAR","PRIMERADOSIS","SEGUNDADOSIS","REFUERZO"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['VacunaCovid']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -835,11 +797,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="SuministroAcidoAcetil" id="SuministroAcidoAcetil" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="NOAPLICA">NO APLICA</option>
-                                <option value="SISUMINISTRA">SI SE SUMINISTRA</option>
-                                <option value="NOEVALUADO">REGISTRO NO EVALUADO</option>
+                            <select name="SuministroAcidoAcetil" id="SuministroAcidoAcetil" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","NO APLICA","SI SUMINISTRA","NO EVALUADO"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['SuministroAcidoAcetil']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -851,11 +816,14 @@
                                 person
                             </i>
                             </span>
-                            <select name="CRiesgoPreeclampsia" id="CRiesgoPreeclampsia" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="RIESGONOEVALUADO">RIESGO NO EVALUADO</option>
-                                <option value="RIESGOBAJO">RIESGO BAJO</option>
-                                <option value="RIESGOALTO">RIESGO ALTO</option>
+                            <select name="CRiesgoPreeclampsia" id="CRiesgoPreeclampsia" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","RIESGO NO EVALUADO","RIESGO BAJO","RIESGO ALTO"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['CRiesgoPreeclampsia']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -871,7 +839,7 @@
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaSifilis"  name="fechaTomaSifilis" >
+                            <input value="<?php echo $data['paciente']['fechaTomaSifilis'] ? $data['paciente']['fechaTomaSifilis'] : date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaSifilis"  name="fechaTomaSifilis" >
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -880,10 +848,14 @@
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="ResultadoSifilis" id="ResultadoSifilis" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="REACTIVO">REACTIVO</option>
-                                <option value="NOREACTIVO">NO REACTIVO</option>
+                            <select name="ResultadoSifilis" id="ResultadoSifilis" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","REACTIVO","NO REACTIVO"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['ResultadoSifilis']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -893,7 +865,7 @@
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaVIH"   name="fechaTomaVIH" >
+                            <input value="<?php echo $data['paciente']['fechaTomaVIH'] ? $data['paciente']['fechaTomaVIH'] : date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaVIH"   name="fechaTomaVIH" >
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -902,10 +874,14 @@
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="ResultadoVIH" id="ResultadoVIH" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="POSITIVO">POSITIVO</option>
-                                <option value="NEGATIVO">NEGATIVO</option>
+                            <select name="ResultadoVIH" id="ResultadoVIH" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","POSITIVO","NEGATIVO"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['ResultadoVIH']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -915,7 +891,7 @@
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaHB"  name="fechaTomaHB" >
+                            <input value="<?php echo $data['paciente']['fechaTomaHB'] ? $data['paciente']['fechaTomaHB'] : date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaHB"  name="fechaTomaHB" >
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -924,10 +900,14 @@
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="ResultadoHB" id="ResultadoHB" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="POSITIVO">POSITIVO</option>
-                                <option value="NEGATIVO">NEGATIVO</option>
+                            <select name="ResultadoHB" id="ResultadoHB" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","POSITIVO","NEGATIVO"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['ResultadoHB']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -937,7 +917,7 @@
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaGlicemia"  name="fechaTomaGlicemia" >
+                            <input value="<?php echo $data['paciente']['fechaTomaGlicemia'] ? $data['paciente']['fechaTomaGlicemia'] : date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTomaGlicemia"  name="fechaTomaGlicemia" >
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -946,7 +926,7 @@
                             <span class="input-group-text">
                             <i class="material-icons">person</i>
                             </span>
-                            <input   class="form-control" type="number" id="ResultadoGlicemia" name="ResultadoGlicemia" placeholder="0" >
+                            <input   value="<?php echo $data['paciente']['ResultadoGlicemia']?>" class="form-control" type="number" id="ResultadoGlicemia" name="ResultadoGlicemia" placeholder="0" >
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -955,11 +935,14 @@
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="TomaLab1Trimestre" id="TomaLab1Trimestre" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="COMPLETOS">COMPLETOS</option>
-                                <option value="INCOMPLETOS">INCOMPLETOS</option>
-                                <option value="SINTOMARLOS">SIN TOMARLOS</option>
+                            <select name="TomaLab1Trimestre" id="TomaLab1Trimestre" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","COMPLETOS","INCOMPLETOS","SIN TOMARLOS"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['TomaLab1Trimestre']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -969,11 +952,14 @@
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="TomaLab2Trimestre" id="TomaLab2Trimestre" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="COMPLETOS">COMPLETOS</option>
-                                <option value="INCOMPLETOS">INCOMPLETOS</option>
-                                <option value="SINTOMARLOS">SIN TOMARLOS</option>
+                            <select name="TomaLab2Trimestre" id="TomaLab2Trimestre" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","COMPLETOS","INCOMPLETOS","SIN TOMARLOS"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['TomaLab2Trimestre']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -983,11 +969,14 @@
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="TomaLab3Trimestre" id="TomaLab3Trimestre" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="COMPLETOS">COMPLETOS</option>
-                                <option value="INCOMPLETOS">INCOMPLETOS</option>
-                                <option value="SINTOMARLOS">SIN TOMARLOS</option>
+                            <select name="TomaLab3Trimestre" id="TomaLab3Trimestre" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","COMPLETOS","INCOMPLETOS","SIN TOMARLOS"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['TomaLab3Trimestre']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -997,11 +986,16 @@
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="SolicitaIVE" id="SolicitaIVE" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="SI">SI</option>
-                                <option value="NO">NO</option>
+                            <select name="SolicitaIVE" id="SolicitaIVE" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","SI","NO"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['SolicitaIVE']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
+                            
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -1010,10 +1004,14 @@
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="TamizajeChagas" id="TamizajeChagas" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value="SI">SI</option>
-                                <option value="NO">NO</option>
+                            <select name="TamizajeChagas" id="TamizajeChagas" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","SI","NO"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['TamizajeChagas']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -1029,7 +1027,7 @@
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaAfiliacionSSFM"  name="fechaAfiliacionSSFM" >
+                            <input value="<?php echo $data['paciente']['fechaAfiliacionSSFM'] ? $data['paciente']['fechaAfiliacionSSFM'] : date('Y-m-d'); ?>" class="form-control" type="date" id="fechaAfiliacionSSFM"  name="fechaAfiliacionSSFM" >
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -1038,7 +1036,7 @@
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTamizaje1"  name="fechaTamizaje1" >
+                            <input value="<?php echo $data['paciente']['fechaTamizaje1'] ? $data['paciente']['fechaTamizaje1'] : date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTamizaje1"  name="fechaTamizaje1" >
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -1047,10 +1045,14 @@
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="ResultadoTamizaje1" id="ResultadoTamizaje1" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value=" REACTIVO"> REACTIVO</option>
-                                <option value="NO REACTIVO">NO REACTIVO</option>
+                            <select name="ResultadoTamizaje1" id="ResultadoTamizaje1" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","REACTIVO","NO REACTIVO"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['ResultadoTamizaje1']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -1060,7 +1062,7 @@
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input class="form-control" type="date" id="fechaTamizaje2" value="<?php echo date('Y-m-d'); ?>" name="fechaTamizaje2" >
+                            <input value="<?php echo $data['paciente']['fechaTamizaje2'] ? $data['paciente']['fechaTamizaje2'] : date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTamizaje2"  name="fechaTamizaje2" >
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -1069,10 +1071,14 @@
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="ResultadoTamizaje2" id="ResultadoTamizaje2" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value=" REACTIVO"> REACTIVO</option>
-                                <option value="NO REACTIVO">NO REACTIVO</option>
+                            <select name="ResultadoTamizaje2" id="ResultadoTamizaje2" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","REACTIVO","NO REACTIVO"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['ResultadoTamizaje2']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>
@@ -1082,7 +1088,7 @@
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input value="<?php echo date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTamizaje3"  name="fechaTamizaje3" >
+                            <input value="<?php echo $data['paciente']['fechaTamizaje3'] ? $data['paciente']['fechaTamizaje3'] : date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTamizaje3"  name="fechaTamizaje3" >
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -1091,11 +1097,16 @@
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="ResultadoTamizaje3" id="ResultadoTamizaje3" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value=" REACTIVO"> REACTIVO</option>
-                                <option value="NO REACTIVO">NO REACTIVO</option>
+                            <select name="ResultadoTamizaje3" id="ResultadoTamizaje3" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","REACTIVO","NO REACTIVO"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['ResultadoTamizaje3']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
+                            
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -1104,7 +1115,7 @@
                             <span class="input-group-text">
                                 <i class="material-icons">today</i>
                             </span>
-                            <input class="form-control" type="date" id="fechaTamizaje4" value="<?php echo date('Y-m-d'); ?>" name="fechaTamizaje4" >
+                            <input value="<?php echo $data['paciente']['fechaTamizaje4'] ? $data['paciente']['fechaTamizaje4'] : date('Y-m-d'); ?>" class="form-control" type="date" id="fechaTamizaje4"  name="fechaTamizaje4" >
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -1113,11 +1124,14 @@
                             <span class="input-group-text" >
                             <i class="material-icons">badge</i>
                             </span>
-                            <select name="ResultadoTamizaje4" id="ResultadoTamizaje4" class="form-control" >
-                                <option value="SELECCIONAR">SELECCIONAR</option>
-                                <option value=" REACTIVO"> REACTIVO</option>
-                                <option value="NO REACTIVO">NO REACTIVO</option>
-                                <option value="PENDIENTE">PENDIENTE</option>
+                            <select name="ResultadoTamizaje4" id="ResultadoTamizaje4" class="form-control">
+                            <?php
+                            $opciones = ["SELECCIONAR","REACTIVO","NO REACTIVO"];
+                            foreach ($opciones as $opcion) { 
+                                $selected = ($opcion == $data['paciente']['ResultadoTamizaje4']) ? 'selected' : ''; 
+                                echo "<option value='$opcion' $selected>$opcion</option>"; 
+                            } 
+                            ?> 
                             </select>
                         </div>
                     </div>  
@@ -1129,14 +1143,22 @@
                                     article
                                 </i>
                             </span>
-                        <textarea class="form-control" type="text" id="observaciones" name="observaciones" rows="6" placeholder=""></textarea>
+                        <textarea value="<?php echo $data['paciente']['OBSERVACIONES']  ?>" class="form-control" type="text" id="observaciones" name="observaciones" rows="6" placeholder=""></textarea>
                     </div>
                 </div> 
+                <div class="col-md-12 mb-2">
+                    <label for=""></label>
+                        <div class="input-group">
+                            
+                            <a href="" class="btn btn-info" ><i class="material-icons"> save</i> Descargar Historial</a>
+                        
+                    </div>
+                </div>
         </div> 
     </div>
     <div class="modal-footer">
-        <a href="#" class="btn btn-info" onclick="detallesCompletos(<?= $data['paciente']['identificacion']?>)"><i class="material-icons"> save</i>Guardar</a>
-        <a href="<?php echo BASE_URL . 'pacientes/'?>" class="btn btn-danger" type="button" data-bs-dismiss="modal" ><i class="material-icons">cancel</i>Cancelar</a>
+        <a href="" class="btn btn-info" onclick="ModificarPaciente(event)"><i class="material-icons"> save</i>Guardar</a>
+        <a href="<?php echo BASE_URL . 'detalles/'?>" class="btn btn-danger" type="button" data-bs-dismiss="modal" ><i class="material-icons">undo</i>Regresar</a>
     </div>
 </form> 
 

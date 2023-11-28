@@ -5,7 +5,7 @@ class UsuariosModel extends Query{
     }
 
     public function getUsuario( $usuario, $clave){
-            $sql ="SELECT * FROM usuarios WHERE usuario = '$usuario' AND clave = '$clave' AND estado = 1   ";
+            $sql ="SELECT * FROM usuarios WHERE usuario = '$usuario' AND clave = '$clave' ";
             $data =$this->select($sql);
             return $data;
     }
