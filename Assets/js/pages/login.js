@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded',function () {
                         let timerInterval
                         Swal.fire({
                             title: res.mensaje,
-                            html: 'Redireccionado en  <b></b> milliseconds.',
+                            html: '',
                             timer: 1000,
                             timerProgressBar: true,
                             didOpen: () => {

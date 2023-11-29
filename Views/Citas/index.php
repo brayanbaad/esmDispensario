@@ -24,8 +24,8 @@
                     </button>
                 </div>
                 <form id="formulario" autocomplete="off">
-                <input type="hidden" id="id_cita" name="id_cita">
-                <input value="<?php echo date('Y-m-d')?>" class="form-control" type="hidden" id="fechaHoy" name='fechaHoy'>
+                <input type="text" id="id_cita" name="id_cita">
+                <input value="<?php echo date('Y-m-d')?>" class="form-control" type="hidden" id="fechaHoy" name='fechaHoy' >
                 
                     <div class="modal-body">
                         <div class="row">
@@ -33,7 +33,7 @@
                                 <label for="start">Fecha: </label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="material-icons">badge</i></span>
-                                    <input value="<?php echo date('Y-m-d')?>" class="form-control" type="date" id="start" name='start'>
+                                    <input value="<?php echo date('Y-m-d')?>" class="form-control" type="date" id="start" name='start' readonly="">
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4">

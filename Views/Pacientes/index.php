@@ -443,6 +443,7 @@
                             </span>
                             <select name="AntecedentesParto" id="AntecedentesParto" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -499,6 +500,7 @@
                             </span>
                             <select name="Abortos" id="Abortos" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -527,6 +529,7 @@
                             </span>
                             <select name="HijosVivos" id="HijosVivos" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -555,6 +558,7 @@
                             </span>
                             <select name="HijosMuertos" id="HijosMuertos" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
+                                <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>

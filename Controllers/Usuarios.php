@@ -99,7 +99,7 @@ class Usuarios extends Controller{
                     $_SESSION['asignar']=$data['usuario'];
                     $_SESSION['rol']=$data['rol'];
                     $_SESSION['activo']= true;
-                    $res = array('tipo' =>'success','mensaje'=>'BIENVENIDO AL SISTEMA DEL ESTABLECIMIENTO DE SANIDAD ESMBAS10');
+                    $res = array('tipo' =>'success','mensaje'=>'BIENVENIDO AL SISTEMA DEL ESTABLECIMIENTO DE SANIDAD MILITAR BAS10');
                 }else {
                     $res = array('tipo' =>'warning','mensaje'=>' USUARIO NO ESTA HABILITADO PARA EL INGRESO');
                 }
@@ -169,9 +169,9 @@ class Usuarios extends Controller{
     {
         $data = $this->model->eliminar($id);
         if ($data==1 ) {
-            $res = array('tipo'=>'success','mensaje'=>'USUARIO ELIMINADO');
+            $res = array('tipo'=>'success','mensaje'=>'USUARIO DESACTIVADO');
         }else {
-            $res = array('tipo'=>'error','mensaje'=>'ERROR AL ELIMINAR EL USUARIO');
+            $res = array('tipo'=>'error','mensaje'=>'ERROR AL DESACTIVAR EL USUARIO');
         }
         echo json_encode($res,JSON_UNESCAPED_UNICODE);
         die();

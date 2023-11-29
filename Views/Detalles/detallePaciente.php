@@ -470,7 +470,7 @@
                             </span>
                             <select name="AntecedentesParto" id="AntecedentesParto" class="form-control">
                             <?php
-                            $opciones = ["SELECCIONAR","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
+                            $opciones = ["SELECCIONAR","0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
                             foreach ($opciones as $opcion) { 
                                 $selected = ($opcion == $data['paciente']['AntecedentesParto']) ? 'selected' : ''; 
                                 echo "<option value='$opcion' $selected>$opcion</option>"; 
@@ -508,7 +508,7 @@
                             </span>
                             <select name="Abortos" id="Abortos" class="form-control">
                             <?php
-                            $opciones = ["SELECCIONAR","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
+                            $opciones = ["SELECCIONAR","0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
                             foreach ($opciones as $opcion) { 
                                 $selected = ($opcion == $data['paciente']['Abortos']) ? 'selected' : ''; 
                                 echo "<option value='$opcion' $selected>$opcion</option>"; 
@@ -527,7 +527,7 @@
                             </span>
                             <select name="HijosVivos" id="HijosVivos" class="form-control">
                             <?php
-                            $opciones = ["SELECCIONAR","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
+                            $opciones = ["SELECCIONAR","0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
                             foreach ($opciones as $opcion) { 
                                 $selected = ($opcion == $data['paciente']['HijosVivos']) ? 'selected' : ''; 
                                 echo "<option value='$opcion' $selected>$opcion</option>"; 
@@ -546,7 +546,7 @@
                             </span>
                             <select name="HijosMuertos" id="HijosMuertos" class="form-control">
                             <?php
-                            $opciones = ["SELECCIONAR","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
+                            $opciones = ["SELECCIONAR","0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
                             foreach ($opciones as $opcion) { 
                                 $selected = ($opcion == $data['paciente']['HijosMuertos']) ? 'selected' : ''; 
                                 echo "<option value='$opcion' $selected>$opcion</option>"; 
@@ -780,7 +780,7 @@
                             </span>
                             <select name="VacunaCovid" id="VacunaCovid" class="form-control">
                             <?php
-                            $opciones = ["SELECCIONAR","SINVACUNAR","PRIMERADOSIS","SEGUNDADOSIS","REFUERZO"];
+                            $opciones = ["SELECCIONAR","SIN VACUNAR","PRIMERA DOSIS","SEGUNDA DOSIS","REFUERZO"];
                             foreach ($opciones as $opcion) { 
                                 $selected = ($opcion == $data['paciente']['VacunaCovid']) ? 'selected' : ''; 
                                 echo "<option value='$opcion' $selected>$opcion</option>"; 

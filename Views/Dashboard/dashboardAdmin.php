@@ -14,7 +14,7 @@
         <div class="col-xl-3 col-md-6">
             <div class="card bg-success">
                 <div class="card-body d-flex text-white justify-content-between">
-                    Usuarios
+                    Personal De Acceso
                     <i class="material-icons ">person</i>
                 </div>
                 <div class="card-footer d-flex  justify-content-center bg-success ">
@@ -45,11 +45,11 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row text-center">
         <div class="col-xl-6">
             <div class="card">
-                <div class="card-header bg-dark text-white text-center">
-                Personas 
+                <div class="card-header bg-primary text-white text-center">
+                PORCENTAJE GRADOS 
                 </div>
                 <div class="card-body ">
                     <canvas id="personal" width="100" height="100"></canvas>
@@ -58,14 +58,16 @@
         </div>
         <div class="col-xl-6">
             <div class="card">
-                <div class="card-header bg-dark text-white text-center">
-                Usuarios 
+                <div class="card-header bg-success text-white text-center">
+                CANTIDAD ESPECIALIDADES 
                 </div>
                 <div class="card-body ">
                     <canvas id="usuarios" width="100" height="100"></canvas>
                 </div>
             </div>
         </div>
+        
+        
     </div>
         
     

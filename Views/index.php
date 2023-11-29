@@ -17,7 +17,7 @@
     <img class="wave" src="Assets/img/wave.png">
     <div class="container">
         <div class="img">
-            <img src="Assets/img/bg.svg">
+            <img src="Assets/img/doctor.svg">
         </div>
         <div class="login-content">
             <form id="formulario" autocomplete="off">

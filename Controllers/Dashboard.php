@@ -34,4 +34,17 @@ class Dashboard extends Controller
     }
 
 
+    public function reporteGrados() {
+        $data = $this->model->getGrados();
+        echo json_encode($data,JSON_UNESCAPED_UNICODE);
+        die();
+    }
+
+    public function reporteEspecialidades() {
+        $data = $this->model->getEspecialidades();
+        echo json_encode($data,JSON_UNESCAPED_UNICODE);
+        die();
+    }
+
+
 }

@@ -70,7 +70,7 @@ function Activar(id) {
 
 function Eliminar(id) {
     const url = BASE_URL + 'Usuarios/eliminar/' + id;
-    eliminarRegistro('ESTÁ SEGURO?','SE ELIMINAR DE FORMA PERMANENTE','Si Eliminar',url,tblUsuarios);
+    eliminarRegistro('ESTÁ SEGURO?','SE DESACTIVARA DE FORMA PERMANENTE','Si Desactivar',url,tblUsuarios);
 }
 
 function Editar(id){

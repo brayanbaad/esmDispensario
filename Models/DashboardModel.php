@@ -9,10 +9,20 @@ class DashboardModel extends Query{
         return $this->select($sql);
     }
 
-public function getFecha(){
+    public function getFecha(){
         $sql = "SELECT COUNT(*) as total FROM citas WHERE start = DATE(NOW())";
         return $this->select($sql);
     }
+    public function getGrados(){
+        $sql = "SELECT pd.* ,g.nombreCorto as grado, COUNT(*) as cantidad, (COUNT(*) * 100.0 / (SELECT COUNT(*) FROM personal_dispensario)) as porcentaje FROM personal_dispensario pd INNER JOIN grados g ON PD.id_grado=g.id WHERE pd.id_grado = g.id GROUP BY id_grado;";
+        return $this->selectAll($sql);
+    }
+    
+    public function getEspecialidades(){
+        $sql = "SELECT pd.* ,e.nombre as especialidad,COUNT(*) as cantidad FROM personal_dispensario pd INNER JOIN especialidades e ON PD.id_especialidad=e.id WHERE pd.id_especialidad = e.id GROUP BY id_especialidad;";
+        return $this->selectAll($sql);
+    }
+
 
     
 

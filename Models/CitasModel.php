@@ -19,7 +19,7 @@ class CitasModel extends Query{
     }
     public function getVerificar($itemStart,$start,$itemEnd,$end,$id)  {
         if ($id== 0) {
-            $sql = "SELECT id,start,end FROM citas WHERE $itemStart = start AND $itemEnd = end AND id !=$id ";
+            $sql = "SELECT * FROM citas WHERE  start =$itemStart AND $itemEnd != end AND id !=$id ";
         } else {
             $sql = "SELECT end  FROM citas WHERE $itemEnd=$end ";
         }

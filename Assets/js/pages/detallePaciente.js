@@ -9,9 +9,28 @@ function ModificarPaciente(e) {
         if(this.readyState== 4 && this.status==200){
             const res = JSON.parse(this.responseText);
             if (res.tipo=='success') {
-                    alertaPersonalizada(res.tipo,res.mensaje);
-                    
-                }
+                let timerInterval
+                Swal.fire({
+                    title: res.mensaje,
+                    html: 'MODIFICANDO',
+                    timer: 1000,
+                    timerProgressBar: false,
+                    didOpen: () => {
+                        Swal.showLoading()
+                        const b = Swal.getHtmlContainer().querySelector('b')
+                        timerInterval = setInterval(() => {
+                            b.textContent = Swal.getTimerLeft()
+                        },100)
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                }).then((result) => {
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        window.location = BASE_URL+'detalles';
+                    }
+                })
+            }
         }
     }
 }
