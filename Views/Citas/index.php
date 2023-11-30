@@ -24,8 +24,9 @@
                     </button>
                 </div>
                 <form id="formulario" autocomplete="off">
-                <input type="hidden" id="id_cita" name="id_cita">
+                <input type="text" id="id_cita" name="id_cita">
                 <input value="<?php echo date('Y-m-d')?>" class="form-control" type="hidden" id="fechaHoy" name='fechaHoy' >
+                <input value="<?php echo date('h:i')?>" class="form-control" type="text" id="hora" name='hora' >
                 
                     <div class="modal-body">
                         <div class="row">

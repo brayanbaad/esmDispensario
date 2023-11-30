@@ -24,8 +24,11 @@
             $id_paciente = $_POST['id_paciente'];
             $color = $_POST['color'];
             $fechaHoy =  $_POST['fechaHoy'];
+            $hora =  $_POST['hora'];
             if ($start < $fechaHoy){
-                $res = array('tipo'=>'warning','mensaje'=>'LA FECHA SELECCIONADA ES INVALIDA');
+                $res = array('tipo'=>'warning','mensaje'=>'UNA FECHA ANTIGUA, NO SE PUEDE MODIFICAR');
+            }elseif ($start== $fechaHoy && $end < $hora) {
+                $res = array('tipo'=>'warning','mensaje'=>'LA HORA SELECCIONADA YA HA PASADO');
             }else {
                 if ($id=="") {
                     $verificardatos = $this->model->getVerificar('start',$start,'end',$end,0);
@@ -48,7 +51,8 @@
                         }else {
                             $res = array('tipo'=>'error','mensaje'=>'ERROR AL MODIFICAR LA CITA');
                         }
-                        $res = array('tipo'=>'error','mensaje'=>'LA HORA SELECCIONADA YA ESTÁ AGENDADA, SELECCIONE OTRA POR FAVOR');
+                    }else {
+                        $res = array('tipo'=>'error','mensaje'=>'LA HORA SELECCIONADA YA ESTÁ AGENDADA, INDIQUE OTRA HORA POR FAVOR');
                     }
                 }
             }

@@ -183,5 +183,17 @@
             die();
             
         }
+
+
+        public function generarPdf($id) {
+            $paciente =$this->model->getPaciente();
+            require('Libraries/fpdf/fpdf.php');
+            $pdf = new FPDF('P','mm','A4');
+            $pdf->AddPage();
+            $pdf->SetTitle('Historial Paciente');
+            $pdf->SetFont('Arial','B',14);
+            $pdf->Cell(40,10,utf8_decode($paciente['apellidos']));
+            $pdf->Output();
+        }
     } 
 ?>

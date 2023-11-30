@@ -10,7 +10,6 @@ tdlCitas=$('#tdlCitas').DataTable( {
     columns: [ 
         {'data':'department'},
         {'data':'description'},
-        {'data':'title'},
         {'data':'start'},
         {'data':'end'},
         {'data':'estado'},
@@ -20,16 +19,18 @@ tdlCitas=$('#tdlCitas').DataTable( {
         url:'https://cdn.datatables.net/plug-ins/1.13.5/i18n/es-ES.json'
     },
     responsive: true,
-    order: [[0,'desc']]
     
 } );
 
-function Editar(id){
-        title.textContent='MODIFICAR ESTADO';
-        myModal.show();
-        
+function ConfirmarEstado(id) {
+    const url = BASE_URL + 'ConsultaCitas/confirmarEstado/' + id;
+    AlertaActivacion('Mensaje!','Esta seguro de confirmar la cita?',url,tdlCitas);
 }
 
+function DesconfirmarEstado(id) {
+    const url = BASE_URL + 'ConsultaCitas/desconfirmarEstado/' + id;
+    AlertaActivacion('Mensaje!','Esta seguro de desconfirmar la cita?',url,tdlCitas);
+}
 reporteHoras();
 function reporteHoras() {
     const url = BASE_URL + 'ConsultaCitas/reporteHoras';

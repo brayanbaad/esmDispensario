@@ -1150,7 +1150,7 @@
                     <label for=""></label>
                         <div class="input-group">
                             
-                            <a href="" class="btn btn-info" ><i class="material-icons"> save</i> Descargar Historial</a>
+                            <a href="" class="btn btn-info"> <i class="material-icons"> save</i> Descargar Historial</a>
                         
                     </div>
                 </div>
