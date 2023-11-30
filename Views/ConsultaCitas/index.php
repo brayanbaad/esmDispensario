@@ -1,18 +1,17 @@
 <?php include_once 'Views/template/header.php'?>
-    <div class="container">
+<div class="container">
         <div class="col-md-12">
-            <button class="btn btn-primary mb-4" id="btnNuevo" type="button">
-                <i class="material-icons">
-                    add
-                </i>Nuevo</button>
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover table-bordered display nowrap text-center" style="width:100%" id="tdlEspecialidades">
+                            <table class="table table-striped table-hover table-bordered display nowrap text-center" style="width:100%" id="tdlCitas">
                                 <thead>
                                     <tr>
-                                        <th style="text-align: center">Id</th>
-                                        <th style="text-align: center">Nombre</th>
+                                        <th style="text-align: center">Identificacion</th>
+                                        <th style="text-align: center">Apellidos</th>
+                                        <th style="text-align: center">Nombres</th>
+                                        <th style="text-align: center">Fecha: </th>
+                                        <th style="text-align: center">Hora: </th>
                                         <th style="text-align: center">Estado</th>
                                         <th style="text-align: center">Acciones</th>
                                     </tr>
@@ -25,7 +24,7 @@
                 </div>    
             </div>   
     </div>
-    <div id="modalRegistro" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+    <div id="modalEstado" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-info">
@@ -34,22 +33,24 @@
                         
                     </button>
                 </div>
-                <form id="formulario" autocomplete="off">
-                    <input type="hidden" id="id_especialidad" name="id_especialidad">
+                <form id="formularioEstado" autocomplete="off">
+                    <input type="hidden" id="id_citaEstado" name="id_citaEstado">
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="nombre">Nombre</label>
+                                <label for="ESTADO">ESTADO</label>
                                 <div class="input-group">
                                     <span class="input-group-text">
                                     <i class="material-icons">
                                         person
                                     </i>
                                     </span>
-                                    <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre" >
+                                    <select name="ESTADO" id="ESTADO" class="form-control" >
+                                        <option value="PENDIENTE">PENDIENTE</option>
+                                        <option value="CONFIRMAR">CONFIRMAR</option>
+                                    </select>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -66,5 +67,4 @@
             </div>
         </div>
     </div>
-
 <?php include_once 'Views/template/footer.php'?>

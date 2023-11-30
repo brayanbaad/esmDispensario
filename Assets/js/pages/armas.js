@@ -76,7 +76,7 @@ function Editar(id){
                         const res = JSON.parse(this.responseText);
                         frm.id_arma.value = res.id;
                         frm.nombre.value = res.nombre;
-                        title.textContent='MODIFICAR CARGO';
+                        title.textContent='MODIFICAR ARMA';
                         myModal.show();
                 }
             }

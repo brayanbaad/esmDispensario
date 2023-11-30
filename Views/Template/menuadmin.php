@@ -20,7 +20,7 @@
         <a href="<?php echo BASE_URL .'Usuarios'?>" class="active">
             <i class="material-icons-two-tone">
                 admin_panel_settings
-            </i>Usuarios
+            </i>Personal Acceso
         </a>
     </li>
     <li class="sidebar-title">

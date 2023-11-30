@@ -29,8 +29,8 @@
     <div id="modalRegistro" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"  id="title"></h5>
+                <div class="modal-header bg-info">
+                    <h5 class="modal-title text-white"  id="title"></h5>
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         
                     </button>

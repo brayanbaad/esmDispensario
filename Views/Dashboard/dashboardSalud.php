@@ -3,7 +3,7 @@
         <div class="col-xl-3 col-md-6">
             <div class="card bg-info">
                 <div class="card-body d-flex text-white justify-content-between">
-                    Cantidad De Pacientes
+                    Pacientes
                     <i class="material-icons ">person</i>
                 </div>
                 <div class="card-footer d-flex  justify-content-center bg-info ">
@@ -18,52 +18,65 @@
                     <i class="material-icons ">person</i>
                 </div>
                 <div class="card-footer d-flex  justify-content-center bg-success ">
-                    <span class="text-white"><?php echo $data['citas']['total']?></span>
+                    <span class="text-white"><?php echo $data['fechaHoy']['total']?></span>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-danger">
                 <div class="card-body d-flex text-white justify-content-between">
-                    Citas Para Mañana
+                    Citas Proximas
                     <i class="material-icons ">person</i>
                 </div>
                 <div class="card-footer d-flex  justify-content-center bg-danger ">
-                    <span class="text-white">12</span>
+                    <span class="text-white"><?php echo $data['fechaFuturas']['total']?></span>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6">
+        <div class="col-xl-3 col-md-8">
             <div class="card bg-warning">
                 <div class="card-body d-flex text-white justify-content-between">
                     Citas Antiguas
                     <i class="material-icons ">person</i>
                 </div>
                 <div class="card-footer d-flex  justify-content-center bg-warning ">
-                    <span class="text-white">12</span>
+                    <span class="text-white"><?php echo $data['fechaPasadas']['total']?></span>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="row">
-        <div class="col-xl-6">
+        <div class="col-xl-4">
             <div class="card">
                 <div class="card-header bg-dark text-white text-center">
                 RANGO DE EDAD 
                 </div>
                 <div class="card-body ">
-                    <canvas id="personal" width="100" height="100"></canvas>
+                    <canvas id="edades" width="100" height="100"></canvas>
                 </div>
             </div>
         </div>
-        <div class="col-xl-6">
+        <div class="col-xl-4">
             <div class="card">
                 <div class="card-header bg-dark text-white text-center">
-                Usuarios 
+                CLASIFICACION DE RIESGO
                 </div>
                 <div class="card-body ">
-                    <canvas id="usuarios" width="100" height="100"></canvas>
+                    <canvas id="clasificacion" ></canvas>
                 </div>
             </div>
         </div>
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-header bg-dark text-white text-center">
+                CLASIFICACION DE SEMANAS GESTACIONAL
+                </div>
+                <div class="card-body ">
+                    <canvas id="semanas" ></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 <?php include_once 'Views/template/footer.php'?>

@@ -138,6 +138,25 @@ class Pacientes extends Controller{
         die();
         
     }
+
+    public function reporteEdades() {
+        $data = $this->model->getEdades();
+        echo json_encode($data,JSON_UNESCAPED_UNICODE);
+        die();
+    }
+
+    public function reporteClasificacion() {
+        $data = $this->model->getClasificacion();
+        echo json_encode($data,JSON_UNESCAPED_UNICODE);
+        die();
+    }
+
+    public function reporteSemanasGestational() {
+        $data = $this->model->getSemanasGestacional();
+        echo json_encode($data,JSON_UNESCAPED_UNICODE);
+        die();
+    }
+    
     
 }
 

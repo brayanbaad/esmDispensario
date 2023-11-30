@@ -61,5 +61,23 @@ class PacientesModel extends Query{
         return $this->save($sql,$datos);
     }
 
+    public function getEdades(){
+        $sql = "SELECT p.edad , COUNT(*) as cantidad, (COUNT(*) * 100.0 / (SELECT COUNT(*) FROM pacientes)) as porcentaje FROM pacientes p GROUP BY edad;";
+        return $this->selectAll($sql);
+    }
+
+    public function getClasificacion(){
+        $sql = "SELECT p.clasificacionRiesgo,COUNT(*) as cantidad, (COUNT(*) * 100.0 / (SElECT COUNT(*) FROM pacientes)) as porcentaje FROM pacientes p GROUP BY p.clasificacionRiesgo;";
+        return $this->selectAll($sql);
+    }
+    
+    public function getSemanasGestacional(){
+        $sql = "SELECT p.sgestacionalIngreso as semanas , COUNT(*) as cantidad, (COUNT(*) * 100.0 / (SELECT COUNT(*) FROM pacientes)) as porcentaje FROM pacientes p GROUP BY sgestacionalIngreso;";
+        return $this->selectAll($sql);
+    }
+
+
+    
+
 
 }

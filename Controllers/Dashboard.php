@@ -22,13 +22,16 @@ class Dashboard extends Controller
             $data['title'] ='Dashboard Personal Salud';
             $data['script'] ='pacientes.js';
             $data['pacientes'] = $this->model->getDatos('pacientes');
-            $data['citas'] = $this->model->getFecha();
+            $data['fechaHoy'] = $this->model->getFecha();
+            $data['fechaPasadas'] = $this->model->getFechaPasadas();
+            $data['fechaFuturas'] = $this->model->getFechaFuturas();
             $this->views->getView($this,'dashboardSalud',$data);
         }else{
             $data['title'] ='Dashboard Auxiliar';
-            $data['script'] ='citas.js';
-            $data['pacientes'] = $this->model->getDatos('pacientes');
-            $data['citas'] = $this->model->getFecha();
+            $data['script'] ='consultaCitas.js';
+            $data['fechaHoy'] = $this->model->getFecha();
+            $data['fechaMañana'] = $this->model->getFechaFuturas();
+            $data['fechaPasadas'] = $this->model->getFechaPasadas();
             $this->views->getView($this,'dashboardAuxiliar',$data);
         }
     }
@@ -45,6 +48,8 @@ class Dashboard extends Controller
         echo json_encode($data,JSON_UNESCAPED_UNICODE);
         die();
     }
+
+    
 
 
 }

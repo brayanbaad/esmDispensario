@@ -51,6 +51,11 @@ class CitasModel extends Query{
     }
 
     
+
+
+    
+
+    
 }
 
 ?>

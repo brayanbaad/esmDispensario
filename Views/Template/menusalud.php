@@ -26,6 +26,13 @@
             </i> Consultar Pacientes 
         </a>
     </li>
+    <li >
+        <a href="<?php echo BASE_URL .'ConsultaCitas'?>" class="active" disabled>
+            <i class="material-icons-two-tone">
+            view_timeline
+            </i> Consultar Citas 
+        </a>
+    </li>
     <!-- <li >
         <a href="" class="active" disabled >
             <i class="material-icons-two-tone">

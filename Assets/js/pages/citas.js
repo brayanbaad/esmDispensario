@@ -4,28 +4,28 @@ const btnGuardar = new bootstrap.Modal(document.getElementById('btnaccion'));
 const fechaHoy = document.getElementById('fechaHoy').value;
 let frm = document.getElementById('formulario');
 let btnEliminar = document.getElementById('btnEliminar');
-let start =document.getElementById('btnEliminar');
+let start = document.getElementById('btnEliminar');
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     calendar = new FullCalendar.Calendar(calendarEl, {
-        locale:'es',
-        headerToolbar:{
-            left:'prev next today',
-            center:'title',
-            right:'dayGridMonth timeGridWeek listWeek'
+        locale: 'es',
+        headerToolbar: {
+            left: 'prev next today',
+            center: 'title',
+            right: 'dayGridMonth timeGridWeek listWeek'
         },
         events: cargarCitas,
-        editable:true,
-        dateClick:function(info) {
+        editable: true,
+        dateClick: function (info) {
             if (info.dateStr < fechaHoy) {
             } else {
                 frm.reset();
-                document.getElementById('id_cita').value= "";
-                document.getElementById('start').value= info.dateStr;
+                document.getElementById('id_cita').value = "";
+                document.getElementById('start').value = info.dateStr;
                 btnEliminar.classList.add('d-none')
-                document.getElementById('titulo').textContent= "REGISTRO DE CITA"
+                document.getElementById('titulo').textContent = "REGISTRO DE CITA"
                 myModal.show();
-                
+
             }
         },
         eventClick: function (info) {
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('description').value = info.event.extendedProps.description;
             document.getElementById('id_cita').value = info.event.id;
             document.getElementById('id_paciente').value = info.event.groupId;
-            document.getElementById('titulo').textContent= "INFORMACION DE LA CITA";
+            document.getElementById('titulo').textContent = "INFORMACION DE LA CITA";
             btnEliminar.classList.remove('d-none')
             myModal.show();
         },
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     timer: 1500
                 });
                 calendar.refetchEvents();
-            }else{
+            } else {
                 const url = BASE_URL + 'Citas/drop';
                 const http = new XMLHttpRequest();
                 const data = new FormData(frm);
@@ -65,11 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (this.readyState == 4 && this.status == 200) {
                         console.log(this.responseText);
                         const res = JSON.parse(this.responseText);
-                        alertaPersonalizada(res.tipo,res.mensaje);
-                            if (res.tipo == 'success') {
-                                myModal.hide();
-                                calendar.refetchEvents();
-                            }
+                        alertaPersonalizada(res.tipo, res.mensaje);
+                        if (res.tipo == 'success') {
+                            myModal.hide();
+                            calendar.refetchEvents();
+                        }
                     }
                 }
             }
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (this.readyState == 4 && this.status == 200) {
                         console.log(this.responseText);
                         const res = JSON.parse(this.responseText);
-                        alertaPersonalizada(res.tipo,res.mensaje);
+                        alertaPersonalizada(res.tipo, res.mensaje);
                         if (res.tipo == 'success') {
                             myModal.hide();
                             calendar.refetchEvents();
@@ -109,54 +109,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-function RegistrarCita(e){
-        e.preventDefault();
-        const start = document.getElementById('start').value;
-        const end = document.getElementById('end').value;
-        const id = document.getElementById('identificacion').value;
-        if (  id == ''  ) {
-            alertaPersonalizada('warning','DIGITE LA IDENTICACION DEL PACIENTE');
-        } else if (end == "SELECCIONAR") {
-            alertaPersonalizada('warning','SELECCIONE LA HORA DE LA CITA');
-        }else {
-            const data = new FormData(frm);
-            const url =BASE_URL+ "Citas/registrar";
-            const http= new XMLHttpRequest();
-            http.open("POST",url,true);
-            http.send(data);
-            http.onreadystatechange = function(){
-                if(this.readyState== 4 && this.status==200){
-                    const res = JSON.parse(this.responseText);
-                        alertaPersonalizada(res.tipo,res.mensaje);
-                    if (res.tipo == 'success') {
-                        myModal.hide();
-                        calendar.refetchEvents();
-                    }
+function RegistrarCita(e) {
+    e.preventDefault();
+    const start = document.getElementById('start').value;
+    const end = document.getElementById('end').value;
+    const id = document.getElementById('identificacion').value;
+    if (id == '') {
+        alertaPersonalizada('warning', 'DIGITE LA IDENTICACION DEL PACIENTE');
+    } else if (end == "SELECCIONAR") {
+        alertaPersonalizada('warning', 'SELECCIONE LA HORA DE LA CITA');
+    } else {
+        const data = new FormData(frm);
+        const url = BASE_URL + "Citas/registrar";
+        const http = new XMLHttpRequest();
+        http.open("POST", url, true);
+        http.send(data);
+        http.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                const res = JSON.parse(this.responseText);
+                alertaPersonalizada(res.tipo, res.mensaje);
+                if (res.tipo == 'success') {
+                    myModal.hide();
+                    calendar.refetchEvents();
                 }
             }
         }
-} 
+    }
+}
 
 
 
 function cargarDatos(e) {
     e.preventDefault();
-    if (e.which==13) {
+    if (e.which == 13) {
         var selectId = document.getElementById('identificacion').value;
         const data = new FormData(frm);
-                const url =BASE_URL+ "Citas/cargarDatos/"+selectId;
-                const http= new XMLHttpRequest();
-                http.open("GET",url,true);
-                http.send();
-                http.onreadystatechange = function(){
-                    if(this.readyState== 4 && this.status==200){
-                        const res = JSON.parse(this.responseText);
-                        document.getElementById('id_paciente').value = res.id;
-                        document.getElementById('description').value = res.apellidos;
-                        document.getElementById('title').value = res.nombres;
-                        document.getElementById('identificacion').value = res.identificacion;
-                    }
-                }
+        const url = BASE_URL + "Citas/cargarDatos/" + selectId;
+        const http = new XMLHttpRequest();
+        http.open("GET", url, true);
+        http.send();
+        http.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                const res = JSON.parse(this.responseText);
+                document.getElementById('id_paciente').value = res.id;
+                document.getElementById('description').value = res.apellidos;
+                document.getElementById('title').value = res.nombres;
+                document.getElementById('identificacion').value = res.identificacion;
+            }
+        }
     }
 }
 
@@ -173,10 +173,10 @@ function cargarCitas() {
                     const res = JSON.parse(this.responseText)
                     const events = res.map((event) => ({
                         id: event.id,
-                        title: event.end +' - '+event.title +' '+ event.description,
+                        title: event.end + ' - ' + event.title + ' ' + event.description,
                         start: event.start,
                         backgroundColor: event.color,
-                        textColor:event.title,
+                        textColor: event.title,
                         groupId: event.groupId,
                         extendedProps: {
                             description: event.description,
@@ -193,62 +193,3 @@ function cargarCitas() {
     })
 }
 
-
-
-
-
-
-
-// var ctx = document.getElementById("usuarios");
-// var myPieChart = new Chart(ctx, {
-//     type: 'doughnut',
-//     data: {
-//         labels: ["Blue", "Red", "Yellow", "Green","Yellow", "Green"],
-//         datasets: [{
-//             data: [12.21, 15.58, 11.25, 8.32, 12.21, 15.58,],
-//             backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745', '#ffc107', '#28a745'],
-//         }],
-//     },
-// });
-
-// var ctx = document.getElementById("personal");
-// var myLineChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: ["January", "February", "March", "April", "May", "June"],
-//         datasets: [{
-//             label: "Revenue",
-//             backgroundColor: "rgba(2,117,216,1)",
-//             borderColor: "rgba(2,117,216,1)",
-//             data: [4215, 5312, 6251, 7841, 9821, 14984],
-//         }],
-//     },
-//     options: {
-//         scales: {
-//             xAxes: [{
-//                 time: {
-//                     unit: 'month'
-//                 },
-//                 gridLines: {
-//                     display: false
-//                 },
-//                 ticks: {
-//                     maxTicksLimit: 6
-//                 }
-//             }],
-//             yAxes: [{
-//                 ticks: {
-//                     min: 0,
-//                     max: 15000,
-//                     maxTicksLimit: 5
-//                 },
-//                 gridLines: {
-//                     display: true
-//                 }
-//             }],
-//         },
-//         legend: {
-//             display: false
-//         }
-//     }
-// });
