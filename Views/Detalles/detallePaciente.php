@@ -3,7 +3,7 @@
 <form id="formularioDetalle"  >
     <div class="card">
         <div class="card-body">
-        <a href="<?php echo BASE_URL . 'detalles/'?>" class="btn btn-info mb-4" type="button" data-bs-dismiss="modal" ><i class="material-icons">undo</i>Regresar</a>
+                <a href="<?php echo BASE_URL . 'detalles/'?>" class="btn btn-info mb-4" type="button" data-bs-dismiss="modal" ><i class="material-icons">undo</i>Regresar</a>
             <div class="row">
             <input value="<?= $data['paciente']['id'] ?>" class="form-control" type="hidden" id="id"  name="id" >
                 <div class="col-md-4 mb-2">

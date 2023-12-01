@@ -23,15 +23,16 @@
                 $data[$i]['estado']='<span class="badge badge-success">ACTIVO</span>';
                 if ($data[$i]['clasificacionRiesgo']=='ALTO') {
                     $data[$i]['clasificacionRiesgo']='<span class="badge badge-danger">ALTO</span>';
-                    $data[$i]['acciones']='
-                    <div>
-                    <a href ="'.BASE_URL.'/Detalles/detallePaciente/'.$data[$i]['id'].'" class="btn btn-primary btn-sm" ">Ver Paciente</a>
+                    $data[$i]['acciones']='<div>
+                        <a href ="'.BASE_URL.'/Detalles/detallePaciente/'.$data[$i]['id'].'" class="btn btn-primary btn-sm" "><i class="material-icons">visibility</i>Ver Paciente</a>
+                        <a href ="'.BASE_URL.'/Detalles/generarPdf/'.$data[$i]['id'].'" class="btn btn-danger btn-sm" "><i class="material-icons">download</i>Historial</a>
                     </div>';
                 } else {
                     $data[$i]['clasificacionRiesgo']='<span class="badge badge-success">BAJO</span>';
                     $data[$i]['acciones']='
                     <div>
-                    <a href ="'.BASE_URL.'/Detalles/detallePaciente/'.$data[$i]['id'].'" class="btn btn-primary btn-sm" ">Ver Paciente</a>
+                    <a href ="'.BASE_URL.'/Detalles/detallePaciente/'.$data[$i]['id'].'" class="btn btn-primary btn-sm" "><i class="material-icons">visibility</i>Ver Paciente</a>
+                    <a href ="'.BASE_URL.'/Detalles/generarPdf/'.$data[$i]['id'].'" target="_blank"  class="btn btn-danger btn-sm" "><i class="material-icons">download</i>Historial</a>
                     </div>';
                 }
             }else{
@@ -186,14 +187,20 @@
 
 
         public function generarPdf($id) {
-            $paciente =$this->model->getPaciente();
+            $paciente =$this->model->getPacienteHistorial($id);
             require('Libraries/fpdf/fpdf.php');
             $pdf = new FPDF('P','mm','A4');
             $pdf->AddPage();
-            $pdf->SetTitle('Historial Paciente');
             $pdf->SetFont('Arial','B',14);
-            $pdf->Cell(40,10,utf8_decode($paciente['apellidos']));
+            $pdf->Cell(100,10,'Hola Mundo',1,0,'C');
             $pdf->Output();
         }
     } 
-?>
+    // $pdf->SetTitle('Historial Del Paciente');
+    // $pdf->AddLink();
+    // $pdf->Cell(100,10,'Hola Mundo',1,0,'C');
+    // $pdf->Image('Assets/img/cabecera.PNG',10,10,55,0);
+    // $pdf->SetFont('Arial','B',14);
+    // $pdf->Cell(45);
+    // $pdf->Cell(40,10,utf8_decode($paciente['apellidos']));
+    ?>

@@ -8,8 +8,8 @@ class DetallesModel extends Query{
         $sql = "SELECT * FROM pacientes ";
         return $this->selectAll($sql);
     }
-    public function getPaciente(){
-        $sql = "SELECT * FROM pacientes " ;
+    public function getPacienteHistorial($id){
+        $sql = "SELECT * FROM pacientes WHERE id=$id" ;
         return $this->select($sql);
     }
     public function getDetallePaciente($id){
