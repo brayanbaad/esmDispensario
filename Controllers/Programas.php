@@ -10,15 +10,10 @@ class Programas extends Controller
     }
 
     public function index()  {
-        $id_user = $_SESSION['id_usuario'];
-        $verificar = $this->model->verificarPermiso($id_user,'programas');
-        if (!empty($verificar)) {
-            $data['title'] ='Gestión de Programas';
+        $data['title'] ='Gestión de Programas';
         $data['script'] ='programas.js';
         $this->views->getView($this,'index',$data);
-        } else {
-            header('Location:'.BASE_URL.'Errors/permisos');
-        }
+        
         
     }
 

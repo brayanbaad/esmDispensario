@@ -17,7 +17,6 @@
                                         <th style="text-align: center">Nombres:</th>
                                         <th style="text-align: center">Grado</th>
                                         <th style="text-align: center">Seccion:</th>
-                                        <th style="text-align: center">Estado:</th>
                                         <th style="text-align: center">Fecha Nacimiento:</th>
                                         <th style="text-align: center">Correo</th>
                                         <th style="text-align: center">Telefono:</th>
@@ -25,6 +24,7 @@
                                         <th style="text-align: center">Arma:</th>
                                         <th style="text-align: center">Novedad:</th>
                                         <th style="text-align: center">Item</th>
+                                        <th style="text-align: center">Estado:</th>
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -28,10 +28,9 @@
     <div id="modalRegistro" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title "  id="title"></h5>
+                <div class="modal-header bg-info">
+                    <h5 class="modal-title text-white"  id="title"></h5>
                     <button class="btn-close " data-bs-dismiss="modal" aria-label="Close">
-                        <span  class="text-white" aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <form id="formulario" autocomplete="off">
@@ -43,7 +42,7 @@
                                 <div class="input-group">
                                     <span class="input-group-text">
                                     <i class="material-icons">
-                                        person
+                                    view_carousel
                                     </i>
                                     </span>
                                     <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre" >

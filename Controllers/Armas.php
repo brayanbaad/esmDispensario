@@ -11,16 +11,9 @@ class Armas extends Controller
     }
 
     public function index()  {
-        $id_user = $_SESSION['id_usuario'];
-        $verificar = $this->model->verificarPermiso($id_user,'armas');
-        if (!empty($verificar)) {
-            $data['title'] ='Gestion De Armas';
-            $data['script'] ='armas.js';
-            $this->views->getView($this,'index',$data);
-        } else {
-            header('Location:'.BASE_URL.'Errors/permisos');
-        }
-        
+        $data['title'] ='Gestion De Armas';
+        $data['script'] ='armas.js';
+        $this->views->getView($this,'index',$data);
     }
 
     public function listar(){

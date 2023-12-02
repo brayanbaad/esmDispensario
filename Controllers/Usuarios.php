@@ -9,17 +9,11 @@ class Usuarios extends Controller{
         if (empty($_SESSION['activo'])) {
             header("location:". BASE_URL);
         }
-        $id_user = $_SESSION['id_usuario'];
-        $verificar = $this->model->verificarPermiso($id_user,'programas');
-        if (!empty($verificar)) {
             $data['programas'] = $this->model->getProgramas();
             $data['personal'] = $this->model->getPersonas();
             $data['title'] ='Gestion De Usuarios';
             $data['script'] ='usuarios.js';
             $this->views->getView($this,"index",$data);
-        } else {
-            header('Location:'.BASE_URL.'Errors/permisos');
-        }
         
     }
 

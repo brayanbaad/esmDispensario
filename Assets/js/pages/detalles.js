@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
             { 'data': 'apellidos' },
             { 'data': 'nombres' },
             { 'data': 'clasificacionRiesgo' },
-            { 'data': 'acciones' },
             { 'data': 'fechaNacimiento' },
             { 'data': 'edad' },
             { 'data': 'telefono' },
             { 'data': 'id' },
             { 'data': 'estado' },
+            { 'data': 'acciones' },
         ],
         language: {
             url: 'https://cdn.datatables.net/plug-ins/1.13.5/i18n/es-ES.json'

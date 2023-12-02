@@ -680,7 +680,7 @@
             $pdf->SetFont('TIMES','I',11);
             $pdf->MultiCell(195,5,utf8_decode($paciente['observaciones']),1,'L');
             
-            $pdf->Output();
+            $pdf->Output('',"HistorialPaciente.pdf");
         }
     } 
 

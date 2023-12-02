@@ -75,7 +75,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text">
                                             <i class="material-icons"> 
-                                            person
+                                            key
                                         </i>
                                         </span>
                                         <input class="form-control" type="password" id="clave" name="clave" placeholder="Contraseña" >
@@ -86,7 +86,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text">
                                             <i class="material-icons">
-                                            person
+                                            key
                                             </i>
                                         </span>
                                         <input class="form-control" type="password" id="confirmar" name="confirmar" placeholder="Confirmar " >

@@ -4,7 +4,7 @@
             <div class="card bg-primary">
                 <div class="card-body d-flex text-white justify-content-between">
                     Personal Dispensario
-                    <i class="material-icons ">person</i>
+                    <i class="material-icons ">groups</i>
                 </div>
                 <div class="card-footer d-flex  justify-content-center bg-primary ">
                     <span class="text-white"><?php echo $data['personalDispensario']['total']?></span>
@@ -15,7 +15,7 @@
             <div class="card bg-success">
                 <div class="card-body d-flex text-white justify-content-between">
                     Personal De Acceso
-                    <i class="material-icons ">person</i>
+                    <i class="material-icons ">lock_person</i>
                 </div>
                 <div class="card-footer d-flex  justify-content-center bg-success ">
                     <span class="text-white"><?php echo $data['usuarios']['total']?></span>
@@ -26,7 +26,7 @@
             <div class="card bg-warning">
                 <div class="card-body d-flex text-white justify-content-between">
                     Areas
-                    <i class="material-icons ">person</i>
+                    <i class="material-icons ">apps</i>
                 </div>
                 <div class="card-footer d-flex  justify-content-center bg-warning ">
                     <span class="text-white"><?php echo $data['secciones']['total']?></span>
@@ -37,7 +37,7 @@
             <div class="card bg-danger">
                 <div class="card-body d-flex text-white justify-content-between">
                     Especialidades
-                    <i class="material-icons ">person</i>
+                    <i class="material-icons ">co_present</i>
                 </div>
                 <div class="card-footer d-flex  justify-content-center bg-danger ">
                     <span class="text-white"><?php echo $data['especialidades']['total']?></span>

@@ -31,7 +31,7 @@
                     <div class="input-group">
                         <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                fingerprint
                             </i>
                         </span>
                         <input  class="form-control" type="number" id="identificacion" name="identificacion" placeholder="Digite Numero"  >
@@ -42,7 +42,7 @@
                     <div class="input-group">
                         <span class="input-group-text">
                         <i class="material-icons">
-                            person
+                            group
                         </i>
                         </span>
                         <input  class="form-control" type="text" id="apellidos" name="apellidos" placeholder=" Digite Apellidos">
@@ -84,7 +84,7 @@
                     <div class="input-group">
                         <span class="input-group-text">
                         <i class="material-icons">
-                            person
+                            phone
                         </i>
                         </span>
                         <input  class="form-control" type="number" id="telefono" name="telefono" placeholder="Telefono" >
@@ -95,7 +95,7 @@
                     <div class="input-group">
                         <span class="input-group-text">
                         <i class="material-icons">
-                            person
+                            pin_drop
                         </i>
                         </span>
                         <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Direccion" >
@@ -106,7 +106,7 @@
                     <div class="input-group">
                         <span class="input-group-text">
                         <i class="material-icons">
-                            person
+                            school
                         </i>
                         </span>
                         <input  class="form-control" type="text" id="nivelEducativo" name="nivelEducativo" placeholder="Nivel Educativo" >
@@ -117,7 +117,7 @@
                     <div class="input-group">
                         <span class="input-group-text">
                         <i class="material-icons">
-                            person
+                            accessibility
                         </i>
                         </span>
                         <input  class="form-control" type="text" id="ocupacion" name="ocupacion" placeholder="ocupacion" >
@@ -146,7 +146,7 @@
                     <div class="col-md-6 mb-4">
                         <label for="sgestacionalIngreso">Semanas De Gestación Al Ingreso Semanas/Dias:</label>
                         <div class="input-group">
-                            <span class="input-group-text"><i class="material-icons">person</i></span>
+                            <span class="input-group-text"><i class="material-icons">pin</i></span>
                             <input  class="form-control" type="number" id="sgestacionalIngreso" name="sgestacionalIngreso" placeholder="0" readonly="">
                         </div>
                     </div>
@@ -163,7 +163,7 @@
                         <label for="SemanasAControl">Semanas Actuales Ultimo Control:</label>
                         <div class="input-group">
                             <span class="input-group-text">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">pin</i>
                             </span>
                             <input  class="form-control" type="number" id="SemanasAControl" name="SemanasAControl" placeholder="0" readonly="">
                         </div>
@@ -172,7 +172,7 @@
                         <label for="ClasificacionRiesgo">Clasificacion Riesgo Obstetrico:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
-                            <i class="material-icons">badge</i>
+                            <i class="material-icons">warning</i>
                             </span>
                             <select name="ClasificacionRiesgo" id="ClasificacionRiesgo" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
@@ -185,7 +185,7 @@
                         <label for="DSGestacional">Diagnostico Sifilis Gestacional Confirmado:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
-                            <i class="material-icons">badge</i>
+                            <i class="material-icons">check_circle</i>
                             </span>
                             <select name="DSGestacional" id="DSGestacional" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
@@ -213,9 +213,7 @@
                         <label for="TSPareja">Tratamiento Para Sifilis En Pareja:</label>
                         <div class="input-group">
                             <span class="input-group-text">
-                            <i class="material-icons">
-                                person
-                            </i>
+                                <i class="material-icons">contacts</i>
                             </span>
                             <select name="TSPareja" id="TSPareja" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
@@ -226,12 +224,13 @@
                             </select>
                         </div>
                     </div>
+                    
                     <div class="col-md-4 mb-4">
                         <label for="CDVIH">Confirmacion Diagnostico infeccion VIH:</label>
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                check_circle
                             </i>
                         </span>
                         <select name="CDVIH" id="CDVIH" class="form-control" >
@@ -245,7 +244,7 @@
                         <label for="IPTVIH">Ingreso Programa Tratamiento VIH:</label>
                         <div class="input-group">
                             <span class="input-group-text">
-                                <i class="material-icons">person</i>
+                                <i class="material-icons">add_box</i>
                             </span>
                             <select name="IPTVIH" id="IPTVIH" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
@@ -261,7 +260,7 @@
                         <div class="input-group">
                             <span class="input-group-text" >
                             <i class="material-icons">
-                                badge
+                                pregnant_woman
                             </i>
                             </span>
                             <select name="ALMaterna" id="ALMaterna" class="form-control" >
@@ -276,7 +275,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                    person
+                                    medication_liquid
                             </i>
                             </span>
                             <select name="EMicroMulti" id="EMicroMulti" class="form-control" >
@@ -300,7 +299,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                    person
+                                    diversity_1
                             </i>
                             </span>
                             <select name="MPFamiliar" id="MPFamiliar" class="form-control" >
@@ -328,7 +327,7 @@
                         <label for="VitalidadMadre">Vitalidad Madre Final Embarazo:</label>
                         <div class="input-group">
                             <span class="input-group-text">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">pregnant_woman</i>
                             </span>
                             <select name="VitalidadMadre" id="VitalidadMadre" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
@@ -343,7 +342,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                child_care
                             </i>
                             </span>
                             <select name="VitalidadNacido" id="VitalidadNacido" class="form-control" >
@@ -383,7 +382,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                warning
                             </i>
                             </span>
                             <input  class="form-control" type="text" id="CFactoresRiesgo" name="CFactoresRiesgo" placeholder="Edad Materna" >
@@ -394,7 +393,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                report
                             </i>
                             </span>
                             <select name="RiesgoBiopsicosocial" id="RiesgoBiopsicosocial" class="form-control" >
@@ -410,7 +409,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                format_list_numbered
                             </i>
                             </span>
                             <select name="NGestacionesActuales" id="NGestacionesActuales" class="form-control" >
@@ -438,7 +437,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                            format_list_numbered
                             </i>
                             </span>
                             <select name="AntecedentesParto" id="AntecedentesParto" class="form-control" >
@@ -467,7 +466,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                            format_list_numbered
                             </i>
                             </span>
                             <select name="cesareas" id="cesareas" class="form-control" >
@@ -495,7 +494,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                            format_list_numbered
                             </i>
                             </span>
                             <select name="Abortos" id="Abortos" class="form-control" >
@@ -524,7 +523,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                            format_list_numbered
                             </i>
                             </span>
                             <select name="HijosVivos" id="HijosVivos" class="form-control" >
@@ -553,7 +552,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                            format_list_numbered
                             </i>
                             </span>
                             <select name="HijosMuertos" id="HijosMuertos" class="form-control" >
@@ -582,7 +581,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                sticky_note_2
                             </i>
                             </span>
                             <input class="form-control" type="text" id="AntecedentesPatologicos" name="AntecedentesPatologicos" placeholder="Digite Antecedente" >
@@ -593,7 +592,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                scale
                             </i>
                             </span>
                             <input class="form-control" type="number"   id="Peso" name="Peso"  placeholder="0" >
@@ -604,7 +603,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                            height
                             </i>
                             </span>
                             <input  class="form-control" type="number"  id="Talla" name="Talla"  placeholder="0" >
@@ -615,7 +614,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                accessibility
                             </i>
                             </span>
                             <input  class="form-control" type="number"  id="IMC" name="IMC" placeholder="0"  readonly="">
@@ -626,7 +625,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                co_present
                             </i>
                             </span>
                             <select name="CursoPreparacion" id="CursoPreparacion" class="form-control" >
@@ -650,7 +649,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                            contacts
                             </i>
                             </span>
                             <select name="AtencionGineco" id="AtencionGineco" class="form-control" >
@@ -665,7 +664,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                contacts
                             </i>
                             </span>
                             <select name="AtencionOdontologia" id="AtencionOdontologia" class="form-control" >
@@ -680,7 +679,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                            contacts
                             </i>
                             </span>
                             <select name="AtencionNutricion" id="AtencionNutricion" class="form-control" >
@@ -695,7 +694,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                psychology
                             </i>
                             </span>
                             <select name="AtencionPsicologia" id="AtencionPsicologia" class="form-control" >
@@ -710,7 +709,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                            format_list_numbered
                             </i>
                             </span>
                             <select name="NumeroControles" id="NumeroControles" class="form-control" >
@@ -734,7 +733,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                vaccines
                             </i>
                             </span>
                             <select name="VacunaTetano" id="VacunaTetano" class="form-control" >
@@ -753,7 +752,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                fullscreen_exit
                             </i>
                             </span>
                             <select name="DPTA" id="DPTA" class="form-control" >
@@ -768,7 +767,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                            vaccines
                             </i>
                             </span>
                             <select name="Influenza" id="Influenza" class="form-control" >
@@ -783,7 +782,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                            vaccines
                             </i>
                             </span>
                             <select name="VacunaCovid" id="VacunaCovid" class="form-control" >
@@ -800,7 +799,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                send
                             </i>
                             </span>
                             <select name="SuministroAcidoAcetil" id="SuministroAcidoAcetil" class="form-control" >
@@ -816,7 +815,7 @@
                         <div class="input-group">
                             <span class="input-group-text">
                             <i class="material-icons">
-                                person
+                                warning
                             </i>
                             </span>
                             <select name="CRiesgoPreeclampsia" id="CRiesgoPreeclampsia" class="form-control" >
@@ -846,7 +845,7 @@
                         <label for="ResultadoSifilis">Resultados De Sifilis:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
-                            <i class="material-icons">badge</i>
+                            <i class="material-icons">article</i>
                             </span>
                             <select name="ResultadoSifilis" id="ResultadoSifilis" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
@@ -868,7 +867,7 @@
                         <label for="ResultadoVIH">Resultados De VIH:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
-                            <i class="material-icons">badge</i>
+                            <i class="material-icons">article</i>
                             </span>
                             <select name="ResultadoVIH" id="ResultadoVIH" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
@@ -890,7 +889,7 @@
                         <label for="ResultadoHB">Resultados De HB:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
-                            <i class="material-icons">badge</i>
+                            <i class="material-icons">article</i>
                             </span>
                             <select name="ResultadoHB" id="ResultadoHB" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
@@ -921,7 +920,7 @@
                         <label for="TomaLab1Trimestre">Toma De laboratorios 1 Trimestre:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
-                            <i class="material-icons">badge</i>
+                            <i class="material-icons">water_bottle</i>
                             </span>
                             <select name="TomaLab1Trimestre" id="TomaLab1Trimestre" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
@@ -935,7 +934,7 @@
                         <label for="TomaLab2Trimestre">Toma De laboratorios 2 Trimestre:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
-                            <i class="material-icons">badge</i>
+                            <i class="material-icons">water_bottle</i>
                             </span>
                             <select name="TomaLab2Trimestre" id="TomaLab2Trimestre" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>
@@ -949,7 +948,7 @@
                         <label for="TomaLab3Trimestre">Toma De laboratorios 3 Trimestre:</label>
                         <div class="input-group">
                             <span class="input-group-text" >
-                            <i class="material-icons">badge</i>
+                            <i class="material-icons">water_bottle</i>
                             </span>
                             <select name="TomaLab3Trimestre" id="TomaLab3Trimestre" class="form-control" >
                                 <option value="SELECCIONAR">SELECCIONAR</option>

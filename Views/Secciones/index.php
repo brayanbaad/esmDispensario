@@ -43,7 +43,7 @@
                                 <div class="input-group">
                                     <span class="input-group-text">
                                     <i class="material-icons">
-                                        person
+                                        lan
                                     </i>
                                     </span>
                                     <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre" >

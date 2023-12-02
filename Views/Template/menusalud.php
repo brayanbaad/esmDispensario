@@ -26,6 +26,9 @@
             </i> Consultar Pacientes 
         </a>
     </li>
+    <li class="sidebar-title">
+        CITAS
+    </li>
     <li >
         <a href="<?php echo BASE_URL .'ConsultaCitas'?>" class="active" disabled>
             <i class="material-icons-two-tone">
@@ -33,31 +36,5 @@
             </i> Consultar Citas 
         </a>
     </li>
-    <!-- <li >
-        <a href="" class="active" disabled >
-            <i class="material-icons-two-tone">
-            edit_calendar
-            </i> Proximas Citas
-        </a>
-    </li> -->
     
-    <li class="sidebar-title">
-        INFORMES
-    </li>
-    <li>
-        <a href="<?php echo BASE_URL .'consultar'?>" class="active">
-            <i class="material-icons-two-tone">
-            devices_fold
-            </i>Reportes
-        </a>
-    </li>
-    <!-- <li>
-    <div class="col-xl-12 col-md-6">
-            <div class="card bg-warning">
-                <div class="card-body d-flex text-white">
-                <input value="<?php echo date('Y-m-d')?>" class="form-control" type="date" readonly="" >
-                </div>
-            </div>
-        </div>
-    </li> -->
 </ul>

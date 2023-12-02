@@ -44,7 +44,7 @@
                                 <div class="input-group">
                                     <span class="input-group-text">
                                     <i class="material-icons">
-                                        person
+                                        military_tech
                                     </i>
                                     </span>
                                     <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre" >
@@ -55,7 +55,7 @@
                                 <div class="input-group">
                                     <span class="input-group-text">
                                     <i class="material-icons">
-                                        person
+                                        radar
                                     </i>
                                     </span>
                                     <input class="form-control" type="text" id="nombreCorto" name="nombreCorto" placeholder="Nombre Corto" >

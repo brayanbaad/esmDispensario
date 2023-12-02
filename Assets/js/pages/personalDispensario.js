@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded',function () {
             {'data':'nombres'},
             {'data':'grado'},
             {'data':'seccion'},
-            {'data':'estado'},
             {'data':'fecha_nacimiento'},
             {'data':'correo'},
             {'data':'telefono'},
@@ -28,6 +27,7 @@ document.addEventListener('DOMContentLoaded',function () {
             {'data':'arma'},
             {'data':'novedad'},
             {'data':'id'}, 
+            {'data':'estado'},
         ],
         language : {
             url:'https://cdn.datatables.net/plug-ins/1.13.5/i18n/es-ES.json'
