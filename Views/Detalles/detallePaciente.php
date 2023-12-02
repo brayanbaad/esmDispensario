@@ -1146,14 +1146,6 @@
                         <textarea value="<?php echo $data['paciente']['OBSERVACIONES']  ?>" class="form-control" type="text" id="observaciones" name="observaciones" rows="6" placeholder=""></textarea>
                     </div>
                 </div> 
-                <div class="col-md-12 mb-2">
-                    <label for=""></label>
-                        <div class="input-group">
-                            
-                            <a href="" class="btn btn-info"> <i class="material-icons"> save</i> Descargar Historial</a>
-                        
-                    </div>
-                </div>
         </div> 
     </div>
     <div class="modal-footer">
