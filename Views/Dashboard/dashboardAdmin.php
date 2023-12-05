@@ -52,7 +52,7 @@
                 PORCENTAJE GRADOS 
                 </div>
                 <div class="card-body ">
-                    <canvas id="personal" width="100" height="100"></canvas>
+                    <canvas id="personal" width="80" height="80"></canvas>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 CANTIDAD ESPECIALIDADES 
                 </div>
                 <div class="card-body ">
-                    <canvas id="usuarios" width="100" height="100"></canvas>
+                    <canvas id="usuarios" width="80" height="80"></canvas>
                 </div>
             </div>
         </div>

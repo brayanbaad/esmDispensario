@@ -80,7 +80,7 @@ function reporteEspecialidades() {
                 datasets: [{
                   label: "Especialidades",
                   lineTension: 0.3,
-                  backgroundColor: "rgba(46, 181, 189,0.2)",
+                  backgroundColor: "rgba(201, 218, 60,0.2)",
                   borderColor: "rgba(2,117,216,1)",
                   pointRadius: 5,
                   pointBackgroundColor: "rgba(59, 142, 242 ,1)",

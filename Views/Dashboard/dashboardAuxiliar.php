@@ -36,7 +36,7 @@
         <div class="col-xl-6">
             <div class="card">
                 <div class="card-header bg-dark text-white text-center">
-                
+                FECHAS SELECCIONADAS
                 </div>
                 <div class="card-body ">
                     <canvas id="clasificacion" ></canvas>

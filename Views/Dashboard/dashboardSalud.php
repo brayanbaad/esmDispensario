@@ -63,17 +63,17 @@
                 CLASIFICACION DE RIESGO
                 </div>
                 <div class="card-body ">
-                    <canvas id="clasificacion" ></canvas>
+                    <canvas id="clasificacion" width="100" height="100"></canvas>
                 </div>
             </div>
         </div>
         <div class="col-xl-4">
             <div class="card">
                 <div class="card-header bg-dark text-white text-center">
-                CLASIFICACION DE SEMANAS GESTACIONAL
+                CLASIFICACION DE SEMANAS 
                 </div>
                 <div class="card-body ">
-                    <canvas id="semanas" ></canvas>
+                    <canvas id="semanas" width="100" height="100"></canvas>
                 </div>
             </div>
         </div>
