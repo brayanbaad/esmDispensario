@@ -682,6 +682,74 @@
             
             $pdf->Output('',"HistorialPaciente.pdf");
         }
+
+        public function pdf() {
+            $desde= $_POST['desde'];
+            $hasta= $_POST['hasta'];
+            $pacientes =$this->model->getListadoPacientes($desde,$hasta);
+            require('Libraries/fpdf/fpdf.php');
+            $pdf = new FPDF('P','mm','A4');
+            $pdf->SetTitle('Listado Pacientes');
+            $pdf->AddPage('LANDSCAPE');
+            $pdf->Cell(185,22,'',1,'L');
+            $pdf->Image('Assets/img/cabeCera.PNG',12,15,90,0);
+            $pdf->SetFont('TIMES','I',12);
+            $pdf->Cell(95,6,utf8_decode('Historial Pacientes'),1,0,'L');
+            $pdf->Ln();
+            $pdf->Cell(185,22);
+            $pdf->SetFont('TIMES','I',12);
+            $pdf->Cell(95,5,utf8_decode('Codigo: '),1,0,'L');
+            $pdf->Ln();
+            $pdf->Cell(185,22);
+            $pdf->SetFont('TIMES','I',12);
+            $pdf->Cell(95,5,utf8_decode('Proceso: '),1,0,'L');
+            $pdf->Ln();
+            $pdf->Cell(185,22);
+            $pdf->SetFont('TIMES','I',12);
+            $pdf->Cell(95,6,utf8_decode('Vigente a partir de:'),1,0,'L');
+            $pdf->Ln(9);
+            $pdf->SetFont('TIMES','B',12);
+            $pdf->Cell(280,7,utf8_decode('LISTADO DE PACIENTES '),1,0,'C');
+            $pdf->Ln(10);
+            $pdf->SetFont('TIMES','B',10);
+            $pdf->SetFillColor(98, 166, 220);
+            $pdf->SetTextColor(255,255,255);
+            $pdf->Cell(7,10,'ID',1,0,'C',true);
+            $pdf->Cell(35,10,'IDENTIFICACION',1,0,'L',true);
+            $pdf->Cell(31,10,'FECHA INGRESO',1,0,'L',true);
+            $pdf->Cell(35,10,'NOMBRES',1,0,'C',true);
+            $pdf->Cell(35,10,'APELLIDOS',1,0,'C',true);
+            $pdf->Cell(32,10,'F. NACIMIENTO',1,0,'C',true);
+            $pdf->Cell(12,10,'EDAD',1,0,'C',true);
+            $pdf->Cell(23,10,'SEMANAS',1,0,'C',true);
+            $pdf->Cell(18,10,'RIESGO',1,0,'C',true);
+            $pdf->Cell(27,10,'FECHA PARTO',1,0,'C',true);
+            $pdf->Cell(25,10,'PESO',1,1,'C',true);
+            $pdf->SetFont('TIMES','',10);
+            $pdf->SetTextColor(0,0,0);
+            foreach($pacientes as $valor){
+                $pdf->Cell(7,10,$valor['id'],1,0,'C');
+                $pdf->Cell(35,10,$valor['identificacion'],1,0,'C');
+                $pdf->Cell(31,10,$valor['fechaRuta'],1,0,'C');
+                $pdf->Cell(35,10,$valor['nombres'],1,0,'C');
+                $pdf->Cell(35,10,$valor['apellidos'],1,0,'C');
+                $pdf->Cell(32,10,$valor['fechaNacimiento'],1,0,'C');
+                $pdf->Cell(12,10,$valor['edad'],1,0,'C');
+                $pdf->Cell(23,10,$valor['semanasAControl'],1,0,'C');
+                $pdf->Cell(18,10,$valor['clasificacionRiesgo'],1,0,'C');
+                $pdf->Cell(27,10,$valor['fechaPParto'],1,0,'C');
+                $pdf->Cell(25,10,$valor['peso'],1,1,'C');
+            }
+            
+            
+            // //DATOS BASICOS
+            // $pdf->SetFont('TIMES','B',11);
+            
+            // $pdf->SetFont('TIMES','I',11);
+            // $pdf->Cell(90,10,utf8_decode("PACIENTES"),0,0,'C');
+
+            $pdf->Output('',"listadoPacientes.pdf");
+        }
     } 
 
 ?>

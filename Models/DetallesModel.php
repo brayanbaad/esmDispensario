@@ -52,6 +52,12 @@ class DetallesModel extends Query{
         return $this->save($sql,$datos);
         
     }
+
+    public function getListadoPacientes($desde,$hasta){
+        $sql = "SELECT * FROM pacientes WHERE fechaRuta BETWEEN '$desde' AND '$hasta'" ;
+        return $this->selectAll($sql);
+    }
+    
 }
 
 ?>

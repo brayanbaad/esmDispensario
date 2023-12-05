@@ -174,7 +174,7 @@ class Usuarios extends Controller{
     public function activar($id) {
         $data = $this->model->accionUsuario(1,$id);
         if ($data==1) {
-            $res = array('tipo'=>'success','mensaje'=>'USUARIO ACTIVADA');
+            $res = array('tipo'=>'success','mensaje'=>'USUARIO ACTIVADO');
         }else{
             $res = array('tipo'=>'error','mensaje'=>'ERROR AL ACTIVAR EL USUARIO');
         }

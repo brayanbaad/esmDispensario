@@ -65,12 +65,12 @@ document.addEventListener('DOMContentLoaded',function () {
 
 function Activar(id) {
     const url = BASE_URL + 'Usuarios/activar/' + id;
-    AlertaActivacion('Mensaje!','Esta seguro de activar el Usuario?',url,tblUsuarios);
+    AlertaActivacion('Mensaje!','ESTÁ SEGURO DE ACTIVAR EL USUARIO NUEVAMENTE?',url,tblUsuarios);
 }
 
 function Eliminar(id) {
     const url = BASE_URL + 'Usuarios/eliminar/' + id;
-    eliminarRegistro('ESTÁ SEGURO?','SE DESACTIVARA DE FORMA PERMANENTE','Si Desactivar',url,tblUsuarios);
+    eliminarRegistro('ESTÁ SEGURO?','SE DESACTIVARA EL USUARIO DE FORMA PERMANENTE','Si Desactivar',url,tblUsuarios);
 }
 
 function Editar(id){

@@ -44,6 +44,14 @@
             die();
         }
 
+        public function reporteFechas() {
+            $data = $this->model->getfechas();
+            echo json_encode($data,JSON_UNESCAPED_UNICODE);
+            die();
+        }
+
+        
+
         public function confirmarEstado($id) {
             $data = $this->model->accionEditarEstado('CONFIRMADA',$id);
             if ($data==1) {

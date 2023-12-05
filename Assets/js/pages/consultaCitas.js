@@ -99,14 +99,72 @@ function reporteHoras() {
     }
 }
 
-var ctx = document.getElementById("clasificacion");
-            var myPieChart = new Chart(ctx, {
-                type: 'doughnut',
+reporteFechas();
+function reporteFechas() {
+    const url = BASE_URL + 'ConsultaCitas/reporteFechas';
+    const http = new XMLHttpRequest();
+    http.open("POST", url, true);
+    http.send();
+    http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            const res = JSON.parse(this.responseText);
+            let start = [];
+            let cantidad = [];
+            for (let i = 0; i < res.length; i++) {
+                start.push(res[i]['start']);
+                cantidad.push(res[i]['cantidad']);
+            }
+            var ctx = document.getElementById("clasificacion");
+            var myLineChart = new Chart(ctx, {
+                type: 'bar',
                 data: {
-                    labels: ["TS", "TD"],
+                    labels: start,
                     datasets: [{
-                        data: [12.21, 15.58],
-                        backgroundColor: ['#19B040 ', '#B01919'],
+                        label: "Horas",
+                        lineTension: 0.3,
+                        backgroundColor: "rgba(63, 230, 55 ,1)",
+                        borderColor: "rgba(2,117,216,1)",
+                        pointRadius: 5,
+                        pointBackgroundColor: "rgba(59, 142, 242 ,1)",
+                        pointBorderColor: "rgba(563, 230, 55  ,1)",
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(2,117,216,1)",
+                        pointHitRadius: 50,
+                        pointBorderWidth: 2,
+                        data: cantidad,
                     }],
                 },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            time: {
+                                unit: 'date'
+                            },
+                            gridLines: {
+                                display: false
+                            },
+                            ticks: {
+                                maxTicksLimit: 7
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                min: 0,
+                                max: 40000,
+                                maxTicksLimit: 5
+                            },
+                            gridLines: {
+                                color: "rgba(0, 0, 0, .125)",
+                            }
+                        }],
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
             });
+        }
+    }
+}
+
+

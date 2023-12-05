@@ -14,6 +14,10 @@ class ConsultaCitasModel extends Query{
         return $this->selectAll($sql);
     }
 
+    public function getfechas(){
+        $sql = "SELECT c.start , COUNT(*) as cantidad FROM citas c GROUP BY start;";
+        return $this->selectAll($sql);
+    }
     public function accionEditarEstado( string $estado,int $id)
     {
         $this->id = $id;

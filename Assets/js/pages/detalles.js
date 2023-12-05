@@ -24,10 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         responsive: true,
         order: [[0, 'desc']]
-
     });
 })
-
 
 
 
