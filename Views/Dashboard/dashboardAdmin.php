@@ -46,7 +46,7 @@
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-xl-6">
+        <div class="col-xl-4">
             <div class="card">
                 <div class="card-header bg-primary text-white text-center">
                 PORCENTAJE GRADOS 
@@ -56,7 +56,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-6">
+        <div class="col-xl-4">
             <div class="card">
                 <div class="card-header bg-success text-white text-center">
                 CANTIDAD ESPECIALIDADES 
